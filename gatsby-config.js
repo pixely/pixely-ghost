@@ -180,5 +180,10 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
+        `gatsby-plugin-sass`,
+        {
+            resolve: `@danbruegge/gatsby-plugin-stylelint`,
+            options: { files: [`**/**.scss`] },
+        },
     ],
 }
