@@ -182,8 +182,8 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-sass`,
         {
-          resolve: "@danbruegge/gatsby-plugin-stylelint",
-          options: { files: ["**/**.scss"] }
+            resolve: `@danbruegge/gatsby-plugin-stylelint`,
+            options: { files: [`**/**.scss`] },
         },
     ],
 }
