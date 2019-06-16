@@ -1,17 +1,17 @@
-{
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "ecmaFeatures": {
-            "jsx": true,
-            "experimentalObjectRestSpread": true
+module.exports = {
+    'parser': 'babel-eslint',
+    'parserOptions': {
+        'ecmaVersion': 6,
+        'ecmaFeatures': {
+            'jsx': true,
+            'experimentalObjectRestSpread': true
         }
     },
-    "plugins": ["ghost", "react"],
-    "extends": [
-        "plugin:ghost/node",
-        "plugin:ghost/ember",
-        "plugin:react/recommended"
+    plugins: ['ghost', 'react'],
+    extends: [
+        'plugin:ghost/node',
+        'plugin:ghost/ember',
+        'plugin:react/recommended'
     ],
     "settings": {
         "react": {
@@ -56,4 +56,4 @@
             }
         ]
     }
-}
+};
