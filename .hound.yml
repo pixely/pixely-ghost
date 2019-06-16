@@ -1,0 +1,9 @@
+scss:
+  enabled: false
+
+stylelint:
+  config_file: .stylelintrc
+
+eslint:
+  config_file: .eslintrc.js
+  ignore_file: .eslintignore
