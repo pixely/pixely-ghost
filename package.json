@@ -1,19 +1,19 @@
 {
   "name": "pixely-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
-  "version": "1.0.0",
+  "description": "Ghost theme for personal site of Graham Martin",
+  "version": "0.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
+  "author": "Graham Martin",
   "homepage": "https://docs.ghost.org/api/gatsby/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/pixely/pixely-ghost.git"
   },
   "engines": {
     "node": ">= 8.10.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/pixely/pixely-ghost.git/issues"
   },
   "keywords": [
     "gatsby",
@@ -25,7 +25,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "lint": "eslint . --ext .js --cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "yarn lint"
   },
   "devDependencies": {
     "eslint": "5.16.0",
