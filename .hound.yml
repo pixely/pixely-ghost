@@ -6,7 +6,7 @@ jshint:
 
 stylelint:
   enabled: true
-  config_file: .stylelintrc.yml
+  config_file: .stylelintrc
 
 eslint:
   enabled: true
