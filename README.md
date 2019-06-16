@@ -1,15 +1,8 @@
-# Gatsby Starter Ghost
+# Pixely – Personal site for Graham Martin
 
-A starter template to build lightning fast websites with [Ghost](https://ghost.org) & [Gatsby](https://gatsbyjs.org)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5877c28b-ce78-4541-84f9-e97d9b91ce9c/deploy-status)](https://app.netlify.com/sites/wonderful-meninsky-eec361/deploys)
 
-**Demo:** https://gatsby.ghost.org
-
-&nbsp;
-
-![gatsby-starter-ghost](https://user-images.githubusercontent.com/120485/50913567-8ab8e380-142c-11e9-9e78-de02ded12fc6.jpg)
-
-&nbsp;
-
+This is a custom [Gatsby](https://gatsbyjs.org) template for [Ghost](https://ghost.org).
 
 # Installing
 
