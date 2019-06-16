@@ -181,6 +181,9 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-sass`,
-        `@danbruegge/gatsby-plugin-stylelint`,
+        {
+          resolve: "@danbruegge/gatsby-plugin-stylelint",
+          options: { files: ["**/**.scss"] }
+        },
     ],
 }
