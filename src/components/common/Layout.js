@@ -5,6 +5,8 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Navigation } from '.'
+import Masthead from '../organisms/masthead'
+
 import config from '../../utils/siteConfig'
 
 // Styles
@@ -30,6 +32,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <style type="text/css">{`${site.codeinjection_styles}`}</style>
             <body className={bodyClass} />
         </Helmet>
+
+        <Masthead />
 
         <div className="viewport">
 
