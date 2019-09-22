@@ -27,7 +27,9 @@
     "lint": "yarn lint:es; yarn lint:stylelint",
     "lint:es": "eslint . --ext .js --cache",
     "lint:stylelint": "stylelint \"**/**.scss\"",
-    "test": "yarn lint"
+    "test": "yarn lint",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@danbruegge/gatsby-plugin-stylelint": "^3.4.0",
@@ -61,6 +63,8 @@
     "node-sass": "^4.12.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-helmet": "5.2.1"
-  }
+    "react-helmet": "5.2.1",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
