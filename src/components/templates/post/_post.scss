@@ -10,7 +10,7 @@ $grid-gap-desktop: 20px;
   }
 
   &__hero {
-    grid-column: 1 / -2;
+    grid-column: 1 / -1;
     grid-row: 1 / 4;
     background: var(--color-primary-light);
   }
@@ -23,7 +23,7 @@ $grid-gap-desktop: 20px;
 
     &--cosmetic {
       grid-row-start: 4;
-      padding: $grid-gap-mobile;
+      padding: $grid-gap-desktop;
       margin-bottom: -#{$grid-gap-mobile};
     }
   }
@@ -55,7 +55,6 @@ $grid-gap-desktop: 20px;
       grid-column: 1 / span 2;
       
       &--cosmetic {
-        padding: $grid-gap-desktop;
         margin-bottom: -#{$grid-gap-desktop};
       }
     }

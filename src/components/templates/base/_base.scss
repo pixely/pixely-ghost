@@ -7,6 +7,7 @@
 
     display: grid;
     grid-template-columns: var(--grid-mobile);
+    grid-template-rows: min-content 25vh auto;
     grid-gap: var(--grid-gap-mobile);
   }
 
@@ -24,6 +25,7 @@
       margin: var(--spacing-medium);
 
       grid-template-columns: var(--grid-desktop);
+      grid-template-rows: auto;
       grid-gap: var(--grid-gap-desktop);
     }
   }

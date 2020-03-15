@@ -1,7 +1,7 @@
 $type--base: 20px;
 $type--extra-small: .694rem;
 
-html {font-size: 20px} /*20px*/
+html {font-size: 18px} /*20px*/
 
 body {
   font-family: var(--font-sans-serif);
@@ -60,10 +60,8 @@ small,
   font-size: .579rem;
 }
 
-::-moz-selection { 
-  background: var(--color-secondary);
-}
+@media (min-width: 400px) {
   
-::selection { 
-  background: var(--color-secondary);
+  html {font-size: 20px} /*20px*/
+
 }
