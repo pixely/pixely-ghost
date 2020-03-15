@@ -4,9 +4,7 @@
   grid-gap: var(--grid-gap-mobile);
   z-index: 2;
 
-  /* Temp hack */
-  position: absolute;
-  margin: 20px;
+  position: sticky;
   left: 0;
   right: 0;
   top: 0;

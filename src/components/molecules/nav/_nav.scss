@@ -1,3 +1,16 @@
 .nav {
   background: var(--color-secondary);
+  display: flex;
+  transition: background-color .2s linear;
+
+  &__icon {
+    width: 30px;
+    margin: 15px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--color-secondary-dark);
+  }
 }

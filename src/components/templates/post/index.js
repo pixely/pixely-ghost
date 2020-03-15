@@ -65,6 +65,8 @@ const Post = ({ data, location }) => {
                     <div className="post__footer">
                         <Author {...post.primary_author} />
                     </div>
+
+                    {/* {console.log(post)} */}
                     
                 </Layout>
             </>

@@ -12,6 +12,7 @@ $grid-gap-desktop: 20px;
   &__hero {
     grid-column: 1 / -2;
     grid-row: 1 / 4;
+    background: var(--color-primary-light);
   }
 
   &__meta {
