@@ -1,0 +1,15 @@
+.post-meta {
+
+  &__row {
+    font-family: var(--font-body-copy);
+    font-size: .694rem;
+    line-height: 1.5;
+    padding: var(--spacing-small);
+    color: var(--color-text);
+    text-align: right;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+  }
+}

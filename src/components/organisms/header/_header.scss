@@ -1,0 +1,41 @@
+.header {
+  display: grid;
+  grid-template-columns: var(--grid-mobile);
+  grid-gap: var(--grid-gap-mobile);
+  z-index: 2;
+
+  /* Temp hack */
+  position: absolute;
+  margin: 20px;
+  left: 0;
+  right: 0;
+  top: 0;
+  
+  /* End temp hack */
+
+  &__logo {
+    grid-column: 1 / 6;    
+  }
+
+  &__nav {
+    grid-column-start: -2;
+    justify-self: right;
+  }
+}
+
+
+@media (min-width: 400px) {
+   
+  .header {
+    grid-template-columns: var(--grid-desktop);
+    grid-gap: var(--grid-gap-desktop);
+
+    &__logo {
+      grid-column-end: auto;
+    }
+      
+    &__nav {
+      
+    }
+  }      
+}

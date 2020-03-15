@@ -1,0 +1,11 @@
+.hero {
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+@media (min-width: 400px) {
+
+  .hero {
+    max-height: 60vh;
+  }
+}

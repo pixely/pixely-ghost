@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import './masthead.scss';
+import './_masthead.scss';
 
 /**
 * Navigation component
@@ -28,11 +28,11 @@ import './masthead.scss';
 
 const Masthead = () => (
   <Fragment>
-    <header class="masthead">
-      <h1 class="masthead__logo"><a href="/">pixely</a></h1>
+    <header className="masthead">
+      <h1 className="masthead__logo"><a href="/">pixely</a></h1>
     </header>
-    <div class="masthead masthead--background" />
-    <div class="masthead masthead--shadows" />
+    <div className="masthead masthead--background" />
+    <div className="masthead masthead--shadows" />
   </Fragment>
 )
 

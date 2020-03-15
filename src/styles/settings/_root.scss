@@ -1,19 +1,24 @@
 :root {
   // Colours
-  --color-base: #f3f1ea;
+  // --color-base: #f5f4f4; // Cooler - #f5f4f4 / Warmer #f3f1ea
   --color-primary: #033649;
   --color-secondary: #036564;
-  --color--tertiary: #025f7d;
-  --color-text: #fff;
+  --color-tertiary: #025f7d;
+  --color-text: #3c484e;
+  --color-text-dark: #000;
+  --color-text-inverted: #fff;
+
+  --color-base: #F5F1DE;
+  --color-primary: #003049;
+  --color-secondary: #FCBF49;
 
   // Fonts
   --font-headings: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-body-copy: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-
+  --font-monospace: "Anonymous Pro", monospace;
 
   --font-sans-serif: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-serif: Georgia, Times, serif;
-  --font-mono: Menlo, Courier, monospace;
   --font-light: 100;
   --font-normal: 400;
   --font-bold: 700;
@@ -23,4 +28,18 @@
   --height: 4rem;
   --margin: 2rem;
   --radius: .6rem;
+
+  // Spacing
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+
+  // Grid
+  --grid-mobile: 10px 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr 10px;
+  --grid-desktop: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+  --grid-gap-mobile: var(--spacing-small);
+  --grid-gap-desktop: var(--spacing-medium);
+  $grid-gap-mobile: 10px;
+  $grid-gap-desktop: 20px;
+  $grid-breakpoint-tablet: 400px;
+
 }

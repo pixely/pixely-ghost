@@ -1,0 +1,30 @@
+.base {
+  background: var(--color-secondary);
+
+  &__inner {
+    margin: var(--spacing-small) 0 0 var(--spacing-small);
+    background: var(--color-base);
+
+    display: grid;
+    grid-template-columns: var(--grid-mobile);
+    grid-gap: var(--grid-gap-mobile);
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+    grid-row-start: 1;
+  }
+}
+
+@media (min-width: 400px) {
+  
+  .base {
+
+    &__inner {
+      margin: var(--spacing-medium);
+
+      grid-template-columns: var(--grid-desktop);
+      grid-gap: var(--grid-gap-desktop);
+    }
+  }
+}
