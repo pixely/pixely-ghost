@@ -1,15 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link as GatsbyLink } from 'gatsby';
 
 import './_link.scss';
 
 const Link = ({ href, className, children, inverted }) => (
-  <a
+  <GatsbyLink
     className={`${className ? `${className} ` : ''} link ${inverted ? 'link--inverted' : null}`}
-    href={href}
+    to={href}
   >
     {children}
-  </a>
+  </GatsbyLink>
 )
 
 Link.defaultProps = {

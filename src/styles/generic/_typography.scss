@@ -60,6 +60,10 @@ small,
   font-size: .579rem;
 }
 
+.text--inverted {
+  color: var(--color-text-inverted);
+}
+
 @media (min-width: 400px) {
   
   html {font-size: 20px} /*20px*/

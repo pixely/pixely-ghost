@@ -19,12 +19,12 @@ const PostMeta = ({ author, publishDate, tags }) => (
       <p className="post-meta__row">
         By <Link href={`/author/${author.slug}`}>{author.name}</Link>
       </p>
-      <p className="post-meta__row">Posted in { tags.filter(tag => tag.visibility == "public").map((tag, index) => (
+      {tags.length > 0 && <p className="post-meta__row">Posted in { tags.filter(tag => tag.visibility == "public").map((tag, index) => (
           <>
-          <Link href={`/tag/{tag.slug}`}>{tag.name}</Link>
+          <Link href={`/tag/${tag.slug}`}>{tag.name}</Link>
           {plur(index, tags.length-1)}
           </>
-      ))} </p>
+      ))} </p>}
   </aside>
 )
 

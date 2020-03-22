@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
 import './_logo.scss';
 
 const Logo = ({ className }) => (
   <h1 className={`${className ? `${className} ` : ''}logo`}>
-    <a href="/" className="logo__link">
+    <Link to="/" className="logo__link">
       pixely
-    </a>
+    </Link>
   </h1>
 );
 

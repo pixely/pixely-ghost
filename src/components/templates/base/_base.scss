@@ -7,8 +7,14 @@
 
     display: grid;
     grid-template-columns: var(--grid-mobile);
-    grid-template-rows: min-content 25vh auto;
     grid-gap: var(--grid-gap-mobile);
+  }
+
+  &--post {
+
+    .base__inner {
+      grid-template-rows: min-content 25vh auto;
+    }
   }
 
   &__header {
@@ -27,6 +33,13 @@
       grid-template-columns: var(--grid-desktop);
       grid-template-rows: auto;
       grid-gap: var(--grid-gap-desktop);
+    }
+
+    &--post {
+
+      .base__inner {
+        grid-template-rows: auto;
+      }
     }
   }
 }
