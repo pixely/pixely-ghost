@@ -12,7 +12,7 @@ const Author = ({ profile_image, name, slug, bio, facebook, twitter, website, cl
             alt ={name} 
         />
         <div class="author__info">
-            <h5 className="author__name">By <Link href={`/author/${slug}`} inverted>{name}</Link></h5>
+            <h5 className="author__name">By <Link to={`/author/${slug}`} inverted>{name}</Link></h5>
             <p className="text-s">{bio}</p>
             <p className="text-s">
               {facebook && (

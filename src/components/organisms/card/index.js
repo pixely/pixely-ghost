@@ -7,7 +7,6 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import Image from '../../atoms/image';
 
 import './_card.scss';
-import PostMeta from '../../molecules/post-meta'
 
 const Card = ({ post }) => {
     const url = `/${post.slug}/`
@@ -34,7 +33,7 @@ const Card = ({ post }) => {
                     {/* {post.featured && <MetaItem>Featured</MetaItem>} */}
                     <MetaItem>{post.published_at_pretty}</MetaItem>
                     <MetaItem>{readingTime}</MetaItem>
-                    {/* <MetaItem>{post.primary_author.name}</MetaItem> */}
+                    {/* <MetaItem key={`${post.id}-author`}>{post.primary_author.name}</MetaItem> */}
                     {post.tags.length > 0 && <MetaItem><Tags post={post} visibility="public" autolink={false} /></MetaItem>}
                 </p>
                 <p>{post.excerpt}</p>

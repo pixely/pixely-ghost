@@ -17,11 +17,11 @@ const PostMeta = ({ author, publishDate, tags }) => (
   <aside className="post-meta">
       <p className="post-meta__row">{ publishDate }</p>
       <p className="post-meta__row">
-        By <Link href={`/author/${author.slug}`}>{author.name}</Link>
+        By <Link to={`/author/${author.slug}`}>{author.name}</Link>
       </p>
       {tags.length > 0 && <p className="post-meta__row">Posted in { tags.filter(tag => tag.visibility == "public").map((tag, index) => (
           <>
-          <Link href={`/tag/${tag.slug}`}>{tag.name}</Link>
+          <Link to={`/tag/${tag.slug}`}>{tag.name}</Link>
           {plur(index, tags.length-1)}
           </>
       ))} </p>}

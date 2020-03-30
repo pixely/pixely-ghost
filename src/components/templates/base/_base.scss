@@ -7,13 +7,22 @@
 
     display: grid;
     grid-template-columns: var(--grid-mobile);
+    grid-template-rows: min-content auto;
     grid-gap: var(--grid-gap-mobile);
+    min-height: calc(100vh - 20px);
   }
 
   &--post {
 
     .base__inner {
       grid-template-rows: min-content 25vh auto;
+    }
+  }
+
+  &--tag {
+
+    .base__inner {
+      grid-template-rows: min-content 25vh 45px minmax(20px, auto) auto;
     }
   }
 
@@ -31,8 +40,9 @@
       margin: var(--spacing-medium);
 
       grid-template-columns: var(--grid-desktop);
-      grid-template-rows: auto;
+      grid-template-rows: min-content auto;
       grid-gap: var(--grid-gap-desktop);
+      min-height: calc(100vh - 40px);
     }
 
     &--post {
@@ -41,5 +51,6 @@
         grid-template-rows: auto;
       }
     }
+
   }
 }

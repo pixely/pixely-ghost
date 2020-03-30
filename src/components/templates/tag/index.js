@@ -4,9 +4,11 @@ import PropTypes from 'prop-types'
 import { Layout } from '../../common'
 import { MetaData } from '../../common/meta'
 
+import Image from '../../atoms/image';
+import Title from '../../atoms/title';
 import Feed from '../../organisms/feed';
 
-import './_home.scss';
+import './_tag.scss';
 /**
 * Main index page (home page)
 *
@@ -15,14 +17,22 @@ import './_home.scss';
 * in /utils/siteConfig.js under `postsPerPage`.
 *
 */
-const Home = ({ data, location, pageContext }) => {
+const Tag = ({ data, location, pageContext }) => {
+    const tag = data.ghostTag
     const posts = data.allGhostPost.edges
 
     return (
         <>
-            <MetaData location={location} />
-            <Layout bodyClass="home" isHome={true}>
-                <div className="home__feed">
+            <MetaData
+                data={data}
+                location={location}
+                type="series"
+            />
+            <Layout bodyClass="tag">
+                <Title className="tag__title">{tag.name}</Title>
+                {tag.description ? <p className="tag__description">{tag.description}</p> : null }
+                {tag.feature_image && <Image src={tag.feature_image} alt={tag.name} className="tag__image" /> }
+                <div className="tag__feed">
                     <Feed posts={posts} pageContext={pageContext} />
                 </div>
             </Layout>
@@ -30,7 +40,7 @@ const Home = ({ data, location, pageContext }) => {
     )
 }
 
-Home.propTypes = {
+Tag.propTypes = {
     data: PropTypes.shape({
         allGhostPost: PropTypes.object.isRequired,
     }).isRequired,
@@ -40,4 +50,4 @@ Home.propTypes = {
     pageContext: PropTypes.object,
 }
 
-export default Home
+export default Tag

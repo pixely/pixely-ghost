@@ -21,7 +21,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <html lang={site.lang} />
             <style type="text/css">{`${site.codeinjection_styles}`}</style>
             <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700|Rubik:700,700i,400i|Anonymous+Pro:400&display=swap" rel="stylesheet" />
-            <body className={`base${bodyClass ? ` base--${bodyClass}` : ''}`} />
+            <body className={`base${bodyClass ? ` base--${bodyClass}` : ''} ${bodyClass}`} />
         </Helmet>
         <Base data={data} children={children} config={config} isHome />
       </Fragment>

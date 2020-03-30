@@ -4,14 +4,17 @@ import { Link as GatsbyLink } from 'gatsby';
 
 import './_link.scss';
 
-const Link = ({ href, className, children, inverted }) => (
-  <GatsbyLink
-    className={`${className ? `${className} ` : ''} link ${inverted ? 'link--inverted' : null}`}
-    to={href}
-  >
-    {children}
-  </GatsbyLink>
-)
+const Link = ({ href, to, className, children, inverted, ...props }) => {
+  const linkProps = {
+    className: `${className ? `${className} ` : ''}link${inverted ? ' link--inverted' : ''}`,
+    ...props,
+  };
+  return (
+    to ? 
+    <GatsbyLink {...linkProps} to={to}>{children}</GatsbyLink> :
+    <a {...linkProps} href={href}>{children}</a>
+  );
+}
 
 Link.defaultProps = {
     // navClass: `site-nav-item`,

@@ -35,7 +35,7 @@ const Post = ({ data, location }) => {
                 </Helmet>
                 <Layout bodyClass="post">
                     {/* Post title */}
-                    <Title className="post__title" title={post.title} />
+                    <Title className="post__title">{post.title}</Title>
                     
                     {/* Post Hero */}
                     <div className="post__hero">

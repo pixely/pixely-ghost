@@ -2,12 +2,6 @@
   
   &__feed {
     grid-column: 1 / -1;
-    display: grid;
-    grid-gap: 20px;
-  }
-
-  &__pagination {
-    grid-column: 1 / -1;
   }
 }
 
@@ -18,10 +12,6 @@
     &__feed {
       grid-column: 2 / span 6;
     }
-
-    &__pagination {
-      grid-column: 2 / span 5;
-    }
   }
 }
 
@@ -31,7 +21,7 @@
 
     &__feed {
       grid-column: 2 / span 5;
-      margin: -10px;
+      // margin: -10px;
     }
   }
 }
