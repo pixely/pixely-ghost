@@ -30,8 +30,8 @@ const Tag = ({ data, location, pageContext }) => {
             />
             <Layout bodyClass="tag">
                 <Title className="tag__title">{tag.name}</Title>
-                {tag.description ? <p className="tag__description">{tag.description}</p> : null }
-                {tag.feature_image && <Image src={tag.feature_image} alt={tag.name} className="tag__image" /> }
+                {tag.description && <p className="tag__description">{tag.description}</p> }
+                {tag.feature_image ? <Image src={tag.feature_image} alt={tag.name} className="tag__image" /> : <div className="author__image" /> }
                 <div className="tag__feed">
                     <Feed posts={posts} pageContext={pageContext} />
                 </div>

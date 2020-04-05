@@ -28,7 +28,7 @@ const Card = ({ post }) => {
                 />
             }
             <div className="card__body">
-                <h3 className={`card__title${post.featured ? ' text--inverted' : ''}`}>{post.title}</h3>
+                <h4 className={`card__title${post.featured ? ' text--inverted' : ''}`}>{post.title}</h4>
                 <p className="card__meta">
                     {/* {post.featured && <MetaItem>Featured</MetaItem>} */}
                     <MetaItem>{post.published_at_pretty}</MetaItem>

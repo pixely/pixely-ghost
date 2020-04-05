@@ -26,6 +26,13 @@
     }
   }
 
+  &--author {
+
+    .base__inner {
+      grid-template-rows: min-content 25vh 45px minmax(20px, auto) auto;
+    }
+  }
+
   &__header {
     grid-column: 1 / -1;
     grid-row-start: 1;

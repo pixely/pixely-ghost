@@ -1,4 +1,4 @@
-.author {
+.author-bio {
   display: grid;
   grid-gap: var(--grid-gap-mobile);
   grid-template-columns: 1fr 4fr;
@@ -24,7 +24,7 @@
 
 @media (min-width: 400px) {
   
-  .author {
+  .author-bio {
     grid-gap: var(--grid-gap-desktop);
   }
 }

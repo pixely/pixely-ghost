@@ -10,7 +10,7 @@ import Title from '../../atoms/title';
 import Hero from '../../atoms/hero';
 import PostMeta from '../../molecules/post-meta';
 import Content from '../../organisms/content';
-import Author from '../../molecules/author';
+import AuthorBio from '../../molecules/author-bio';
 
 import './_post.scss';
 
@@ -63,7 +63,7 @@ const Post = ({ data, location }) => {
                     
                     {/* Author bio */ }
                     <div className="post__footer">
-                        <Author {...post.primary_author} />
+                        <AuthorBio {...post.primary_author} />
                     </div>
 
                     {/* {console.log(post)} */}
