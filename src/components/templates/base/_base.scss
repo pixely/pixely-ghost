@@ -22,14 +22,14 @@
   &--tag {
 
     .base__inner {
-      grid-template-rows: min-content 25vh 45px minmax(20px, auto) auto;
+      grid-template-rows: min-content 25vh 45px minmax(20px, max-content) auto;
     }
   }
 
   &--author {
 
     .base__inner {
-      grid-template-rows: min-content 25vh 45px minmax(20px, auto) auto;
+      grid-template-rows: min-content 25vh 45px minmax(20px, max-content) auto;
     }
   }
 

@@ -9,8 +9,8 @@ import { MetaData } from '../../common/meta'
 import Title from '../../atoms/title';
 import Hero from '../../atoms/hero';
 import PostMeta from '../../molecules/post-meta';
-import Content from '../../organisms/content';
 import AuthorBio from '../../molecules/author-bio';
+import Content from '../../organisms/content';
 
 import './_post.scss';
 
@@ -20,9 +20,7 @@ import './_post.scss';
 * This file renders a single post and loads all the content.
 *
 */
-const Post = ({ data, location }) => {
-    const post = data.ghostPost
-
+const Post = ({ post, data, location }) => {
     return (
             <>
                 <MetaData
@@ -65,8 +63,6 @@ const Post = ({ data, location }) => {
                     <div className="post__footer">
                         <AuthorBio {...post.primary_author} />
                     </div>
-
-                    {/* {console.log(post)} */}
                     
                 </Layout>
             </>
