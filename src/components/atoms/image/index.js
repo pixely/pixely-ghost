@@ -7,6 +7,7 @@ const Image = ({ className, ...props }) => (
   <img
       className={`${className ? `${className} ` : ''} image`}
       {...props}
+      loading="lazy"
   />
 )
 
