@@ -13,28 +13,32 @@
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   
+  &.is-open {
+    transform: translateY(10px)
+  }
+
   &__icon-bar {
     display: block;
     position: absolute;
-    height: 4px;
-    width: 36px;
+    height: 3px;
+    width: 24px;
     background: var(--color-primary);
     opacity: 1;
-    left: 12px;
+    left: 18px;
     transform: rotate(0deg);
     transition: .25s ease-in-out; 
     
     &:nth-child(1) {
-      top: 15px;
+      top: 21px;
     }
 
     &:nth-child(2),
     &:nth-child(3) {
-      top: 27px;
+      top: 28px;
     }
 
     &:nth-child(4) {
-      top: 39px;
+      top: 35px;
     }
   }
 
@@ -56,10 +60,27 @@
     }
   }
 
+  &.is-open,
   &:hover,
   &:active,
   &:focus {
     background: var(--color-secondary-dark);
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.75);
+    animation: navFadeOut .5s linear;
+    animation-fill-mode: both;
+    cursor: pointer;
+    
+    &.is-open {
+      animation: navFadeIn .5s linear;
+    }
   }
 
   &__menu {
@@ -71,22 +92,16 @@
     min-height: 100vh;
     background: #FCBF49;
     overflow: scroll;
-    display: none;
-
+    display: grid;
     padding: 60px 10px 0 10px;
-    
-    border: 20px solid #CF9D3C;
-    
-    /* flex-direction: column; */
-    
-    /* justify-content: space-evenly; */
     flex: 1 1 1;
-    
-    /* border-top: 10px solid #CF9D3C; */
-    
-    /* border-left: 10px solid #CF9D3C; */
+    border-top: 10px solid #CF9D3C;
+    border-left: 10px solid #CF9D3C;
+    animation: navSlideOutUp .3s ease-in-out;
+    transform-origin: top left;
+
     &.is-open {
-      display: grid;
+      animation: navSlideInDown .3s linear;
     }
   }
 
@@ -101,6 +116,9 @@
     display: grid;
     place-content: center center;
     background: transparent;
+    animation: navFadeInOut .2s linear;
+    animation-delay: .3s;
+    animation-fill-mode: backwards;
 
     &:last-child {
       margin-bottom: 20px;
@@ -113,5 +131,103 @@
     &:hover {
       background: var(--color-secondary-dark);
     }
+  }
+}
+
+@media (min-width: 400px) {
+
+  .nav {
+    
+    &.is-open {
+      transform: translateY(20px)
+    }
+
+    &__menu {
+      left: auto;
+      bottom: 0;
+      background: #FCBF49;
+      padding: 60px 10px 0 10px;
+      border-top: 0;
+      border-left-width: 10px;
+      width: 30vw;  
+      padding-top: 90px;
+      animation: navSlideOut .3s ease-in-out;
+      animation-delay: .02s;
+      animation-fill-mode: both;
+
+      &.is-open {
+        animation: navSlideIn .3s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes navFadeIn {
+  
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes navFadeOut {
+  
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes navSlideIn {
+  
+  from {
+    transform: translate(100%);
+    opacity: .5;
+  }
+
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes navSlideOut {
+  
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(100%);
+    opacity: .5;
+  }
+}
+
+@keyframes navSlideInDown {
+  
+  from {
+    transform: translate(-100%, -100%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes navSlideOutUp {
+  
+  from {
+    transform: translate(0);    
+  }
+
+  to {
+    transform: translate(-100%, -100%);
   }
 }

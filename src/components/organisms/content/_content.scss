@@ -15,6 +15,10 @@
     grid-column: 1 / -1;
   }
 
+  & > .kg-width-full figcaption {
+    padding: 0 20px;
+  }
+  
   img {
     margin: 0;
     border: 0;
@@ -120,6 +124,7 @@
     background: var(--color-secondary);
     color: var(--color-text-dark);
   }
+  
 }
 
 @media (min-width: 400px) {
@@ -134,10 +139,6 @@
   
     & > .kg-width-wide {
       grid-column: 3 / -1;
-    }
-
-    & > .kg-width-full figcaption {
-      padding: 0 20px;
     }
   }
 }
