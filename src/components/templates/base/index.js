@@ -24,7 +24,7 @@ const Base = ({ config, data, children, bodyClass, isHome }) => {
     return (
     <Fragment>
     <div className="base__inner">
-      <Header className="base__header" />
+      <Header className="base__header" navItems={site.navigation} />
       {children}
     </div>
 

@@ -1,20 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+
+import GenericNav from './genericNav';
 
 import './_nav.scss';
 
-const Nav = ({ className }) => (
-  <a
-    className={`${className ? `${className} ` : ''}nav`}
-    href="#"
-  >
-    <svg className="nav__icon" viewBox="0 0 100 80" width="40" height="30">
-      <rect width="100" height="10"></rect>
-      <rect y="30" width="100" height="10"></rect>
-      <rect y="60" width="100" height="10"></rect>
-    </svg>
-  </a>
-)
+const Nav = ({ className, navItems }) => {
+  const [menuActive, setMenu] = useState(false);
+
+  return (
+    <>
+      <button
+        className={`${className ? `${className} ` : ''}nav${menuActive ? ' is-open' : ''}`}
+        onClick={() => setMenu(!menuActive)}
+        aria-label="Open main menu"
+      >
+        <span className="nav__icon-bar"></span>
+        <span className="nav__icon-bar"></span>
+        <span className="nav__icon-bar"></span>
+        <span className="nav__icon-bar"></span>
+      </button>
+      <nav className={`nav__menu${menuActive ? ' is-open' : ''}`}>
+        <GenericNav navItems={navItems} navClass="nav__menu-item" />
+        <GenericNav navItems={navItems} navClass="nav__menu-item" />
+        <GenericNav navItems={navItems} navClass="nav__menu-item" />
+        <GenericNav navItems={navItems} navClass="nav__menu-item" />
+        <GenericNav navItems={navItems} navClass="nav__menu-item" />
+        <GenericNav navItems={navItems} navClass="nav__menu-item" />
+      </nav>
+    </>
+  )
+}
 
 Nav.defaultProps = {
     // navClass: `site-nav-item`,

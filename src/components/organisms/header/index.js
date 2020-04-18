@@ -6,10 +6,10 @@ import Nav from '../../molecules/nav';
 
 import './_header.scss';
 
-const Header = ({ html, className }) => (
+const Header = ({ html, className, navItems }) => (
   <header className={`${className ? `${className} ` : ''}header`}>
     <Logo className="header__logo" />
-    <Nav className="header__nav" />
+    <Nav className="header__nav" navItems={navItems} />
   </header>
 )
 
