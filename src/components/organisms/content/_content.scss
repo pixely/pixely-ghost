@@ -135,5 +135,9 @@
     & > .kg-width-wide {
       grid-column: 3 / -1;
     }
+
+    & > .kg-width-full figcaption {
+      padding: 0 20px;
+    }
   }
 }
