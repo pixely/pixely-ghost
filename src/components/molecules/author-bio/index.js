@@ -11,7 +11,7 @@ const AuthorBio = ({ profile_image, name, slug, bio, facebook, twitter, website,
             src={profile_image} 
             alt ={name} 
         />
-        <div class="author-bio__info">
+        <div className="author-bio__info">
             <h5 className="author-bio__name">By <Link to={`/author/${slug}`} inverted>{name}</Link></h5>
             <p className="text-s">{bio}</p>
             <p className="text-s">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Link from '../../atoms/link';
 
@@ -20,10 +20,10 @@ const PostMeta = ({ author, publishDate, tags }) => (
         By <Link to={`/author/${author.slug}`}>{author.name}</Link>
       </p>
       {tags.length > 0 && <p className="post-meta__row">Posted in { tags.filter(tag => tag.visibility == "public").map((tag, index) => (
-          <>
-          <Link to={`/tag/${tag.slug}`}>{tag.name}</Link>
-          {plur(index, tags.length-1)}
-          </>
+          <Fragment key={`tag-${tag.id}`}>
+            <Link to={`/tag/${tag.slug}`}>{tag.name}</Link>
+            {plur(index, tags.length-1)}
+          </Fragment>
       ))} </p>}
   </aside>
 )

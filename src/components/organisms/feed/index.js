@@ -16,8 +16,8 @@ import './_feed.scss';
 const Feed = ({ posts, pageContext }) => (
         <section className="feed">
             {posts.map(({ node }) => (
-                <div class="feed__card">
-                    <Card key={node.id} post={node} />
+                <div key={node.id} className="feed__card">
+                    <Card post={node} />
                 </div>
             ))}
             <div className="feed__pagination">
