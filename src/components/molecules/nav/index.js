@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import GenericNav from './genericNav';
 
