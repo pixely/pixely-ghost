@@ -90,13 +90,13 @@
     left: 0;
     bottom: 0;
     min-height: 100vh;
-    background: #FCBF49;
+    background: var(--color-secondary);
     overflow: scroll;
     display: grid;
     padding: 60px 10px 0 10px;
     flex: 1 1 1;
-    border-top: 10px solid #CF9D3C;
-    border-left: 10px solid #CF9D3C;
+    border-top: 10px solid  var(--color-secondary-dark);
+    border-left: 10px solid var(--color-secondary-dark);
     animation: navSlideOutUp .3s ease-in-out;
     transform-origin: top left;
 
@@ -145,7 +145,6 @@
     &__menu {
       left: auto;
       bottom: 0;
-      background: #FCBF49;
       padding: 60px 10px 0 10px;
       border-top: 0;
       border-left-width: 10px;
