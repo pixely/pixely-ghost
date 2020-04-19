@@ -1,0 +1,27 @@
+.home {
+  
+  &__feed {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 576px) {
+
+  .home {
+
+    &__feed {
+      grid-column: 2 / span 6;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .home {
+
+    &__feed {
+      grid-column: 2 / span 5;
+      // margin: -10px;
+    }
+  }
+}
