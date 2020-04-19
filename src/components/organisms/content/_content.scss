@@ -18,7 +18,7 @@
   & > .kg-width-full figcaption {
     padding: 0 20px;
   }
-  
+
   img {
     margin: 0;
     border: 0;
@@ -127,7 +127,7 @@
   
 }
 
-@media (min-width: 400px) {
+@media (min-width: 576px) {
 
   .content {
     grid-template-columns: var(--grid-desktop);

@@ -66,11 +66,6 @@ const Nav = ({ className, navItems }) => {
       {menuActive && <div key="oa" className={`nav__overlay ${menuVisible ? 'is-open' : ''}`} onClick={() => setMenuStatus(!menuActive)} /> }
       {menuActive && <nav key="ob" className={`nav__menu ${menuVisible ? 'is-open' : ''}`}>
           <GenericNav navItems={navItems} navClass="nav__menu-item" />
-          <GenericNav navItems={navItems} navClass="nav__menu-item" />
-          <GenericNav navItems={navItems} navClass="nav__menu-item" />
-          <GenericNav navItems={navItems} navClass="nav__menu-item" />
-          <GenericNav navItems={navItems} navClass="nav__menu-item" />
-          <GenericNav navItems={navItems} navClass="nav__menu-item" />
         </nav>
       }
     </>

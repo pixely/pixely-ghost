@@ -11,7 +11,7 @@
   height: 60px;
   position: relative;
   transform: rotate(0deg);
-  transition: .5s ease-in-out;
+  transition: .3s ease-in-out;
   
   &.is-open {
     transform: translateY(10px)
@@ -74,12 +74,12 @@
     left: 0;
     bottom: 0;
     background: rgba(0,0,0,.75);
-    animation: navFadeOut .5s linear;
+    animation: navFadeOut .2s linear;
     animation-fill-mode: both;
     cursor: pointer;
     
     &.is-open {
-      animation: navFadeIn .5s linear;
+      animation: navFadeIn .2s linear;
     }
   }
 
@@ -134,7 +134,7 @@
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 576px) {
 
   .nav {
     
@@ -154,6 +154,7 @@
       animation: navSlideOut .3s ease-in-out;
       animation-delay: .02s;
       animation-fill-mode: both;
+      align-content: start;
 
       &.is-open {
         animation: navSlideIn .3s ease-in-out;
@@ -213,21 +214,27 @@
 @keyframes navSlideInDown {
   
   from {
-    transform: translate(-100%, -100%);
+    transform: translate(-100%, -100%) scale(0);
+    // transform: scale(0);
+    // opacity: 0;
   }
 
   to {
-    transform: translate(0);
+    transform: translate(0) scale(1);
+    // transform: scale(1);
+    // opacity: 1;
   }
 }
 
 @keyframes navSlideOutUp {
   
   from {
-    transform: translate(0);    
+    // transform: translate(0); 
+    opacity: 1;   
   }
 
   to {
-    transform: translate(-100%, -100%);
+    // transform: translate(-100%, -100%);
+    opacity: 0;
   }
 }
