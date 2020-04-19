@@ -14,13 +14,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
-
+    
     return (
     <Fragment>
         <Helmet>
             <html lang={site.lang} />
             <style type="text/css">{`${site.codeinjection_styles}`}</style>
             <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700|Rubik:700,700i,400i|Anonymous+Pro:400&display=swap" rel="stylesheet" />
+            <script>{`${site.codeinjection_head}`}</script>
             <body className={`base${bodyClass ? ` base--${bodyClass}` : ''} ${bodyClass}`} />
         </Helmet>
         <Base data={data} children={children} config={config} isHome />

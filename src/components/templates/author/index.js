@@ -55,7 +55,6 @@ const Author = ({ data, location, pageContext }) => {
                         )}
                     </p>
                 </div> }
-                {console.log(author)}
                 {author.cover_image ? <Image src={author.cover_image} alt={author.name} className="author__image" /> : <div className="author__image" /> }
                 <div className="author__feed">
                     <Feed posts={posts} pageContext={pageContext} />
