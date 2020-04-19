@@ -53,7 +53,7 @@ const Nav = ({ className, navItems }) => {
   return (
     <>
       <button
-        className={`${className ? `${className} ` : ''}nav${menuActive ? ' is-open' : ''}`}
+        className={`${className ? `${className} ` : ''}nav${menuVisible ? ' is-open' : ''}`}
         onClick={() => setMenuStatus(!menuActive)}
         aria-label="Open main menu"
         style={buttonOffset()}
