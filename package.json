@@ -36,7 +36,7 @@
     "eslint-plugin-react": "7.19.0",
     "stylelint": "^10.1.0",
     "stylelint-config-airbnb": "^0.0.0",
-    "stylelint-order": "^3.0.0",
+    "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.8.0"
   },
   "dependencies": {
