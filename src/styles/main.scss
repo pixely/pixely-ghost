@@ -1,1 +1,8 @@
-@import "./legacy/app";
+// Legacy styles – to be removed
+// @import "./legacy/app";
+
+// Settings layer
+@import "settings/root";
+
+// Generic layer
+@import "generic/generic";
