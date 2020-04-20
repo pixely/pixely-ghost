@@ -1006,12 +1006,12 @@
   dependencies:
     arrify "^1.0.1"
 
-"@danbruegge/gatsby-plugin-stylelint@^3.4.0":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@danbruegge/gatsby-plugin-stylelint/-/gatsby-plugin-stylelint-3.4.1.tgz#ebe0b1f56f1fd3a40763cd9cdf138b9e712b6ba7"
-  integrity sha512-zg/rAk3et3v0MFZWAE3fINW3cq51hblWOWmpK8ABm8ootxqdBjlzuzaMvqZlIPYSKCtb778PJZ+IiP6m1NKYhQ==
+"@danbruegge/gatsby-plugin-stylelint@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@danbruegge/gatsby-plugin-stylelint/-/gatsby-plugin-stylelint-4.1.0.tgz#fac008a170a7694fdc04932249cbfec24b270ea2"
+  integrity sha512-g8z0B9umjGRyVJoek5ZRY/JYiye9wdmh4gNUUSOqlhaG2Uiyk9crYoMUUX+P6UqPWQj+QiR1EmyU5mQkVLACdA==
   dependencies:
-    stylelint-webpack-plugin "^0.10.5"
+    stylelint-bare-webpack-plugin "^2.0.0"
 
 "@ember-data/rfc395-data@^0.0.4":
   version "0.0.4"
@@ -7105,6 +7105,13 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
+get-value@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/get-value/-/get-value-3.0.1.tgz#5efd2a157f1d6a516d7524e124ac52d0a39ef5a8"
+  integrity sha512-mKZj9JLQrwMBtj5wxi6MH8Z5eSKaERpAwjg43dPtlGI1ZVEgH/qC7T8/6R2OBSUA+zzHBZgICsVJaEIV2tKTDA==
+  dependencies:
+    isobject "^3.0.1"
+
 getpass@^0.1.1:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
@@ -8722,6 +8729,13 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
+is-plain-object@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-3.0.0.tgz#47bfc5da1b5d50d64110806c199359482e75a928"
+  integrity sha512-tZIpofR+P05k8Aocp7UI/2UTa9lTJSebCXpFFoR9aibpokDj/uXBsJ8luUu0tTVYKkMU6URDUuOfJZ7koewXvg==
+  dependencies:
+    isobject "^4.0.0"
+
 is-png@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-png/-/is-png-1.1.0.tgz#d574b12bf275c0350455570b0e5b57ab062077ce"
@@ -8911,6 +8925,11 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
+
+isobject@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/isobject/-/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
+  integrity sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -9810,7 +9829,7 @@ micromatch@^2.1.5:
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
 
-micromatch@^3.1.10, micromatch@^3.1.4, micromatch@^3.1.8:
+micromatch@^3.1.10, micromatch@^3.1.4:
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
   dependencies:
@@ -10047,6 +10066,11 @@ mkdirp@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
+
+module-available@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/module-available/-/module-available-1.0.6.tgz#dd7265eeec1158791ea5305a16c1ac6731980f44"
+  integrity sha1-3XJl7uwRWHkepTBaFsGsZzGYD0Q=
 
 moment@^2.10.6, moment@^2.15.2, moment@^2.18.1, moment@^2.24.0:
   version "2.24.0"
@@ -12039,11 +12063,6 @@ quick-lru@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
-
-ramda@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
-  integrity sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
 
 ramda@^0.27.0:
   version "0.27.0"
@@ -14056,6 +14075,18 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
+stylelint-bare-webpack-plugin@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-bare-webpack-plugin/-/stylelint-bare-webpack-plugin-2.0.1.tgz#4c838a4699804d4c3b9093030a5ccabde13cac3b"
+  integrity sha512-cjIbTyhwo1CO+DsKzXjp1D/ySXQ2E4y4+vDY73jXHnP7QHbeBse/38yKLbd6fEm1kO7Rnwlu1KZb8INLdCJy3A==
+  dependencies:
+    chalk "^3.0.0"
+    get-value "^3.0.1"
+    is-plain-object "^3.0.0"
+    lodash "^4.17.15"
+    module-available "^1.0.6"
+    webpack-merge "^4.2.2"
+
 stylelint-config-airbnb@^0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-airbnb/-/stylelint-config-airbnb-0.0.0.tgz#54088e66313e2c02180674dcc54b608b17ad4bc8"
@@ -14082,16 +14113,6 @@ stylelint-scss@^3.8.0:
     postcss-resolve-nested-selector "^0.1.1"
     postcss-selector-parser "^6.0.2"
     postcss-value-parser "^4.0.2"
-
-stylelint-webpack-plugin@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-0.10.5.tgz#0b6e0d373ff5e03baa8197ebe0f2625981bd266b"
-  integrity sha512-jtYx3aJ2qDMvBMswe5NRPTO7kJgAKafc6GilAkWDp/ewoAmnoxA6TsYMnIPtLECRLwXevaCPvlh2JEUMGZCoUQ==
-  dependencies:
-    arrify "^1.0.1"
-    micromatch "^3.1.8"
-    object-assign "^4.1.0"
-    ramda "^0.25.0"
 
 stylelint@^13.3.2:
   version "13.3.2"
