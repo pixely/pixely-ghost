@@ -15,21 +15,21 @@
   &--post {
 
     .base__inner {
-      grid-template-rows: min-content 25vh auto;
+      grid-template-rows: 60px 25vh auto;
     }
   }
 
   &--tag {
 
     .base__inner {
-      grid-template-rows: min-content 25vh 45px minmax(20px, max-content) auto;
+      grid-template-rows: 60px 25vh 45px minmax(20px, max-content) auto;
     }
   }
 
   &--author {
 
     .base__inner {
-      grid-template-rows: min-content 25vh 45px minmax(20px, max-content) auto;
+      grid-template-rows: 60px 25vh 45px minmax(20px, max-content) auto;
     }
   }
 
