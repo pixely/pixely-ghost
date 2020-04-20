@@ -4,5 +4,16 @@
   
   &__pagination {
     margin: 20px 0 40px;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 576px) {
+
+  .feed {
+
+    &__pagination {
+      padding: 0;
+    }
   }
 }
