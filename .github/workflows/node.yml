@@ -24,18 +24,13 @@ jobs:
       run: yarn --frozen-lockfile
       env:
         CI: true
-        
-  lint:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
-    steps:
     - name: Run linting
       run: yarn lint
+    - name: Run unit tests
+      run: yarn test
+    - name: Run Gatsby build
+      run: yarn build
       env:
         CI: true
+      
+  
