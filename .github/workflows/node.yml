@@ -24,8 +24,10 @@ jobs:
       run: yarn --frozen-lockfile
       env:
         CI: true
-    - name: Run linting
-      run: yarn lint
+    - name: Run ESLint
+      run: yarn run lint:es
+    - name: Run Stylelint
+      run: yarn run lint:stylelint
     - name: Run unit tests
       run: yarn test
     - name: Run Gatsby build
