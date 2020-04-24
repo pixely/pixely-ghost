@@ -1,10 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Tag from '../components/templates/tag';
+import Tag from '../components/templates/tag'
 
-export default Tag;
+export default Tag
 
 export const pageQuery = graphql`
     query GhostTagQuery($slug: String!, $limit: Int!, $skip: Int!) {

@@ -1,3 +1,3 @@
-import PageNotFound from '../components/pages/404';
+import PageNotFound from '../components/pages/404'
 
-export default PageNotFound;
+export default PageNotFound

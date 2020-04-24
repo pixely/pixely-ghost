@@ -1,8 +1,8 @@
 import React from 'react'
 import { Layout } from '../../common'
 
-import Title from '../../atoms/title';
-import Link from '../../atoms/link';
+import Title from '../../atoms/title'
+import Link from '../../atoms/link'
 
 /**
 * Main index page (home page)
@@ -16,7 +16,7 @@ import Link from '../../atoms/link';
 const PageNotFound = () => (
     <Layout bodyClass="tag">
         <Title className="tag__title">404: Page not found</Title>
-        <p className="tag__description">Sorry, this page couldn't be found. Perhaps try returning <Link to="/">home</Link>?</p>
+        <p className="tag__description">Sorry, this page couldn&apos;t be found. Perhaps try returning <Link to="/">home</Link>?</p>
         <div className="tag__image" />
     </Layout>
 )

@@ -4,22 +4,22 @@ import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
-import Image from '../../atoms/image';
+import Image from '../../atoms/image'
 
-import './_card.scss';
+import './_card.scss'
 
 const Card = ({ post }) => {
     const url = `/${post.slug}/`
     const readingTime = readingTimeHelper(post)
 
-    const MetaItem = ({children}) => (
+    const MetaItem = ({ children }) => (
         <span className="card__meta-item">
             {children}
         </span>
     )
 
     return (
-        <Link to={url} className={`card${post.featured ? ' card--featured' : ''}`}>
+        <Link to={url} className={`card${post.featured ? ` card--featured` : ``}`}>
             {post.feature_image &&
                 <Image 
                     className="card__image"
@@ -28,7 +28,7 @@ const Card = ({ post }) => {
                 />
             }
             <div className="card__body">
-                <h4 className={`card__title${post.featured ? ' text--inverted' : ''}`}>{post.title}</h4>
+                <h4 className={`card__title${post.featured ? ` text--inverted` : ``}`}>{post.title}</h4>
                 <p className="card__meta">
                     {/* {post.featured && <MetaItem>Featured</MetaItem>} */}
                     <MetaItem>{post.published_at_pretty}</MetaItem>
@@ -45,6 +45,7 @@ const Card = ({ post }) => {
 Card.propTypes = {
     post: PropTypes.shape({
         title: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
         feature_image: PropTypes.string,
         featured: PropTypes.bool,
         tags: PropTypes.arrayOf(
@@ -57,6 +58,7 @@ Card.propTypes = {
             name: PropTypes.string.isRequired,
             profile_image: PropTypes.string,
         }).isRequired,
+        published_at_pretty: PropTypes.string.isRequired,
     }).isRequired,
 }
 
