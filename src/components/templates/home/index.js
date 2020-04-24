@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { Layout } from '../../common'
 import { MetaData } from '../../common/meta'
 
-import Feed from '../../organisms/feed';
+import Feed from '../../organisms/feed'
 
-import './_home.scss';
+import './_home.scss'
 /**
 * Main index page (home page)
 *

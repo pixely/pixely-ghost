@@ -105,7 +105,7 @@ module.exports = {
               `,
                 feeds: [
                     {
-                        title: 'Pixely',
+                        title: `Pixely`,
                         ...generateRSSFeed(config),
                     },
                 ],

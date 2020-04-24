@@ -1,10 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Helmet } from "react-helmet"
-
-import { Layout } from '../components/common'
-import { MetaData } from '../components/common/meta'
 
 /**
 * Single page (/:slug)
@@ -12,12 +8,12 @@ import { MetaData } from '../components/common/meta'
 * This file renders a single page and loads all the content.
 *
 */
-import PostComponent from '../components/templates/post/';
+import PostComponent from '../components/templates/post/'
 
 const Page = ({ data, location }) => {
     const page = data.ghostPage
-    return <PostComponent post={page} data={data} location={location} />;
-};
+    return <PostComponent post={page} data={data} location={location} />
+}
 
 Page.propTypes = {
     data: PropTypes.shape({

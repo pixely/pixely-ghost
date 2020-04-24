@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 import { Layout } from '../../common'
 import { MetaData } from '../../common/meta'
 
-import Image from '../../atoms/image';
-import Title from '../../atoms/title';
-import Feed from '../../organisms/feed';
+import Image from '../../atoms/image'
+import Title from '../../atoms/title'
+import Feed from '../../organisms/feed'
 
-import './_tag.scss';
+import './_tag.scss'
 /**
 * Main index page (home page)
 *
@@ -43,6 +43,11 @@ const Tag = ({ data, location, pageContext }) => {
 Tag.propTypes = {
     data: PropTypes.shape({
         allGhostPost: PropTypes.object.isRequired,
+        ghostTag: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string,
+            feature_image: PropTypes.string,
+        }),
     }).isRequired,
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
