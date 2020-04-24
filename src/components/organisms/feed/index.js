@@ -32,7 +32,9 @@ Feed.defaultProps = {
 Feed.propTypes = {
     posts: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            node: PropTypes.shape({
+                id: PropTypes.string.isRequired,
+            }),
         }),
     ),
     pageContext: PropTypes.object.isRequired,

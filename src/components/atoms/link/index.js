@@ -27,7 +27,6 @@ Link.propTypes = {
     href: PropTypes.string,
     to: PropTypes.string,
     className: PropTypes.string,
-    children: PropTypes.nodeList.isRequired,
     inverted: PropTypes.bool,
 }
 

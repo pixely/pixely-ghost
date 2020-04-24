@@ -20,7 +20,7 @@ const PostMeta = ({ author, publishDate, tags }) => (
         By <Link to={`/author/${author.slug}`}>{author.name}</Link>
         </p>
         {tags.length > 0 && <p className="post-meta__row">Posted in { tags.filter(tag => tag.visibility === `public`).map((tag, index) => (
-            <Fragment key={`tag-${tag.id}`}>
+            <Fragment key={`tag-${tag.slug}`}>
                 <Link to={`/tag/${tag.slug}`}>{tag.name}</Link>
                 {plur(index, tags.length - 1)}
             </Fragment>
@@ -29,7 +29,7 @@ const PostMeta = ({ author, publishDate, tags }) => (
 )
 
 PostMeta.defaultProps = {
-    tags: [],
+    tags: null,
 }
 
 PostMeta.propTypes = {
@@ -40,7 +40,6 @@ PostMeta.propTypes = {
     }),
     tags: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
             slug: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             visibility: PropTypes.string.isRequired,

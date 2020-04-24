@@ -15,7 +15,6 @@ Title.defaultProps = {
 
 Title.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.nodeList.isRequired,
 }
 
 export default Title
