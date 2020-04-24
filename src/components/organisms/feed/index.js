@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Pagination from '../../molecules/pagination';
-import Card from '../../organisms/card';
+import Pagination from '../../molecules/pagination'
+import Card from '../../organisms/card'
 
-import './_feed.scss';
+import './_feed.scss'
 /**
 * Main index page (home page)
 *
@@ -14,26 +14,30 @@ import './_feed.scss';
 *
 */
 const Feed = ({ posts, pageContext }) => (
-        <section className="feed">
-            {posts.map(({ node }) => (
-                <div key={node.id} className="feed__card">
-                    <Card post={node} />
-                </div>
-            ))}
-            <div className="feed__pagination">
-                <Pagination pageContext={pageContext} />
+    <section className="feed">
+        {posts.map(({ node }) => (
+            <div key={node.id} className="feed__card">
+                <Card post={node} />
             </div>
-        </section>
-);
+        ))}
+        <div className="feed__pagination">
+            <Pagination pageContext={pageContext} />
+        </div>
+    </section>
+)
 
+Feed.defaultProps = {
+    posts: [],
+}
 Feed.propTypes = {
-    // data: PropTypes.shape({
-    //     allGhostPost: PropTypes.object.isRequired,
-    // }).isRequired,
-    // location: PropTypes.shape({
-    //     pathname: PropTypes.string.isRequired,
-    // }).isRequired,
-    // pageContext: PropTypes.object,
+    posts: PropTypes.arrayOf(
+        PropTypes.shape({
+            node: PropTypes.shape({
+                id: PropTypes.string.isRequired,
+            }),
+        }),
+    ),
+    pageContext: PropTypes.object.isRequired,
 }
 
 export default Feed

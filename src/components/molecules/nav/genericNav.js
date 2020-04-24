@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const GenericNav = ({ navItems, navClass }) => (
@@ -14,18 +14,18 @@ const GenericNav = ({ navItems, navClass }) => (
     </>
 )
 
-// GenericNav.defaultProps = {
-//     navClass: null,
-// }
+GenericNav.defaultProps = {
+    navClass: null,
+}
 
-// GenericNav.propTypes = {
-//     data: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             label: PropTypes.string.isRequired,
-//             url: PropTypes.string.isRequired,
-//         }).isRequired,
-//     ).isRequired,
-//     navClass: PropTypes.string,
-// }
+GenericNav.propTypes = {
+    navItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+        }).isRequired,
+    ).isRequired,
+    navClass: PropTypes.string,
+}
 
 export default GenericNav

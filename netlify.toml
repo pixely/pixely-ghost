@@ -6,4 +6,4 @@
   incoming-hooks = ["Ghost"]
 
 [[plugins]]
-package = "netlify-plugin-gatsby-cache"
+  package = "netlify-plugin-gatsby-cache"

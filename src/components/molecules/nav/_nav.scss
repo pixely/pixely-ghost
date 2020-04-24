@@ -93,7 +93,7 @@
     background: var(--color-secondary);
     overflow: scroll;
     display: grid;
-    padding: 60px 10px 0 10px;
+    padding: 60px 10px;
     flex: 1 1 1;
     border-top: 10px solid  var(--color-secondary-dark);
     border-left: 10px solid var(--color-secondary-dark);
@@ -145,7 +145,6 @@
     &__menu {
       left: auto;
       bottom: 0;
-      padding: 60px 10px 0 10px;
       border-top: 0;
       border-left-width: 10px;
       width: 30vw;  

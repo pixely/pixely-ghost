@@ -1,10 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Home from '../components/templates/home';
+import Home from '../components/templates/home'
 
-export default Home;
+export default Home
 
 // This page query loads all posts sorted descending by published date
 // The `limit` and `skip` values are used for pagination
