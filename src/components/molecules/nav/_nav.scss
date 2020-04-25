@@ -99,6 +99,7 @@
     border-left: 10px solid var(--color-secondary-dark);
     animation: navSlideOutUp .3s ease-in-out;
     transform-origin: top left;
+    -webkit-overflow-scrolling: touch;
 
     &.is-open {
       animation: navSlideInDown .3s linear;
