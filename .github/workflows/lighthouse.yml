@@ -11,7 +11,7 @@ jobs:
         id: wait-for-netflify
         with:
           site_name: "pixely-ghost"
-          max_timeout: 60
+          max_timeout: 300
       - name: Run Lighthouse Report
         uses: justinribeiro/lighthouse-action@master
         with:
