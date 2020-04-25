@@ -1,16 +1,19 @@
 name: Lighthouse
-on: [push, pull_request]
 
+on: [pull_request]
 jobs:
-  audit:
+  perf:
     runs-on: ubuntu-latest
     steps:
-    - name: Audit live URL
-      uses: jakejarvis/lighthouse-action@master
-      with:
-        url: 'https://pixely.co.uk'
-    - name: Upload results as an artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: report
-        path: './report'
+      - uses: actions/checkout@v1
+      - name: Generate Lighthouse Report
+        uses: justinribeiro/lighthouse-action@master
+        with:
+          secret: ${{ secrets.GITHUB_TOKEN }}
+          url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
+          wptConnectionSpeed: threegfast
+      - name: Saving Lighthouse Audit Artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: lighthouse-artifacts
+          path: './results'
