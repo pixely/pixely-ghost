@@ -5,13 +5,13 @@ jobs:
   perf:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Wait for Netlify Preview
-      - uses: josephduffy/wait-for-netlify-action@v1
+        uses: josephduffy/wait-for-netlify-action@v1
         id: wait-for-netflify
         with:
           site_name: "pixely-ghost"
           max_timeout: 60
-      - uses: actions/checkout@v1
       - name: Run Lighthouse Report
         uses: justinribeiro/lighthouse-action@master
         with:
