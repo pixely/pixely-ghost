@@ -33,10 +33,17 @@ const Nav = ({ className, navItems }) => {
     }, [])
 
     useEffect(() => {
-        menuVisible && document.body.classList.add(`is-locked`)
+        if (menuVisible) {
+            document.body.style.top = `-${window.scrollY}px`
+            document.body.classList.add(`is-locked`)
+        }
 
         return () => {
-            document.body.classList.remove(`is-locked`)
+            if (menuVisible) {
+                document.body.classList.remove(`is-locked`)
+                window.scrollTo(0, parseInt(document.body.style.top || `0`) * -1)
+                document.body.style.top = ``
+            }
         }
     }, [menuVisible])
 
