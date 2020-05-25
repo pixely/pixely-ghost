@@ -185,9 +185,9 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-sass`,
         ...(process.env.NODE_ENV === 'development' ? 
-        [{
-            resolve: `@danbruegge/gatsby-plugin-stylelint`,
-            options: { files: [`**/**.scss`] },
-        }] : [] ),
+            [{
+                resolve: `@danbruegge/gatsby-plugin-stylelint`,
+                options: { files: [`**/**.scss`] },
+            }] : []),
     ],
 }
