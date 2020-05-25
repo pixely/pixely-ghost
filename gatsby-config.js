@@ -5,6 +5,8 @@ const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
 
 let ghostConfig
 
+console.log(`Current Env: ${process.env.NODE_ENV}`);
+
 try {
     ghostConfig = require(`./.ghost`)
 } catch (e) {
