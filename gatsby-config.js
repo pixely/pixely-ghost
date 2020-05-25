@@ -184,6 +184,7 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-sass`,
+        `gatsby-plugin-eslint`,
         ...(process.env.NODE_ENV === 'development' ? 
             [{
                 resolve: `@danbruegge/gatsby-plugin-stylelint`,
