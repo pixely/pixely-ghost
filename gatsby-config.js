@@ -188,9 +188,9 @@ module.exports = {
             [
                 `gatsby-plugin-eslint`,
                 {
-                resolve: `@danbruegge/gatsby-plugin-stylelint`,
-                options: { files: [`**/**.scss`] },
-                }
+                    resolve: `@danbruegge/gatsby-plugin-stylelint`,
+                    options: { files: [`**/**.scss`] },
+                },
             ] : []),
     ],
 }
