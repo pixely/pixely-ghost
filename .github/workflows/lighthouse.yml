@@ -1,0 +1,27 @@
+name: Lighthouse Audits
+
+on: [push, pull_request]
+
+jobs:
+  lhci:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: yarn install, build
+        run: |
+          yarn --frozen-lockfile
+          yarn build
+      - name: run Lighthouse CI
+        run: |
+          yarn install -g @lhci/cli@0.4.x
+          lhci autorun
