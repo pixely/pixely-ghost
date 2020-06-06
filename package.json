@@ -22,6 +22,7 @@
   "main": "n/a",
   "scripts": {
     "serve": "yarn build && NODE_ENV=production gatsby serve",
+    "serve:lhci": "gatsby build && NODE_ENV=production gatsby serve",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build",
     "dev": "gatsby develop",
     "lint": "yarn lint:es; yarn lint:stylelint",
