@@ -31,9 +31,8 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Run Gatsby build
         run: yarn build
-        - name: run Lighthouse CI
-          run:
-            yarn lhci autorun
-          env:
-            LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
-            LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: run Lighthouse CI
+        run: yarn lhci autorun
+        env:
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
