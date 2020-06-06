@@ -1,6 +1,10 @@
 name: Lighthouse Audits
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "*/10 * * * *"
 
 jobs:
   lhci:
