@@ -29,12 +29,11 @@ jobs:
           ${{ runner.os }}-yarn-
     - name: Install dependencies
       run: yarn --frozen-lockfile
-      env:
-        CI: true
     - name: Run Gatsby build
       run: yarn build
-      env:
-        CI: true
       - name: run Lighthouse CI
-        run: |
+        run:
           yarn lhci autorun
+        env:
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

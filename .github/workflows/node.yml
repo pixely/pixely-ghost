@@ -30,8 +30,6 @@ jobs:
           ${{ runner.os }}-yarn-
     - name: Install dependencies
       run: yarn --frozen-lockfile
-      env:
-        CI: true
     - name: Run ESLint
       run: yarn run lint:es
     - name: Run Stylelint
@@ -40,7 +38,5 @@ jobs:
       run: yarn test
     - name: Run Gatsby build
       run: yarn build
-      env:
-        CI: true
       
   
