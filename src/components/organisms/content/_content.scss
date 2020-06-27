@@ -114,6 +114,7 @@
   figure > iframe {
     display: block;
     margin: 0 !important; // Instragram embed adds a margin, let's remove it
+    max-width: 100%;
   }
 
   figcaption {
