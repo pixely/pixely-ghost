@@ -1,10 +1,12 @@
 {
   "development": {
     "apiUrl": "https://ghost.pixely.co.uk",
-    "contentApiKey": "c4decd4c2b15d7e61e7b4a953e"
+    "contentApiKey": "c4decd4c2b15d7e61e7b4a953e",
+    "version": "v3"
   },
   "production": {
     "apiUrl": "https://ghost.pixely.co.uk",
-    "contentApiKey": "c4decd4c2b15d7e61e7b4a953e"
+    "contentApiKey": "c4decd4c2b15d7e61e7b4a953e",
+    "version": "v3"
   }
 }
