@@ -18,6 +18,18 @@ export const ghostTagFields = graphql`
         name
         visibility
         feature_image
+        featureImageSharp {
+            colors {
+                ...GatsbyImageColors
+            } 
+            childImageSharp {
+                hero: fluid(maxWidth: 4000 srcSetBreakpoints: [350, 415, 730, 780, 1240, 1400, 1640, 2500, 4000]) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+            }
+        }
         description
         meta_title
         meta_description
@@ -31,7 +43,31 @@ export const ghostAuthorFields = graphql`
         name
         bio
         cover_image
+        coverImageSharp {
+            colors {
+                ...GatsbyImageColors
+            } 
+            childImageSharp {
+                hero: fluid(maxWidth: 4000 srcSetBreakpoints: [350, 415, 730, 780, 1240, 1400, 1640, 2500, 4000]) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+            }
+        }
         profile_image
+        profileImageSharp {
+            colors {
+                ...GatsbyImageColors
+            } 
+            childImageSharp {
+                authorCard: fluid(maxWidth: 500, srcSetBreakpoints: [70, 150, 300]) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+            }
+        }
         location
         website
         twitter
@@ -48,6 +84,23 @@ export const ghostPostFields = graphql`
         slug
         featured
         feature_image
+        featureImageSharp {
+            colors {
+                ...GatsbyImageColors
+            } 
+            childImageSharp {
+                card: fluid(maxWidth: 525) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+                hero: fluid(maxWidth: 3000, srcSetBreakpoints: [350, 415, 730, 780, 1240, 1400, 2500]) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+            }
+        }
         excerpt
         custom_excerpt
 
@@ -88,6 +141,18 @@ export const ghostPostFields = graphql`
             bio
             # email
             profile_image
+            profileImageSharp {
+                colors {
+                    ...GatsbyImageColors
+                } 
+                childImageSharp {
+                    authorCard: fluid(maxWidth: 500, srcSetBreakpoints: [70, 150, 300]) {
+                        ...GatsbyImageSharpFluid_withWebp
+                        width: presentationWidth
+                        height: presentationHeight
+                    }
+                }
+            }
             twitter
             facebook
             website
@@ -116,11 +181,13 @@ export const ghostPostFields = graphql`
         # Content
         plaintext
         html
+        childHtmlRehype {
+            htmlAst
+        }
 
         # Additional fields
         url
         uuid
-        page
         codeinjection_foot
         codeinjection_head
         codeinjection_styles
@@ -136,6 +203,23 @@ export const ghostPageFields = graphql`
         slug
         featured
         feature_image
+        featureImageSharp {
+            colors {
+                ...GatsbyImageColors
+            } 
+            childImageSharp {
+                card: fluid(maxWidth: 525) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+                hero: fluid(maxWidth: 3000, srcSetBreakpoints: [350, 415, 730, 780, 1240, 1400, 2500]) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+            }
+        }
         excerpt
         custom_excerpt
 
@@ -175,7 +259,18 @@ export const ghostPageFields = graphql`
             slug
             bio
             # email
-            profile_image
+            profileImageSharp {
+                colors {
+                    ...GatsbyImageColors
+                } 
+                childImageSharp {
+                    authorCard: fluid(maxWidth: 500, srcSetBreakpoints: [70, 150, 300]) {
+                        ...GatsbyImageSharpFluid_withWebp
+                        width: presentationWidth
+                        height: presentationHeight
+                    }
+                }
+            }
             twitter
             facebook
             website
@@ -204,6 +299,9 @@ export const ghostPageFields = graphql`
         # Content
         plaintext
         html
+        childHtmlRehype {
+            htmlAst
+        }
 
         # Additional fields
         url

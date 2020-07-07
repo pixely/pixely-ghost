@@ -44,23 +44,104 @@ module.exports = {
                 name: `pages`,
             },
         },
-        // Setup for optimised images.
-        // See https://www.gatsbyjs.org/packages/gatsby-image/
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: `jamify-source-ghost`,
             options: {
-                path: path.join(__dirname, `src`, `images`),
-                name: `images`,
+                ghostConfig: process.env.NODE_ENV === `development`
+                    ? ghostConfig.development
+                    : ghostConfig.production,
+                cacheResponse: false,
             },
         },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
+        `gatsby-plugin-extract-image-colors`,
         {
-            resolve: `gatsby-source-ghost`,
-            options:
-                process.env.NODE_ENV === `development`
-                    ? ghostConfig.development
-                    : ghostConfig.production,
+            resolve: `gatsby-plugin-ghost-images`,
+            options: {
+                // An array of node types and image fields per node
+                // Image fields must contain a valid absolute path to the image to be downloaded
+                lookup: [
+                    {
+                        type: `GhostPost`,
+                        imgTags: [`feature_image`],
+                    },
+                    {
+                        type: `GhostPage`,
+                        imgTags: [`feature_image`],
+                    },
+                    {
+                        type: `GhostSettings`,
+                        imgTags: [`cover_image`],
+                    },
+                    {
+                        type: `GhostAuthor`,
+                        imgTags: [`cover_image`, `profile_image`],
+                    },
+                    {
+                        type: `GhostTag`,
+                        imgTags: [`feature_image`],
+                    },
+                ],
+                // Additional condition to exclude nodes
+                // Takes precedence over lookup
+                exclude: node => (
+                    node.ghostId === undefined
+                ),
+                // Additional information messages useful for debugging
+                verbose: false,
+                // Option to disable the module (default: false)
+                disable: false,
+            },
+        },
+        {
+            resolve: `gatsby-transformer-rehype`,
+            options: {
+                filter: node => (
+                    node.internal.type === `GhostPost`
+                ),
+                plugins: [
+                    {
+                        resolve: `gatsby-rehype-ghost-links`,
+                    },
+                    {
+                        resolve: `gatsby-rehype-inline-images`,
+                        // all options are optional and can be omitted
+                        options: {
+                            // all images larger are scaled down to maxWidth (default: maxWidth = imageWidth)
+                            maxWidth: 4000,
+                            srcSetBreakpoints: [365, 750, 810, 1225, 1620, 1640, 2450, 3300],
+                            withWebp: true,
+                            // disable, if you need to save memory
+                            useImageCache: true,
+                        },
+                    },
+                ],
+            },
+        },
+        /**
+         *  Google Fonts
+         */
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Karla`,
+                        variants: [`400`,`400i`,`700`],
+                    },
+                    {
+                        family: `Rubik`,
+                        variants: [`400i`,`700`,`700i`],
+                    },
+                    {
+                        family: `Anonymous Pro`,
+                        variants: [`400`],
+                    },
+                ],
+                encode: false,
+                fontDisplay: `swap`,
+            },
         },
         /**
          *  Utility Plugins
@@ -184,7 +265,7 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-sass`,
-        ...(process.env.NODE_ENV === 'development' ? 
+        ...(process.env.NODE_ENV === 'development' ?
             [
                 `gatsby-plugin-eslint`,
                 {

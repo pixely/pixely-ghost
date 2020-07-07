@@ -12,13 +12,12 @@ import '../../styles/main.scss'
 
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
-    
+
     return (
         <Fragment>
             <Helmet>
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
-                <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700|Rubik:700,700i,400i|Anonymous+Pro:400&display=swap" rel="stylesheet" />
                 <script>{`${site.codeinjection_head}`}</script>
                 <body className={`base${bodyClass ? ` base--${bodyClass}` : ``} ${bodyClass}`} />
             </Helmet>
@@ -46,13 +45,6 @@ const DefaultLayoutSettingsQuery = props => (
                     edges {
                         node {
                             ...GhostSettingsFields
-                        }
-                    }
-                }
-                file(relativePath: {eq: "ghost-icon.png"}) {
-                    childImageSharp {
-                        fixed(width: 30, height: 30) {
-                            ...GatsbyImageSharpFixed
                         }
                     }
                 }

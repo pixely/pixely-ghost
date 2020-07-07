@@ -17,7 +17,6 @@ import './_home.scss'
 */
 const Home = ({ data, location, pageContext }) => {
     const posts = data.allGhostPost.edges
-
     return (
         <>
             <MetaData location={location} />

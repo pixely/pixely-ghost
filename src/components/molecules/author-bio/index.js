@@ -1,20 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from '../../atoms/link'
+import Image from '../../atoms/image'
 
 import './_author-bio.scss'
 
 // eslint-disable-next-line camelcase
-const AuthorBio = ({ profile_image, name, slug, bio, facebook, twitter, website, className }) => {
+const AuthorBio = ({ profileImageSharp, name, slug, bio, facebook, twitter, website, className }) => {
     const twitterUrl = twitter ? `https://twitter.com/${twitter.replace(/^@/, ``)}` : null
     const facebookUrl = facebook ? `https://www.facebook.com/${facebook.replace(/^\//, ``)}` : null
     
     return (
         <aside className={`${className ? `${className} ` : ``}author-bio`}>
-            <img
+            <Image
                 className="author-bio__image"
-                src={profile_image} // eslint-disable-line camelcase
-                alt ={name} 
+                alt={name}
+                {...profileImageSharp?.childImageSharp?.authorCard} // eslint-disable-line camelcase
+                backgroundColor={profileImageSharp?.colors?.muted} // eslint-disable-line camelcase
+                sizes="(min-width: 575px) 10vw, calc(18vw - 10px)"
             />
             <div className="author-bio__info">
                 <h5 className="author-bio__name">By <Link to={`/author/${slug}`} inverted>{name}</Link></h5>
@@ -45,7 +48,7 @@ const AuthorBio = ({ profile_image, name, slug, bio, facebook, twitter, website,
 }
 
 AuthorBio.defaultProps = {
-    profile_image: null, 
+    profileImageSharp: {},
     bio: null, 
     facebook: null, 
     twitter: null, 
@@ -54,7 +57,7 @@ AuthorBio.defaultProps = {
 }
 
 AuthorBio.propTypes = {
-    profile_image: PropTypes.string, 
+    profileImageSharp: PropTypes.object, 
     name: PropTypes.string.isRequired, 
     slug: PropTypes.string.isRequired, 
     bio: PropTypes.string, 

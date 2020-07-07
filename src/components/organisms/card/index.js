@@ -11,7 +11,6 @@ import './_card.scss'
 const Card = ({ post }) => {
     const url = `/${post.slug}/`
     const readingTime = readingTimeHelper(post)
-
     const MetaItem = ({ children }) => (
         <span className="card__meta-item">
             {children}
@@ -20,11 +19,13 @@ const Card = ({ post }) => {
 
     return (
         <Link to={url} className={`card${post.featured ? ` card--featured` : ``}`}>
-            {post.feature_image &&
-                <Image 
+            {(post.featureImageSharp || post.feature_image) &&
+                <Image
                     className="card__image"
-                    src={post.feature_image}
                     alt={post.title}
+                    {...post.featureImageSharp?.childImageSharp?.card}
+                    backgroundColor={post.featureImageSharp?.colors.muted}
+                    sizes="(min-width: 575px) calc(17vw - 40px), calc(100vw - 50px)"
                 />
             }
             <div className="card__body">
@@ -47,6 +48,7 @@ Card.propTypes = {
         title: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
         feature_image: PropTypes.string,
+        featureImageSharp: PropTypes.object,
         featured: PropTypes.bool,
         tags: PropTypes.arrayOf(
             PropTypes.shape({
