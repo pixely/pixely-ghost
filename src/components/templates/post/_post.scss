@@ -19,7 +19,6 @@ $grid-gap-desktop: 20px;
     background: var(--color-secondary);
     grid-column: 1 / span 8;
     grid-row-start: 5;
-    align-self: start;
 
     &--cosmetic {
       grid-row-start: 4;
@@ -53,6 +52,7 @@ $grid-gap-desktop: 20px;
 
     &__meta {
       grid-column: 1 / span 2;
+      align-self: start;
       
       &--cosmetic {
         margin-bottom: -#{$grid-gap-desktop};
