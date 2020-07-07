@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Layout } from '../../common'
 import { MetaData } from '../../common/meta'
 
-import Image from '../../atoms/image'
+import Hero from '../../atoms/hero'
 import Title from '../../atoms/title'
 import Feed from '../../organisms/feed'
 
@@ -31,7 +31,16 @@ const Tag = ({ data, location, pageContext }) => {
             <Layout bodyClass="tag">
                 <Title className="tag__title">{tag.name}</Title>
                 {tag.description && <p className="tag__description">{tag.description}</p> }
-                {tag.feature_image ? <Image src={tag.feature_image} alt={tag.name} className="tag__image" /> : <div className="author__image" /> }
+                <div className="tag__image">
+                    {tag.feature_image && (
+                        <Hero
+                            alt={tag.name}
+                            {...tag.featureImageSharp?.childImageSharp?.hero}
+                            backgroundColor={tag.featureImageSharp?.colors?.muted}
+                            sizes="(min-width: 575px) calc(100vw - 40px), calc(100vw - 10px)"
+                        /> 
+                    )}
+                </div>
                 <div className="tag__feed">
                     <Feed posts={posts} pageContext={pageContext} />
                 </div>
@@ -47,6 +56,7 @@ Tag.propTypes = {
             name: PropTypes.string.isRequired,
             description: PropTypes.string,
             feature_image: PropTypes.string,
+            featureImageSharp: PropTypes.object,
         }),
     }).isRequired,
     location: PropTypes.shape({
