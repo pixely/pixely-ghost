@@ -114,7 +114,7 @@ module.exports = {
                             withWebp: true,
                             // disable, if you need to save memory
                             useImageCache: true,
-                        }
+                        },
                     },
                 ],
             },
@@ -132,11 +132,11 @@ module.exports = {
                     },
                     {
                         family: `Rubik`,
-                        variants: [`400i`,`700`,`700i`]
+                        variants: [`400i`,`700`,`700i`],
                     },
                     {
                         family: `Anonymous Pro`,
-                        variants: [`400`]
+                        variants: [`400`],
                     },
                 ],
                 encode: false,
