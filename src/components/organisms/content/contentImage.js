@@ -13,12 +13,12 @@ const ImgSharpInline = ({ parentClassName, fluidImg, alt }) => {
     width = parentClassName.includes('kg-width-full') ? 'full' : width
     width = parentClassName.includes('kg-width-wide') ? 'wide' : width
     const imageProps = {
-        src: fluid.src,
-        srcSet: fluid.srcSet,
-        srcSetWebp: fluid.srcSetWebp,
+        src: fluid?.src,
+        srcSet: fluid?.srcSet,
+        srcSetWebp: fluid?.srcSetWebp,
         sizes: sizes[width],
-        width: fluid.presentationWidth,
-        height: fluid.presentationHeight,
+        width: fluid?.presentationWidth,
+        height: fluid?.presentationHeight,
         alt,
     }
     return (
