@@ -33,7 +33,7 @@
     "@danbruegge/gatsby-plugin-stylelint": "^4.1.0",
     "@lhci/cli": "0.4.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "7.4.0",
+    "eslint": "7.5.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-ghost": "1.5.0",
     "eslint-plugin-react": "7.20.3",
