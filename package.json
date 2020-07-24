@@ -59,7 +59,7 @@
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
-    "gatsby-plugin-sharp": "^2.6.19",
+    "gatsby-plugin-sharp": "^2.6.22",
     "gatsby-rehype-ghost-links": "^1.5.1",
     "gatsby-rehype-inline-images": "^1.6.0",
     "gatsby-source-filesystem": "2.3.20",
