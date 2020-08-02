@@ -23,7 +23,7 @@
   "scripts": {
     "serve": "yarn build && NODE_ENV=production gatsby serve",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "lint": "yarn lint:es; yarn lint:stylelint",
     "lint:es": "eslint . --ext .js --cache",
     "lint:stylelint": "stylelint \"**/**.scss\"",
