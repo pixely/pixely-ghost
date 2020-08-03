@@ -19,7 +19,7 @@ import './_post.scss'
 * This file renders a single post and loads all the content.
 *
 */
-const Post = ({ post, data, location }) => (
+const Post = ({ post, data, location, displayAuthor, displayMeta }) => (
     <>
         <MetaData
             data={data}
@@ -47,26 +47,33 @@ const Post = ({ post, data, location }) => (
             </div>
 
             {/* Post meta */}
-            <div className="post__meta post__meta--cosmetic" />
-            <div className="post__meta">
-                <PostMeta 
-                    author={post.primary_author}
-                    publishDate={post.updated_at_pretty}
-                    tags={post.tags}
-                />
-            </div>
+            {displayMeta && (<>
+                <div className="post__meta post__meta--cosmetic" />
+                <div className="post__meta">
+                    <PostMeta 
+                        author={post.primary_author}
+                        publishDate={post.updated_at_pretty}
+                        tags={post.tags}
+                    />
+                </div>
+            </>)}
 
             {/* Main post content */ }
             <Content className="post__content" html={ post.html } htmlAst={ post.childHtmlRehype?.htmlAst } />
 
             {/* Author bio */ }
-            <div className="post__footer">
+            {displayAuthor && (<div className="post__footer">
                 <AuthorBio {...post.primary_author} />
-            </div>
+            </div>)}
                     
         </Layout>
     </>
 )
+
+PropTypes.defaultProps = {
+    displayAuthor: false,
+    displayMeta: false,
+}
 
 Post.propTypes = {
     post: PropTypes.shape({
@@ -87,6 +94,8 @@ Post.propTypes = {
             feature_image: PropTypes.string,
         }).isRequired,
     }).isRequired,
+    displayAuthor: PropTypes.bool,
+    displayMeta: PropTypes.bool,
     location: PropTypes.object.isRequired,
 }
 
