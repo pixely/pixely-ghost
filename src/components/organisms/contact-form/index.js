@@ -44,7 +44,7 @@ const ContactForm = ({ className }) => {
             data-netlify-honeypot="bot"
             onSubmit={handleSubmit}
         >
-            <Input type="hidden" name="contact-form" value="contact" />
+            <Input type="hidden" name="contact-form" value="Contact Form" />
             <div hidden>
                 <label htmlFor="bot">Ignore</label>
                 <Input id="bot" name="bot" onChange={handleChange} />
