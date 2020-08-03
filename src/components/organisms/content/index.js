@@ -2,13 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import rehypeReact from 'rehype-react'
 import ImgSharpInline from './contentImage'
+import ContactForm from '../../organisms/contact-form'
 
 import './_content.scss'
 
 const renderAst = new rehypeReact({
     Fragment: React.Fragment,
     createElement: React.createElement,
-    components: { 'img-sharp-inline': ImgSharpInline },
+    components: { 
+        'img-sharp-inline': ImgSharpInline,
+        'contact-form': ContactForm,
+    },
 }).Compiler
 
 const Content = ({ html, htmlAst, className }) => {

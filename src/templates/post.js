@@ -6,7 +6,7 @@ import PostComponent from '../components/templates/post/'
 
 const Post = ({ data, location }) => {
     const post = data.ghostPost
-    return <PostComponent post={post} data={data} location={location} />
+    return <PostComponent post={post} data={data} location={location} displayAuthor displayMeta />
 }
 
 Post.propTypes = {
