@@ -65,7 +65,7 @@
     "gatsby-source-filesystem": "2.3.23",
     "gatsby-transformer-rehype": "^1.8.0",
     "gatsby-transformer-sharp": "^2.5.11",
-    "jamify-source-ghost": "^1.14.1",
+    "jamify-source-ghost": "^1.16.0",
     "lodash": "4.17.19",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",

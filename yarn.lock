@@ -1858,10 +1858,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tryghost/content-api@1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.4.1.tgz#6b5c66e07be3dd87b21086e08d664c205b0cdb33"
-  integrity sha512-aWkktQ5Q4lqIcNX6LDj7DmfiT1O/6AWEIsSmJmMMnaQrKO0ltoTkP/95ZDwBZq82c9arESsX1RJuMAbC2Wwv8w==
+"@tryghost/content-api@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.4.2.tgz#9424040d626d23549d2ce19e7841756991d4e134"
+  integrity sha512-8Cc+1WC9+R7v7e9XoJxbnCQSBjKcLYt3L2+oPO7/1uXPB6q1+LDOi3eZzoKekwz90Y57c2ReIfFbCQKiS2ienA==
   dependencies:
     axios "0.19.2"
 
@@ -10056,12 +10056,12 @@ iterall@^1.2.1, iterall@^1.2.2:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.3.0.tgz#afcb08492e2915cbd8a0884eb93a8c94d0d72fea"
   integrity sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==
 
-jamify-source-ghost@^1.14.1:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/jamify-source-ghost/-/jamify-source-ghost-1.14.1.tgz#43a294c625ae7b756c4dfe48c0b22501bd3e6d66"
-  integrity sha512-rbxerb27aFe447IW1oDIOcbXHh0f8qh/WVJdc4A3ZIsZHfIJOgMAcImBiSxBgNvCKe0ZX2D8Nl6b6EPiz5ge9A==
+jamify-source-ghost@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/jamify-source-ghost/-/jamify-source-ghost-1.16.0.tgz#1c1d8d7e210c83b98b25eaa365b3c4ad41d09abd"
+  integrity sha512-3zUv7qwuIIkL6d8b4o1IBZ8WESth+RLnNmp4opT6oQF+yT3/e1QBs3rdxaP9GQS7MxfO5obrLpePyM+DTmvfeA==
   dependencies:
-    "@tryghost/content-api" "1.4.1"
+    "@tryghost/content-api" "1.4.2"
     cheerio "1.0.0-rc.3"
     gatsby-node-helpers "0.3.0"
     qs "6.9.4"
