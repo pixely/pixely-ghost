@@ -98,7 +98,7 @@ module.exports = {
             resolve: `gatsby-transformer-rehype`,
             options: {
                 filter: node => (
-                    node.internal.type === `GhostPost`
+                    node.internal.type === `GhostPost` || node.internal.type === `GhostPage`
                 ),
                 plugins: [
                     {
