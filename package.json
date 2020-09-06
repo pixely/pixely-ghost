@@ -47,7 +47,7 @@
     "@tryghost/helpers": "1.1.30",
     "@tryghost/helpers-gatsby": "1.0.34",
     "cheerio": "1.0.0-rc.3",
-    "gatsby": "2.24.7",
+    "gatsby": "2.24.53",
     "gatsby-awesome-pagination": "0.3.6",
     "gatsby-plugin-advanced-sitemap": "1.5.5",
     "gatsby-plugin-extract-image-colors": "^0.0.14",
