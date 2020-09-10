@@ -7224,19 +7224,6 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     md5.js "^1.3.4"
     safe-buffer "^5.1.1"
 
-execa@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.10.0.tgz#ff456a8f53f90f8eccc71a96d11bdfc7f082cb50"
-  integrity sha512-7XOMnz8Ynx1gGo/3hyV9loYNPWM94jG3+3T3Y8tsfSstFmETmENCMU/A/zj8Lyaj1lkgEepKepvd6240tBRvlw==
-  dependencies:
-    cross-spawn "^6.0.0"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
 execa@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
@@ -7279,7 +7266,7 @@ execa@^3.4.0:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-execa@^4.0.2, execa@^4.0.3:
+execa@^4.0.0, execa@^4.0.2, execa@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/execa/-/execa-4.0.3.tgz#0a34dabbad6d66100bd6f2c576c8669403f317f2"
   integrity sha512-WFDXGHckXPWZX19t1kCsXzOpqX9LWYNqn4C+HqZlk/V0imTkzJZqf87ZBhvpHaftERYknpk0fjSylnXVlVgI0A==
@@ -8298,10 +8285,10 @@ gatsby-plugin-sass@^2.3.12:
     "@babel/runtime" "^7.10.3"
     sass-loader "^7.3.1"
 
-gatsby-plugin-sharp@^2.6.27, gatsby-plugin-sharp@^2.6.34:
-  version "2.6.34"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.6.34.tgz#a78fe6d3e2ffd70fd5921eefae917f38ea374e2c"
-  integrity sha512-6M+YC41Jtj0Gwm5gwXVy07zp8lEUKfWZlkzwgbTwRhJ/G4M6XSkZrhhjz3Vtk+0wG64XuiG9CB4RemQg0Ksz2Q==
+gatsby-plugin-sharp@^2.6.32, gatsby-plugin-sharp@^2.6.34:
+  version "2.6.35"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.6.35.tgz#d37e08f453784e39d7b1c2a759b801fdd4e633c4"
+  integrity sha512-5y2ut8TGg5iIfDMnVm/WRy37vjSlHzMdJVugvB4lp4NH69FIq75JpaivshtjQYEi3cc5UonXOQWZJ6aSsM54pQ==
   dependencies:
     "@babel/runtime" "^7.10.3"
     async "^3.2.0"
@@ -8310,8 +8297,8 @@ gatsby-plugin-sharp@^2.6.27, gatsby-plugin-sharp@^2.6.34:
     gatsby-core-utils "^1.3.19"
     got "^10.7.0"
     imagemin "^7.0.1"
-    imagemin-mozjpeg "^8.0.0"
-    imagemin-pngquant "^6.0.1"
+    imagemin-mozjpeg "^9.0.0"
+    imagemin-pngquant "^9.0.1"
     lodash "^4.17.19"
     mini-svg-data-uri "^1.2.3"
     potrace "^2.1.8"
@@ -8440,21 +8427,21 @@ gatsby-rehype-ghost-links@^1.6.0:
     lodash "^4.17.20"
     unist-util-visit "^2.0.3"
 
-gatsby-rehype-inline-images@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/gatsby-rehype-inline-images/-/gatsby-rehype-inline-images-1.6.2.tgz#7873a07b7ce096abc0bf1b66df5e3fc9db4708ad"
-  integrity sha512-by+9kd56ePMJ6vb6y+6lF3rzkTgbrODRHcG/BGmeCtzY1X0YgsiFdMz9hJwGjzi9PvLKpNnW3V57YpJ2LlZV/A==
+gatsby-rehype-inline-images@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-rehype-inline-images/-/gatsby-rehype-inline-images-1.7.0.tgz#ca0af6f6ec5594e45e3dc2fff93ef25b625d788f"
+  integrity sha512-PRUSYjUjfrb8t3FBz51X4KnoHtjcbT3tUolKoVkSixOTDzmGobvKo7fafH3pTa8gyaNPwqBYn9ihRNY1qj0TJQ==
   dependencies:
     "@babel/runtime" "7.11.2"
     fs-extra "^9.0.1"
-    gatsby-plugin-sharp "^2.6.27"
-    gatsby-source-filesystem "^2.3.24"
-    lodash "^4.17.19"
+    gatsby-plugin-sharp "^2.6.32"
+    gatsby-source-filesystem "^2.3.28"
+    lodash "^4.17.20"
     path "^0.12.7"
-    sharp "^0.25.4"
+    sharp "^0.26.0"
     unist-util-visit-parents "^3.1.0"
 
-gatsby-source-filesystem@2.3.29, gatsby-source-filesystem@^2.3.24, gatsby-source-filesystem@^2.3.28:
+gatsby-source-filesystem@2.3.29, gatsby-source-filesystem@^2.3.28:
   version "2.3.29"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.29.tgz#5eaf1434593f38523655145323e426f21c30687a"
   integrity sha512-PWHtkj+inhfPm8aMVhtxS1PAW+r4Kk5M1LDP5l0OO2HBaHiiSi0DulgmYJ3usYpctFqOQ92im/EQLRJbOaaQsA==
@@ -9782,24 +9769,25 @@ image-ssim@^0.2.0:
   resolved "https://registry.yarnpkg.com/image-ssim/-/image-ssim-0.2.0.tgz#83b42c7a2e6e4b85505477fe6917f5dbc56420e5"
   integrity sha1-g7Qsei5uS4VQVHf+aRf128VkIOU=
 
-imagemin-mozjpeg@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/imagemin-mozjpeg/-/imagemin-mozjpeg-8.0.0.tgz#d2ca4e8c982c7c6eda55069af89dee4c1cebcdfd"
-  integrity sha512-+EciPiIjCb8JWjQNr1q8sYWYf7GDCNDxPYnkD11TNIjjWNzaV+oTg4DpOPQjl5ZX/KRCPMEgS79zLYAQzLitIA==
+imagemin-mozjpeg@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/imagemin-mozjpeg/-/imagemin-mozjpeg-9.0.0.tgz#d1af26d0b43d75a41c211051c1910da59d9d2324"
+  integrity sha512-TwOjTzYqCFRgROTWpVSt5UTT0JeCuzF1jswPLKALDd89+PmrJ2PdMMYeDLYZ1fs9cTovI9GJd68mRSnuVt691w==
   dependencies:
-    execa "^1.0.0"
+    execa "^4.0.0"
     is-jpg "^2.0.0"
-    mozjpeg "^6.0.0"
+    mozjpeg "^7.0.0"
 
-imagemin-pngquant@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/imagemin-pngquant/-/imagemin-pngquant-6.0.1.tgz#07b4c80e327ac60ef5246758029b1e8aecd879b9"
-  integrity sha512-Stk+fZCLxZznV8MFNA/T3AY/VRKevsiP9uZOLV0RCXoi0vUUFriySYuz/83IGp9D254EW8miGyyQ69zKouFr7w==
+imagemin-pngquant@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/imagemin-pngquant/-/imagemin-pngquant-9.0.1.tgz#ecf22f522bdb734a503ecc21bdd7bc3d0230edcc"
+  integrity sha512-PYyo9G/xwddf+Qqlqe3onz5ZH7p6vHYVVkiuuczUjxZmfekyY77RXaOA/AR6FnVoeQxGa/pDtEK5xUKOcVo+sA==
   dependencies:
-    execa "^0.10.0"
-    is-png "^1.0.0"
-    is-stream "^1.1.0"
-    pngquant-bin "^5.0.0"
+    execa "^4.0.0"
+    is-png "^2.0.0"
+    is-stream "^2.0.0"
+    ow "^0.17.0"
+    pngquant-bin "^6.0.0"
 
 imagemin@^7.0.1:
   version "7.0.1"
@@ -10559,10 +10547,10 @@ is-plain-object@^3.0.0:
   dependencies:
     isobject "^4.0.0"
 
-is-png@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/is-png/-/is-png-1.1.0.tgz#d574b12bf275c0350455570b0e5b57ab062077ce"
-  integrity sha1-1XSxK/J1wDUEVVcLDltXqwYgd84=
+is-png@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/is-png/-/is-png-2.0.0.tgz#ee8cbc9e9b050425cedeeb4a6fb74a649b0a4a8d"
+  integrity sha512-4KPGizaVGj2LK7xwJIz8o5B2ubu1D/vcQsgOGFEDlpcvgZHto4gBnyd0ig7Ws+67ixmwKoNmu0hYnpo6AaKb5g==
 
 is-posix-bracket@^0.1.0:
   version "0.1.1"
@@ -12173,10 +12161,10 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
-mozjpeg@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-6.0.1.tgz#56969dddb5741ef2bcb1af066cae21e61a91a27b"
-  integrity sha512-9Z59pJMi8ni+IUvSH5xQwK5tNLw7p3dwDNCZ3o1xE+of3G5Hc/yOz6Ue/YuLiBXU3ZB5oaHPURyPdqfBX/QYJA==
+mozjpeg@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/mozjpeg/-/mozjpeg-7.0.0.tgz#c20f67a538fcaaa388d325875c53c0e7bc432f7d"
+  integrity sha512-mH7atSbIusVTO3A4H43sEdmveN3aWn54k6V0edefzCEvOsTrbjg5murY2TsNznaztWnIgaRbWxeLVp4IgKdedQ==
   dependencies:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.0"
@@ -12906,6 +12894,13 @@ osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+ow@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/ow/-/ow-0.17.0.tgz#4f938999fed6264c9048cd6254356e0f1e7f688c"
+  integrity sha512-i3keDzDQP5lWIe4oODyDFey1qVrq2hXKTuTH2VpqwpYtzPiKZt2ziRI4NBQmgW40AnV5Euz17OyWweCb+bNEQA==
+  dependencies:
+    type-fest "^0.11.0"
+
 p-cancelable@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/p-cancelable/-/p-cancelable-0.3.0.tgz#b9e123800bcebb7ac13a479be195b507b98d30fa"
@@ -13544,14 +13539,14 @@ pngjs@^3.0.0, pngjs@^3.3.3:
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.4.0.tgz#99ca7d725965fb655814eaf65f38f12bbdbf555f"
   integrity sha512-NCrCHhWmnQklfH4MtJMRjZ2a8c80qXeMlQMv2uVp9ISJMTt562SbGd6n2oq0PaPgKm7Z6pL9E2UlLIhC+SHL3w==
 
-pngquant-bin@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/pngquant-bin/-/pngquant-bin-5.0.2.tgz#6f34f3e89c9722a72bbc509062b40f1b17cda460"
-  integrity sha512-OLdT+4JZx5BqE1CFJkrvomYV0aSsv6x2Bba+aWaVc0PMfWlE+ZByNKYAdKeIqsM4uvW1HOSEHnf8KcOnykPNxA==
+pngquant-bin@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/pngquant-bin/-/pngquant-bin-6.0.0.tgz#aff0d7e61095feb96ced379ad8c7294ad3dd1712"
+  integrity sha512-oXWAS9MQ9iiDAJRdAZ9KO1mC5UwhzKkJsmetiu0iqIjJuW7JsuLhmc4JdRm7uJkIWRzIAou/Vq2VcjfJwz30Ow==
   dependencies:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.1"
-    execa "^0.10.0"
+    execa "^4.0.0"
     logalot "^2.0.0"
 
 pnp-webpack-plugin@^1.6.4:
@@ -13994,6 +13989,27 @@ prebuild-install@^5.3.4:
   version "5.3.4"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-5.3.4.tgz#6982d10084269d364c1856550b7d090ea31fa293"
   integrity sha512-AkKN+pf4fSEihjapLEEj8n85YIw/tN6BQqkhzbDc0RvEZGdkpJBGMUYx66AAMcPG2KzmPQS7Cm16an4HVBRRMA==
+  dependencies:
+    detect-libc "^1.0.3"
+    expand-template "^2.0.3"
+    github-from-package "0.0.0"
+    minimist "^1.2.3"
+    mkdirp "^0.5.1"
+    napi-build-utils "^1.0.1"
+    node-abi "^2.7.0"
+    noop-logger "^0.1.1"
+    npmlog "^4.0.1"
+    pump "^3.0.0"
+    rc "^1.2.7"
+    simple-get "^3.0.3"
+    tar-fs "^2.0.0"
+    tunnel-agent "^0.6.0"
+    which-pm-runs "^1.0.0"
+
+prebuild-install@^5.3.5:
+  version "5.3.5"
+  resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-5.3.5.tgz#e7e71e425298785ea9d22d4f958dbaccf8bb0e1b"
+  integrity sha512-YmMO7dph9CYKi5IR/BzjOJlRzpxGGVo1EsLSUZ0mt/Mq0HWZIHOKHHcHdT69yG54C9m6i45GpItwRHpk0Py7Uw==
   dependencies:
     detect-libc "^1.0.3"
     expand-template "^2.0.3"
@@ -15612,6 +15628,21 @@ sharp@^0.25.4:
     tar "^6.0.2"
     tunnel-agent "^0.6.0"
 
+sharp@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.26.0.tgz#ff4c8d3200a7a1f76c69c53fd11879609d2ff062"
+  integrity sha512-MNldekb9ZnliJAD+qP6uBTf3Wd6HaDVhKYbxXG+SQDvit9fa+2X4wECJvMRF8FLdY4saojrz3BHsnt4OmJw7xg==
+  dependencies:
+    color "^3.1.2"
+    detect-libc "^1.0.3"
+    node-addon-api "^3.0.0"
+    npmlog "^4.1.2"
+    prebuild-install "^5.3.5"
+    semver "^7.3.2"
+    simple-get "^4.0.0"
+    tar-fs "^2.1.0"
+    tunnel-agent "^0.6.0"
+
 shebang-command@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea"
@@ -16685,7 +16716,7 @@ tapable@^1.0.0, tapable@^1.1.3:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
 
-tar-fs@^2.0.0:
+tar-fs@^2.0.0, tar-fs@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-2.1.0.tgz#d1cdd121ab465ee0eb9ccde2d35049d3f3daf0d5"
   integrity sha512-9uW5iDvrIMCVpvasdFHW0wJPez0K4JnMZtsuIeDI7HyMGJNxmDZDOCQROr7lXyS+iL/QMpj07qcjGYTSdRFXUg==
