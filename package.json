@@ -62,7 +62,7 @@
     "gatsby-plugin-sharp": "^2.6.34",
     "gatsby-rehype-ghost-links": "^1.5.2",
     "gatsby-rehype-inline-images": "^1.6.2",
-    "gatsby-source-filesystem": "2.3.28",
+    "gatsby-source-filesystem": "2.3.29",
     "gatsby-transformer-rehype": "^1.8.1",
     "gatsby-transformer-sharp": "^2.5.14",
     "jamify-source-ghost": "^1.17.0",
