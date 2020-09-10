@@ -8431,13 +8431,13 @@ gatsby-recipes@^0.2.23:
     yoga-layout-prebuilt "^1.9.6"
     yup "^0.27.0"
 
-gatsby-rehype-ghost-links@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/gatsby-rehype-ghost-links/-/gatsby-rehype-ghost-links-1.5.2.tgz#fdbb5923ba1e3a539c3dcd7e2081e05a08a5b4c5"
-  integrity sha512-uJA9W9ZJ3ymLFLKwU/5iuOM/HkzMmxzbuhSdQ+5L1LjTFEKVqJII4bhSqvpo71PqZBFAYy1vel+r3WGbivV7+g==
+gatsby-rehype-ghost-links@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-rehype-ghost-links/-/gatsby-rehype-ghost-links-1.6.0.tgz#727e7d12009512f217284735e03b315acb2f6bcd"
+  integrity sha512-V1pJA1Mq1bSJogxPlxQkg2vdw+UKUEarXEviARbhRgF1yRUXwTpf8kYkEm86Uub3pndaTKtxDqRxNM1wu4/8xQ==
   dependencies:
     "@babel/runtime" "7.11.2"
-    lodash "^4.17.19"
+    lodash "^4.17.20"
     unist-util-visit "^2.0.3"
 
 gatsby-rehype-inline-images@^1.6.2:
