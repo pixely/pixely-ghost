@@ -8223,14 +8223,14 @@ gatsby-plugin-force-trailing-slashes@1.0.4:
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
 
-gatsby-plugin-ghost-images@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-ghost-images/-/gatsby-plugin-ghost-images-1.5.2.tgz#15c5127a1a0cb47bddb4fe37c7f5aec0302dbc92"
-  integrity sha512-wepeyMBwaVGFUKGpfqUXAlxn5QwIJDFaMPuHY+hh5GeTPOtnzbnJee1d687GTF+Ks6unDl4yv5hxKbt8XSrwNQ==
+gatsby-plugin-ghost-images@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-ghost-images/-/gatsby-plugin-ghost-images-1.6.0.tgz#b660caf5237564b4e559a230bf0691681125b469"
+  integrity sha512-k5KRZ1ScQxezl4LB/Nlpdn3mVROHKoSAn4JVihbsRpSZUkFhOHCTCj1Kcv7Nj653H5BLwWqKnu3cf/Cq85T2wQ==
   dependencies:
     "@babel/runtime" "7.11.2"
-    gatsby-source-filesystem "^2.3.24"
-    lodash "^4.17.19"
+    gatsby-source-filesystem "^2.3.28"
+    lodash "^4.17.20"
 
 gatsby-plugin-manifest@2.4.28:
   version "2.4.28"
@@ -8454,7 +8454,7 @@ gatsby-rehype-inline-images@^1.6.2:
     sharp "^0.25.4"
     unist-util-visit-parents "^3.1.0"
 
-gatsby-source-filesystem@2.3.29, gatsby-source-filesystem@^2.3.24:
+gatsby-source-filesystem@2.3.29, gatsby-source-filesystem@^2.3.24, gatsby-source-filesystem@^2.3.28:
   version "2.3.29"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.29.tgz#5eaf1434593f38523655145323e426f21c30687a"
   integrity sha512-PWHtkj+inhfPm8aMVhtxS1PAW+r4Kk5M1LDP5l0OO2HBaHiiSi0DulgmYJ3usYpctFqOQ92im/EQLRJbOaaQsA==
@@ -17661,11 +17661,6 @@ uuid@3.4.0, uuid@^3.0.0, uuid@^3.0.1, uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-
-uuid@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.0.tgz#ab738085ca22dc9a8c92725e459b1d507df5d6ea"
-  integrity sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWulZfvpgb/cmDXVulYFQ==
 
 v8-compile-cache@^1.1.2:
   version "1.1.2"
