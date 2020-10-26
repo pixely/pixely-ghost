@@ -53,7 +53,7 @@
     "gatsby-plugin-extract-image-colors": "^0.0.14",
     "gatsby-plugin-feed": "2.5.19",
     "gatsby-plugin-force-trailing-slashes": "1.0.4",
-    "gatsby-plugin-ghost-images": "^1.6.0",
+    "gatsby-plugin-ghost-images": "^1.6.1",
     "gatsby-plugin-manifest": "2.4.35",
     "gatsby-plugin-offline": "3.2.28",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",

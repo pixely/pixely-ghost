@@ -8426,13 +8426,13 @@ gatsby-plugin-force-trailing-slashes@1.0.4:
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
 
-gatsby-plugin-ghost-images@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-ghost-images/-/gatsby-plugin-ghost-images-1.6.0.tgz#b660caf5237564b4e559a230bf0691681125b469"
-  integrity sha512-k5KRZ1ScQxezl4LB/Nlpdn3mVROHKoSAn4JVihbsRpSZUkFhOHCTCj1Kcv7Nj653H5BLwWqKnu3cf/Cq85T2wQ==
+gatsby-plugin-ghost-images@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-ghost-images/-/gatsby-plugin-ghost-images-1.6.1.tgz#78ff486feac48696aac3ad95e0f4c980f557981d"
+  integrity sha512-ZKH4S16UMQU9t4Y074lq3oHT5AuVhwXrH3K/6DavY6cXigLKFE6dADzkMpXCRBAQIWwpe0llvhxdq7XiNsoB+A==
   dependencies:
     "@babel/runtime" "7.11.2"
-    gatsby-source-filesystem "^2.3.28"
+    gatsby-source-filesystem "^2.3.32"
     lodash "^4.17.20"
 
 gatsby-plugin-manifest@2.4.35:
@@ -8665,7 +8665,7 @@ gatsby-rehype-inline-images@^1.7.0:
     sharp "^0.26.0"
     unist-util-visit-parents "^3.1.0"
 
-gatsby-source-filesystem@2.3.35, gatsby-source-filesystem@^2.3.28:
+gatsby-source-filesystem@2.3.35, gatsby-source-filesystem@^2.3.28, gatsby-source-filesystem@^2.3.32:
   version "2.3.35"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.35.tgz#a64815f1c0bc1614519ec2dd1eef49629de6c2e5"
   integrity sha512-OHa7eDW9m/R8uIkAHpOZda517uT0yLPfLhZwEj3vqWgHRKg6bSghvKRDMQGmiD39EPur/Pl7JsotbFxGBRFRTQ==
