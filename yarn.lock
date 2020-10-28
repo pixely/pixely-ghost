@@ -2365,12 +2365,12 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tryghost/content-api@1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.4.4.tgz#ae52a86e694edbe50a7460693f4b7fff619d6174"
-  integrity sha512-5q/M/fcE9OwPHKM+DQUrrjQD7CaNShBxtI/3/aBrcbQPX/aIL2FjbFA5pi3KJ/oe2f0IFlUPGeM1IGuXWsIV4Q==
+"@tryghost/content-api@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.4.7.tgz#daf9222a0fbe427ff7a27abf98610f49e7d97c83"
+  integrity sha512-DPSnwZreBqxL4333VXAyVIi9hMcn9P+8mYvm1l39XjRWRVjRwfIARQJVDvC/xRQ5WXJSGKc3ytLf2ZJKs8dzFA==
   dependencies:
-    axios "0.19.2"
+    axios "0.20.0"
 
 "@tryghost/helpers-gatsby@1.0.37":
   version "1.0.37"
@@ -3633,12 +3633,12 @@ axe-core@3.5.5, axe-core@^3.5.4:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
 
-axios@0.19.2, axios@^0.19.0:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+axios@0.20.0, axios@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
+  integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
   dependencies:
-    follow-redirects "1.5.10"
+    follow-redirects "^1.10.0"
 
 axios@^0.18.0:
   version "0.18.1"
@@ -3648,12 +3648,12 @@ axios@^0.18.0:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
 
-axios@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
-  integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+axios@^0.19.0:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
-    follow-redirects "^1.10.0"
+    follow-redirects "1.5.10"
 
 axobject-query@^2.1.2:
   version "2.2.0"
@@ -11028,12 +11028,12 @@ iterall@^1.2.1, iterall@^1.2.2:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.3.0.tgz#afcb08492e2915cbd8a0884eb93a8c94d0d72fea"
   integrity sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==
 
-jamify-source-ghost@^1.17.0:
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/jamify-source-ghost/-/jamify-source-ghost-1.17.0.tgz#a4398388881be914b490956058e3eadb59f518ed"
-  integrity sha512-Ktip8QqeCiWCGB8o6EGGSysP0eZe1wLoX3XIWq8z83fPwZeNjMv2UpdwPV5fmaxSaxbMznCbQOz3334HEJbecA==
+jamify-source-ghost@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/jamify-source-ghost/-/jamify-source-ghost-1.19.1.tgz#5937f09d1013b65476620381e8234db6735c8d1e"
+  integrity sha512-OYLN8ow6QMqO+PSsBZhr68ebATGd8D4GF6IxEBpZZWM0/aZNzPsPUqknOwA8q8YIC6KUjenzZRyTJMpE/7FONA==
   dependencies:
-    "@tryghost/content-api" "1.4.4"
+    "@tryghost/content-api" "1.4.7"
     cheerio "1.0.0-rc.3"
     gatsby-node-helpers "0.3.0"
     qs "6.9.4"
