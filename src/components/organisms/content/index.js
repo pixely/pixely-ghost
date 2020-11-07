@@ -19,7 +19,7 @@ const Content = ({ html, htmlAst, className }) => {
     const htmlProp = !htmlAst && { dangerouslySetInnerHTML: { __html: html } }
     return (
         <section
-            className={`${className ? `${className} ` : ``} load-external-scripts content`}
+            className={`${className ? `${className} ` : ``} content`}
             { ...htmlProp }
         >
             { htmlAst && renderAst(htmlAst) }
