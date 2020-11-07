@@ -32,8 +32,10 @@ $grid-gap-desktop: 20px;
   }
 
   &__footer {
-    grid-column: 1 / -1;
-    margin-top: 20px;
+    grid-column: 2 / -2;
+    margin: 40px 0;
+    display: grid;
+    grid-gap: var(--grid-gap-desktop);
   }
 }
 
@@ -64,8 +66,8 @@ $grid-gap-desktop: 20px;
     }
 
     &__footer {
-      grid-column: 3 / span 4;
-      margin-bottom: 80px;
+      grid-column: 3 / -1;
+      grid-template-columns: 2fr 2fr 1fr;
     }
   }
 }

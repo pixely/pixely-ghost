@@ -9,6 +9,7 @@ import Title from '../../atoms/title'
 import Hero from '../../atoms/hero'
 import PostMeta from '../../molecules/post-meta'
 import AuthorBio from '../../molecules/author-bio'
+import RelatedPosts from '../../molecules/related-posts'
 import Content from '../../organisms/content'
 
 import './_post.scss'
@@ -19,7 +20,7 @@ import './_post.scss'
 * This file renders a single post and loads all the content.
 *
 */
-const Post = ({ post, data, location, displayAuthor, displayMeta }) => (
+const Post = ({ post, related, latest, data, location, displayAuthor, displayMeta }) => (
     <>
         <MetaData
             data={data}
@@ -65,6 +66,13 @@ const Post = ({ post, data, location, displayAuthor, displayMeta }) => (
             {displayAuthor && (<div className="post__footer">
                 <AuthorBio {...post.primary_author} />
             </div>)}
+            
+            <div className="post__footer">
+                {post.primary_tag && related.length > 0 && (
+                    <RelatedPosts tag={post.primary_tag} posts={related} />
+                )}
+                <RelatedPosts title="Also on other topics" posts={latest} />
+            </div>
                     
         </Layout>
     </>
@@ -73,6 +81,8 @@ const Post = ({ post, data, location, displayAuthor, displayMeta }) => (
 PropTypes.defaultProps = {
     displayAuthor: false,
     displayMeta: false,
+    related: [],
+    primary_tag: null,
 }
 
 Post.propTypes = {
@@ -81,6 +91,7 @@ Post.propTypes = {
         feature_image: PropTypes.string,
         featureImageSharp: PropTypes.object,
         primary_author: PropTypes.object.isRequired,
+        primary_tag: PropTypes.object,
         updated_at_pretty: PropTypes.string.isRequired,
         html: PropTypes.string.isRequired,
         childHtmlRehype: PropTypes.object,
@@ -97,6 +108,8 @@ Post.propTypes = {
     displayAuthor: PropTypes.bool,
     displayMeta: PropTypes.bool,
     location: PropTypes.object.isRequired,
+    related: PropTypes.array,
+    latest: PropTypes.array.isRequired,
 }
 
 export default Post
