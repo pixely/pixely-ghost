@@ -24,6 +24,9 @@ exports.createPages = ({ graphql, actions }) => {
                         edges {
                             node {
                                 slug
+                                primary_tag {
+                                    slug
+                                }
                             }
                         }
                     }
@@ -51,6 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
                             // Data passed to context is available
                             // in page queries as GraphQL variables.
                             slug: node.slug,
+                            tag: node.primary_tag.slug,
                         },
                     })
                 })

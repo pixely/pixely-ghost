@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { navigate } from 'gatsby-link'
+import cn from 'classnames'
+
 import Button from '../../atoms/button'
 import Input from '../../atoms/input'
 import Textarea from '../../atoms/textarea'
@@ -39,7 +41,7 @@ const ContactForm = ({ className }) => {
             name="contact"
             method="post"
             action="/contact-thanks/"
-            className={`${className ? `${className} ` : ``} contact-form`}
+            className={cn(className, 'contact-form')}
             data-netlify="true"
             data-netlify-honeypot="bot"
             onSubmit={handleSubmit}

@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import rehypeReact from 'rehype-react'
 import ImgSharpInline from './contentImage'
+import cn from 'classnames'
+
 import ContactForm from '../../organisms/contact-form'
 
 import './_content.scss'
@@ -19,7 +21,7 @@ const Content = ({ html, htmlAst, className }) => {
     const htmlProp = !htmlAst && { dangerouslySetInnerHTML: { __html: html } }
     return (
         <section
-            className={`${className ? `${className} ` : ``} load-external-scripts content`}
+            className={cn(className, 'content')}
             { ...htmlProp }
         >
             { htmlAst && renderAst(htmlAst) }

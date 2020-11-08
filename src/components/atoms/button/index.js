@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import './_button.scss'
 
 const Button = ({ children, className, ...props }) => (
     <button
-        className={`${className ? `${className} ` : ``} button text-s`}
+        className={cn(className, 'button', 'text-s')}
         {...props}
     >
         {children}

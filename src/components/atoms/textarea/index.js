@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import './_textarea.scss'
 
 const Textarea = ({ className, ...props }) => (
     <textarea
-        className={`${className ? `${className} ` : ``} textarea`}
+        className={cn(className, 'textarea')}
         {...props}
     />
 )

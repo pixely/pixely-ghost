@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import './_input.scss'
 
 const Input = ({ className, ...props }) => (
     <input
-        className={`${className ? `${className} ` : ``} input`}
+        className={cn(className, 'input')}
         {...props}
     />
 )

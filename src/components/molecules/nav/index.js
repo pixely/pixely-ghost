@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import GenericNav from './genericNav'
 
@@ -58,7 +59,7 @@ const Nav = ({ className, navItems }) => {
     return (
         <>
             <button
-                className={`${className ? `${className} ` : ``}nav${menuVisible ? ` is-open` : ``}`}
+                className={cn(className, 'nav', { 'is-open': menuVisible })}
                 onClick={() => setMenuStatus(!menuActive)}
                 aria-label="Open main menu"
                 style={buttonOffset()}
@@ -68,8 +69,8 @@ const Nav = ({ className, navItems }) => {
                 <span className="nav__icon-bar"></span>
                 <span className="nav__icon-bar"></span>
             </button>
-            {menuActive && <div key="oa" className={`nav__overlay ${menuVisible ? `is-open` : ``}`} onClick={() => setMenuStatus(!menuActive)} /> }
-            {menuActive && <nav key="ob" className={`nav__menu ${menuVisible ? `is-open` : ``}`}>
+            {menuActive && <div key="oa" className={cn('nav__overlay', { 'is-open': menuVisible })} onClick={() => setMenuStatus(!menuActive)} /> }
+            {menuActive && <nav key="ob" className={cn('nav__menu', { 'is-open': menuVisible })}>
                 <GenericNav navItems={navItems} navClass="nav__menu-item" />
             </nav>
             }

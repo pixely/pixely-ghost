@@ -11,7 +11,11 @@ import config from '../../utils/siteConfig'
 import '../../styles/main.scss'
 
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
-    const site = data.allGhostSettings.edges[0].node
+    const site = {
+        ...data.allGhostSettings.edges[0].node,
+        author: data.ghostAuthor,
+        ...config,
+    }
 
     return (
         <Fragment>
@@ -20,8 +24,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
                 <script>{`${site.codeinjection_head}`}</script>
                 <body className={`base${bodyClass ? ` base--${bodyClass}` : ``} ${bodyClass}`} />
+                <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Karla:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
             </Helmet>
-            <Base data={data} config={config} isHome={isHome}>
+            <Base data={data} config={site} isHome={isHome}>
                 {children}
             </Base>
         </Fragment>
@@ -34,6 +39,7 @@ DefaultLayout.propTypes = {
     isHome: PropTypes.bool,
     data: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
+        ghostAuthor: PropTypes.object.isRequired,
     }).isRequired,
 }
 
@@ -48,6 +54,10 @@ const DefaultLayoutSettingsQuery = props => (
                         }
                     }
                 }
+                ghostAuthor(slug: {eq: "graham"}) {
+                    ...GhostSiteAuthorFields
+                }
+                
             }
         `}
         render={data => <DefaultLayout data={data} {...props} />}

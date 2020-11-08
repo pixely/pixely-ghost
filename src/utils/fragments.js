@@ -333,5 +333,34 @@ export const ghostSettingsFields = graphql`
             label
             url
         }
+        secondary_navigation {
+            label
+            url
+        }
+    }
+`
+// Used for global author
+export const ghostSiteAuthorFields = graphql`
+    fragment GhostSiteAuthorFields on GhostAuthor {
+        name
+        slug
+        bio
+        # email
+        profile_image
+        profileImageSharp {
+            colors {
+                ...GatsbyImageColors
+            } 
+            childImageSharp {
+                authorCard: fluid(maxWidth: 500, srcSetBreakpoints: [70, 150, 300]) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    width: presentationWidth
+                    height: presentationHeight
+                }
+            }
+        }
+        twitter
+        facebook
+        website
     }
 `

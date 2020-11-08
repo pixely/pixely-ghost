@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import './_title.scss'
 
 const Title = ({ children, className }) => (
-    <h2 className={`${className ? `${className} ` : ``} title`}>
+    <h2 className={cn(className, 'title')}>
         {children}
     </h2>
 )

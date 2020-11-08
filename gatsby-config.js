@@ -120,30 +120,6 @@ module.exports = {
             },
         },
         /**
-         *  Google Fonts
-         */
-        {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
-            options: {
-                fonts: [
-                    {
-                        family: `Karla`,
-                        variants: [`400`,`400i`,`700`],
-                    },
-                    {
-                        family: `Rubik`,
-                        variants: [`400i`,`700`,`700i`],
-                    },
-                    {
-                        family: `Anonymous Pro`,
-                        variants: [`400`],
-                    },
-                ],
-                encode: false,
-                fontDisplay: `swap`,
-            },
-        },
-        /**
          *  Utility Plugins
          */
         {
