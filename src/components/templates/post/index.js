@@ -8,7 +8,6 @@ import { MetaData } from '../../common/meta'
 import Title from '../../atoms/title'
 import Hero from '../../atoms/hero'
 import PostMeta from '../../molecules/post-meta'
-import AuthorBio from '../../molecules/author-bio'
 import RelatedPosts from '../../molecules/related-posts'
 import Content from '../../organisms/content'
 
@@ -20,7 +19,7 @@ import './_post.scss'
 * This file renders a single post and loads all the content.
 *
 */
-const Post = ({ post, related, latest, data, location, displayAuthor, displayMeta }) => (
+const Post = ({ post, related, latest, data, location, displayMeta }) => (
     <>
         <MetaData
             data={data}
@@ -61,11 +60,6 @@ const Post = ({ post, related, latest, data, location, displayAuthor, displayMet
 
             {/* Main post content */ }
             <Content className="post__content" html={ post.html } htmlAst={ post.childHtmlRehype?.htmlAst } />
-
-            {/* Author bio */ }
-            {displayAuthor && (<div className="post__footer">
-                <AuthorBio {...post.primary_author} />
-            </div>)}
             
             <div className="post__footer">
                 {post.primary_tag && related.length > 0 && (
@@ -79,7 +73,6 @@ const Post = ({ post, related, latest, data, location, displayAuthor, displayMet
 )
 
 PropTypes.defaultProps = {
-    displayAuthor: false,
     displayMeta: false,
     related: [],
     primary_tag: null,
@@ -105,7 +98,6 @@ Post.propTypes = {
             feature_image: PropTypes.string,
         }).isRequired,
     }).isRequired,
-    displayAuthor: PropTypes.bool,
     displayMeta: PropTypes.bool,
     location: PropTypes.object.isRequired,
     related: PropTypes.array,
