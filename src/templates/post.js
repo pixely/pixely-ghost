@@ -8,7 +8,7 @@ const Post = ({ data, location }) => {
     const post = data.ghostPost
     const related = data.related.edges.map(relatedPost => relatedPost.node)
     const latest = data.latest.edges.map(latestPost => latestPost.node)
-    return <PostComponent post={post} related={related} latest={latest} data={data} location={location} displayAuthor displayMeta />
+    return <PostComponent post={post} related={related} latest={latest} data={data} location={location} displayMeta />
 }
 
 Post.defaultProps = {

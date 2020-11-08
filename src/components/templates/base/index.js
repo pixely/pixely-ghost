@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import Header from '../../organisms/header'
+import Footer from '../../organisms/footer'
 
 import './_base.scss'
 
@@ -13,25 +14,24 @@ import './_base.scss'
 * styles, and meta data for each page.
 *
 */
-const Base = ({ data, children }) => {
-    const site = data.allGhostSettings.edges[0].node
-    
-    return (
-        <Fragment>
-            <div className="base__inner">
-                <Header className="base__header" navItems={site.navigation} />
-                {children}
-            </div>
-        </Fragment>
-    )
-}
+const Base = ({ config, children }) => (
+    <Fragment>
+        <div className="base__inner">
+            <Header className="base__header" navItems={config.navigation} />
+            {children}
+            <Footer className="base__footer" navItems={config.secondary_navigation} author={config.author} />
+        </div>
+    </Fragment>
+)
 
 Base.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
-    data: PropTypes.shape({
-        allGhostSettings: PropTypes.object.isRequired,
+    config: PropTypes.shape({
+        navigation: PropTypes.array.isRequired,
+        secondary_navigation: PropTypes.array.isRequired,
+        author: PropTypes.object.isRequired,
     }).isRequired,
 }
 
