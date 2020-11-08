@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import Logo from '../../atoms/logo'
 import Nav from '../../molecules/nav'
@@ -7,7 +8,7 @@ import Nav from '../../molecules/nav'
 import './_header.scss'
 
 const Header = ({ className, navItems }) => (
-    <header className={`${className ? `${className} ` : ``}header`}>
+    <header className={cn(className, 'header')}>
         <Logo className="header__logo" />
         <Nav className="header__nav" navItems={navItems} />
     </header>

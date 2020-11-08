@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link as GatsbyLink } from 'gatsby'
+import cn from 'classnames'
 
 import './_link.scss'
 
 const Link = ({ href, to, className, children, inverted, ...props }) => {
     const linkProps = {
-        className: `${className ? `${className} ` : ``}link${inverted ? ` link--inverted` : ``}`,
+        className: cn(className, 'link', { 'link--inverted': inverted }),
         ...props,
     }
     return (

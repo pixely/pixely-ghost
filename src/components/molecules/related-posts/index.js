@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
+
 import Link from '../../atoms/link'
 
 import './_related-posts.scss'
@@ -10,7 +12,7 @@ const RelatedPosts = ({ title, tag, posts, className }) => {
         return null 
     }
     return (
-        <aside className={`${className ? `${className} ` : ``}related-posts`}>
+        <aside className={cn(className, 'related-posts')}>
             {Title && (<h5 className="related-posts__title text">{Title}</h5>)}
             <ul className="related-posts__items">
                 {posts.map(post => (

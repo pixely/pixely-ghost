@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import './_image.scss'
 
@@ -36,7 +37,7 @@ const Image = ({
             </>
         )}
         <img
-            className={`${className ? `${className} ` : ``} image`}
+            className={cn(className, 'image')}
             {...{
                 src,
                 srcSet,
