@@ -66,8 +66,14 @@ $grid-gap-desktop: 20px;
     }
 
     &__footer {
-      grid-column: 3 / -1;
-      grid-template-columns: 2fr 2fr 1fr;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: var(--grid-desktop);
+      grid-template-columns: repeat(4, 1fr);
+
+      & > *:first-child {
+        grid-column-start: 2;
+      }
     }
   }
 }
