@@ -54,6 +54,9 @@ module.exports = {
                 ignore: ['children'],
             },
         ],
+        indent: ['error', 4, {
+            ignoredNodes: ['TemplateLiteral'],
+        }],
     },
 }
 
