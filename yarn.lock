@@ -8271,10 +8271,10 @@ gatsby-rehype-ghost-links@^1.5.2:
     lodash "^4.17.20"
     unist-util-visit "^2.0.3"
 
-gatsby-rehype-inline-images@^1.6.2:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/gatsby-rehype-inline-images/-/gatsby-rehype-inline-images-1.9.1.tgz#4e90158733a0131f3726815baa8ea942858a0b0e"
-  integrity sha512-2PGaqBUyj/jEVuaD752Sq0IrBl3yKVmjxwqgaDYQS7DZMgrxb42p35WYMw4Oyx0XaPFobnjtug08QDx9tFzDdg==
+gatsby-rehype-inline-images@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/gatsby-rehype-inline-images/-/gatsby-rehype-inline-images-1.9.2.tgz#f9f7ebb2c92fc6dde593348c46cd581352284bb4"
+  integrity sha512-7fZ3aUWsfhe13rUaugGvHY8ngNSATwKXAmiPq/zAy4Pt/GTk5GFsbYIxVZplLmH14jnqGGH+SHuGvN8ubH6qrA==
   dependencies:
     "@babel/runtime" "7.12.5"
     fs-extra "^9.0.1"
