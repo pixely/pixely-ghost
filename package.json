@@ -57,7 +57,7 @@
     "gatsby-plugin-ghost-images": "^1.5.2",
     "gatsby-plugin-manifest": "2.5.2",
     "gatsby-plugin-offline": "3.3.3",
-    "gatsby-plugin-react-helmet": "3.3.14",
+    "gatsby-plugin-react-helmet": "3.4.0",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-rehype-ghost-links": "^1.5.2",
