@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
@@ -40,11 +39,6 @@ module.exports = function(config) {
     selector: "img",
     attribute: "data-src", // Lazy images attribute
     verbose: false
-  });
-
-  // Inline CSS
-  config.addFilter("cssmin", code => {
-    return new cleanCSS({}).minify(code).styles;
   });
 
   config.addFilter("getReadingTime", text => {
