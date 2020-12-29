@@ -1,0 +1,10 @@
+{% macro input(id="", name="", value="", type="text", required=false) %}
+    <input
+        name="{{ name }}"
+        class="input"
+        type="{{ type }}"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if value %} value="{{ value }}" {% endif %}
+        {% if required %} required="{{ required }}" {% endif %}
+    />
+{% endmacro %}

@@ -84,9 +84,13 @@
     "lodash": "4.17.20",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
+    "nunjucks": "^3.2.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-helmet": "6.1.0",
+    "rehype": "^11.0.0",
+    "rehype-format": "^3.1.0",
+    "rehype-partials": "^1.0.6",
     "rehype-react": "^6.1.0"
   }
 }

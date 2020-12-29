@@ -7,7 +7,14 @@ const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 const ghostHelpers = require("@tryghost/helpers");
 
+// Rehype related dependencies
+const rehype = require('rehype');
+const format = require('rehype-format');
+const partials = require('rehype-partials');
+const nunjucks = require('nunjucks');
+
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
+const { resolve } = require("path");
 
 // Init Ghost API
 const api = new ghostContentAPI({
@@ -33,7 +40,19 @@ const getRelatedPosts = async (idsToExclude = null, filter = null) => {
       console.error(err);
     });
 
-  return posts;  
+  return posts;
+}
+
+const templateHandler = (path, callback) => {
+  nunjucks.configure('src/_includes/');
+  nunjucks.render(path, callback);
+};
+
+const formatHtml = async html => {
+  return await rehype()
+    .use(partials, { cwd: './src/_includes/', handle: templateHandler })
+    .use(format)
+    .process(html);
 }
 
 module.exports = function(config) {
@@ -43,6 +62,7 @@ module.exports = function(config) {
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
 
+  /*
   // Apply performance attributes to images
   config.addPlugin(lazyImages, {
     cacheFile: ""
@@ -56,6 +76,7 @@ module.exports = function(config) {
     attribute: "data-src", // Lazy images attribute
     verbose: false
   });
+  /* */
 
   config.addFilter("stripDomain", url => {
     return stripDomain(url);
@@ -118,7 +139,8 @@ module.exports = function(config) {
         console.error(err);
       });
 
-    collection.map(doc => {
+    collection.map(async doc => {
+      doc.html = await formatHtml(doc.html);
       doc.url = stripDomain(doc.url);
       doc.primary_author.url = stripDomain(doc.primary_author.url);
 
@@ -142,6 +164,7 @@ module.exports = function(config) {
       });
 
     collection.forEach(async post => {
+      post.html = await formatHtml(post.html);
       post.url = stripDomain(post.url);
       post.primary_author.url = stripDomain(post.primary_author.url);
       post.tags.map(tag => (tag.url = stripDomain(tag.url)));

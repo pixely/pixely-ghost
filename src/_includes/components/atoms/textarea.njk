@@ -1,0 +1,10 @@
+{% macro textarea(id="", name="", required=false, spellcheck=false) %}
+    <textarea 
+        name="{{ name }}"
+        class="textarea"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if required %} required="{{ required }}" {% endif %}
+        {% if spellcheck %} spellcheck="{{ spellcheck }}" {% endif %}
+    >
+    </textarea>
+{% endmacro %}
