@@ -1,0 +1,8 @@
+.feed {
+  display: grid;
+  grid-gap: 20px;
+  
+  &__pagination {
+    margin: 20px 0 40px;
+  }
+}

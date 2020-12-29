@@ -1,0 +1,45 @@
+.card {
+  display: grid;
+  color: var(--color-text);
+  grid-template-columns: 1fr;
+  text-decoration: none;
+  transition: transform .15s ease-in-out;
+
+  &__body {
+    padding: 10px;
+  }
+
+  &__meta {
+    font-family: var(--font-body-copy);
+    font-size: .694rem;
+    margin: 5px 0 10px;
+  }
+
+  &__meta-item:not(:last-child):after {
+    content: " – ";
+  }
+
+  &--featured {
+    background: var(--color-primary);
+    color: var(--color-text-inverted);
+  }
+}
+
+@media (min-width: 576px) {
+
+  .card {
+    padding: 10px;
+    margin: -10px;
+    grid-template-columns: 2fr 6fr;
+    grid-gap: 20px;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+    
+    &__body {
+      grid-column-start: 2;
+      padding: 0;
+    }
+  }
+}
