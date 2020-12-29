@@ -1,0 +1,37 @@
+{% from "components/atoms/link.njk" import link %}
+
+{% macro relatedPosts(posts, tag, title="") %}
+    {% if posts.length %}
+        <aside class="related-posts">
+            {% if title %}
+                <h5 class="related-posts__title text">{{ title }}</h5>
+            {% elseif tag.name and tag.slug %}
+                <h5 class="related-posts__title text">Also on {{ link("/tag/" + tag.slug, tag.name) }}</h5>    
+            {% endif %}
+            <ul class="related-posts__items">
+                {% for post in posts %}
+                    <li class="text-s related-posts__item">
+                        {{ link("/" + post.slug, post.title) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </aside>
+    {% endif %}
+{% endmacro %}
+
+
+    {# const Title = title || (tag && <>Also on <Link to={`/tag/${tag.slug}`}>{tag.name}</Link></>)
+    if (!posts) { 
+        return null 
+    }
+    return (
+        <aside className={cn(className, 'related-posts')}>
+            {Title && (<h5 className="related-posts__title text">{Title}</h5>)}
+            <ul className="related-posts__items">
+                {posts.map(post => (
+                    <li key={post.id} className="text-s related-posts__item">
+                        <Link to={`/${post.slug}`}>{post.title}</Link>
+                    </li>
+                ))}
+            </ul> 
+        </aside> #}

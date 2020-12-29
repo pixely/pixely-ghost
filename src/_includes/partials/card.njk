@@ -1,4 +1,31 @@
+{% macro metaitem(text) %}
+    <span class="card__meta-item">
+        {{ text }}
+    </span>
+{% endmacro %}
+
 {% macro card(post) %}
+    <a href="{{ post.url }}" class="card {% if post.featured %}card--featured{% endif %}">
+        {% if post.feature_image %}
+            <div class="card__image">
+                <img src="{{ post.feature_image }}" alt="{{ post.title }}">
+            </div>
+        {% endif %}
+        <div class="card__body">
+            <h4 class="card {% if post.featured %}  text--inverted{% endif %}">{{ post.title }}</h4>
+            <p class="card__meta">
+                {{ metaitem("Featured") if post.featured }}
+                {{ metaitem(post.published_at | safe | getRelativeTime) }}
+                {{ metaitem(post.html | safe | getReadingTime) }}
+                {{ metaitem(post.primary_author.name) }}
+                {{ metaitem(post | getTags) }}
+            </p>
+            <p>{{ post.excerpt }}</p>
+        </div>
+    </a>
+{% endmacro %}
+
+{# {% macro card(post) %}
     <a class="post-card{% if post.featured %}  post-card-featured{% endif %}" href="{{ post.url }}">
         <header class="post-card-header">
             {% if post.feature_image %}
@@ -32,4 +59,50 @@
             </div>
         </footer>
     </a>
-{% endmacro %}
+{% endmacro %} #}
+
+{# import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import { Tags } from '@tryghost/helpers-gatsby'
+import { readingTime as readingTimeHelper } from '@tryghost/helpers'
+
+import Image from '../../atoms/image'
+
+import './_card.scss'
+
+const Card = ({ post }) => {
+    const url = `/${post.slug}/`
+    const readingTime = readingTimeHelper(post)
+    const MetaItem = ({ children }) => (
+        <span className="card__meta-item">
+            {children}
+        </span>
+    )
+
+    return (
+        <Link to={url} className={`card${post.featured ? ` card--featured` : ``}`}>
+            {(post.featureImageSharp || post.feature_image) &&
+                <Image
+                    className="card__image"
+                    alt={post.title}
+                    {...post.featureImageSharp?.childImageSharp?.card}
+                    backgroundColor={post.featureImageSharp?.colors.muted}
+                    sizes="(min-width: 575px) calc(17vw - 40px), calc(100vw - 50px)"
+                />
+            }
+            <div className="card__body">
+                <h4 className={`card__title${post.featured ? ` text--inverted` : ``}`}>{post.title}</h4>
+                <p className="card__meta">
+                    {/* {post.featured && <MetaItem>Featured</MetaItem>} */}
+                    <MetaItem>{post.published_at_pretty}</MetaItem>
+                    <MetaItem>{readingTime}</MetaItem>
+                    {/* <MetaItem key={`${post.id}-author`}>{post.primary_author.name}</MetaItem> */}
+                    {post.tags.length > 0 && <MetaItem><Tags post={post} visibility="public" autolink={false} /></MetaItem>}
+                </p>
+                <p>{post.excerpt}</p>
+            </div>
+        </Link>
+    )
+} #}
+

@@ -1,0 +1,5 @@
+{% from "components/atoms/image.njk" import image %}
+
+{% macro hero(src, alt, class="") %}
+    {{ image(src, alt, class=class + " hero")}}
+{% endmacro %}

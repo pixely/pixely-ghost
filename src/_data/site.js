@@ -19,7 +19,15 @@ module.exports = async function() {
       console.error(err);
     });
 
+  const siteAuthor = await api.authors
+    .read({
+      slug: "graham"
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
   if (process.env.SITE_URL) siteData.url = process.env.SITE_URL;
 
-  return siteData;
+  return { ...siteData, site_author: siteAuthor };
 };

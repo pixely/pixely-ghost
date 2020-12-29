@@ -1,0 +1,38 @@
+{% from "components/atoms/link.njk" import link %}
+{% from "components/atoms/image.njk" import image %}
+
+{% macro authorbio(author, box=false, hideSocial=false) %}
+    {% set twitterUrl =  "https://twitter.com/" + author.twitter.replace('@', '') if author.twitter %}
+    {% set facebookUrl =  "https://facebook.com/" + author.facebook if author.facebook %}
+    
+    <aside class="author-bio {% if box %}author-bio--boxed{% endif %}">
+        {% if author.profile_image %}
+            <div class="author-bio__image">
+                {{ image(author.profile_image, author.name) }}        
+            </div>
+        {% endif %}
+        <div class="author-bio__info">
+            <h5 class="author-bio__name">By {{ link(author.url | stripDomain, author.name, inverted=true) }}</h5>
+            <p class="text-s">{{ author.bio }}</p>
+            {% if not hideSocial %}
+            <p class="text-s">
+                {% if author.facebook %}
+                    <span class="author-bio__link">
+                        {{ link(facebookUrl, author.facebook, inverted=box) }}
+                    </span>
+                {% endif %}
+                {% if author.twitter %}
+                    <span class="author-bio__link">
+                        {{ link(twitterUrl, author.twitter, inverted=box) }}
+                    </span>
+                {% endif %}
+                {% if author.website %}
+                    <span class="author-bio__link">
+                        {{ link(author.website, author.website, inverted=box) }}
+                    </span>
+                {% endif %}
+            </p>
+            {% endif %}
+        </div>
+    </aside>
+{% endmacro %}

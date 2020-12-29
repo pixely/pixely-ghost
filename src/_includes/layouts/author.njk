@@ -1,20 +1,44 @@
 {% extends 'layouts/default.njk' %}
-{% from "partials/card.njk" import card %}
 
-{% set title = author.name %}
+{% from "components/atoms/title.njk" import title %}
+{% from "components/atoms/hero.njk" import hero %}
+{% from "components/atoms/link.njk" import link %}
+{% from "components/atoms/image.njk" import image %}
+{% from "components/organisms/feed.njk" import feed %}
+
+{% set pageTitle = author.name %}
+
+{% set bodyClass = 'author' %}
 
 {% block content %}
-    {% include "partials/author-header.njk" %}
-
-    <section class="post-feed">
-        {% if author.posts %}
-            {% for post in author.posts %}
-                {{ card(post) }}
-            {% endfor %}
-        {% else %}
-            <p>No posts to be found</p>
-        {% endif %}
-    </section>
+    <div class="author__title">
+        {{ title(pageTitle) }}
+    </div>
+    {% if author.bio %}
+        <div class="author__bio">
+            {% if author.profile_image %}
+                {{ image(author.profile_image, author.name, class="author__profile-image") }}
+            {% endif %}
+            <p class="text">{{ author.bio }}</p>
+            <p class="text-s">
+                {% if author.facebook %}
+                    {{ link(facebookUrl, author.facebook) }} 
+                {% endif %}
+                {% if author.twitter %}
+                    {{ link(twitterUrl, author.twitter) }} 
+                {% endif %}
+                {% if author.website %}
+                    {{ link(author.website, author.website) }} 
+                {% endif %}
+            </p>
+        </div>
+    {% endif %}
+    {% if author.cover_image %}
+        {{ hero(author.cover_image, author.name, class="author__image") }}
+    {% endif %}
+    <div class="author__feed">
+        {{ feed(author.posts) }}
+    </div>
 {% endblock %}
 
 {%- block seo -%}
@@ -23,21 +47,21 @@
     <meta name="twitter:creator" content="{{ author.twitter }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="{{ site.url + page.url }}">
-    <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+    <meta name="twitter:title" content="{{ pageTitle }} – {{ site.title }}">
     <meta name="twitter:description" content="{{ content }}">
     <meta name="twitter:image" content="{{ author.profile_image }}">
 
     <!--Schema-->
     <link rel="author" href="{{ author.website }}">
     <link rel="publisher" href="{{ site.url }}">
-    <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+    <meta itemprop="name" content="{{ pageTitle }} – {{ site.title }}">
     <meta itemprop="description" content="{{ content }}">
     <meta itemprop="image" content="{{ author.profile_image }}">
 
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{ site.url + page.url }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title }} – {{ site.title }}">
+    <meta property="og:title" content="{{ pageTitle }} – {{ site.title }}">
     <meta property="og:image" content="{{ author.profile_image }}">
     <meta property="og:description" content="{{ content }}">
     <meta property="og:site_name" content="{{ site.title }}">

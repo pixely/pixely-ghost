@@ -4,14 +4,18 @@ permalink: 404.html
 
 {% extends 'layouts/default.njk' %}
 
+{% from "components/atoms/link.njk" import link %}
+{% from "components/atoms/title.njk" import title %}
+
 {% set codeinjection_head = doc.codeinjection_head %}
 {% set codeinjection_foot = doc.codeinjection_foot %}
 
-{% set title = "Error 404" %}
+{% set pageTitle = "404: Page not found" %}
+
+{% set bodyClass = 'tag' %}
 
 {% block content %}
-    <article class="content" style="text-align:center">
-        <h1 class="content-title">Error 404</h1>
-        <section class="content-body">Page not found, <a href="/">return home</a> to start over</section>
-    </article>
+    <div class="tag__title">{{ title(pageTitle) }}</div>
+    <p class="tag__description">Sorry, this page couldn&apos;t be found. Perhaps try returning {{ link("/", "home") }}?</p>
+    <div class="tag__image"></div>
 {% endblock %}

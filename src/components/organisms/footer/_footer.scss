@@ -4,6 +4,7 @@
   grid-template-columns: 1fr;
   padding: var(--grid-gap-mobile) 0;
   grid-gap: var(--grid-gap-mobile);
+  height: 100%;
 
   &__bio,
   &__nav {

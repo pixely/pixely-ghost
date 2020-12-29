@@ -5,6 +5,7 @@ const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
+const ghostHelpers = require("@tryghost/helpers");
 
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 
@@ -19,6 +20,21 @@ const api = new ghostContentAPI({
 const stripDomain = url => {
   return url.replace(process.env.GHOST_API_URL, "");
 };
+
+const getRelatedPosts = async (idsToExclude = null, filter = null) => {
+  const relatedPerGroup = 6;
+  const posts = await api.posts
+    .browse({
+      filter: `${filter ? `${filter}+`: ''}id:-[${idsToExclude}]`,
+      fields: ['id', 'title', 'slug'],
+      limit: relatedPerGroup,
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
+  return posts;  
+}
 
 module.exports = function(config) {
   // Minify HTML
@@ -41,10 +57,45 @@ module.exports = function(config) {
     verbose: false
   });
 
+  config.addFilter("stripDomain", url => {
+    return stripDomain(url);
+  });
+
   config.addFilter("getReadingTime", text => {
     const wordsPerMinute = 200;
     const numberOfWords = text.split(/\s/g).length;
-    return Math.ceil(numberOfWords / wordsPerMinute);
+    return `${Math.ceil(numberOfWords / wordsPerMinute)} min read`;
+  });
+
+  config.addFilter("getTags", tags => {
+    return ghostHelpers.tags(tags);
+  });
+
+  config.addFilter("getRelativeTime", date => {
+    return date;
+  });
+
+  config.addFilter("getFormattedTime", dateObj => {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+
+    const date = new Date(dateObj);
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
   });
 
   // Date formatting filter
@@ -90,13 +141,21 @@ module.exports = function(config) {
         console.error(err);
       });
 
-    collection.forEach(post => {
+    collection.forEach(async post => {
       post.url = stripDomain(post.url);
       post.primary_author.url = stripDomain(post.primary_author.url);
       post.tags.map(tag => (tag.url = stripDomain(tag.url)));
+      
+      // Add in related content based on the primary tag
+      post.related = await getRelatedPosts(post.id, `tag:${post.primary_tag.slug}`);
 
+      // Get latest posts, excluding the current post and any other related posts
+      const postsToExclude = post.related.reduce((acc, cur) => `${acc}, ${cur.id}`, post.id);
+      post.latest = await getRelatedPosts(postsToExclude);
+      
       // Convert publish date into a Date object
       post.published_at = new Date(post.published_at);
+
     });
 
     // Bring featured post to the top of the list

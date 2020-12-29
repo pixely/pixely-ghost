@@ -1,23 +1,28 @@
 {% extends 'layouts/default.njk' %}
 
-{% set title = doc.title %}
+{% from "components/atoms/title.njk" import title %}
+{% from "components/atoms/hero.njk" import hero %}
+{% from "components/molecules/post-meta.njk" import postMeta %}
+{% from "components/molecules/related-posts.njk" import relatedPosts %}
+{% from "components/organisms/editor-content.njk" import editorContent %}
+
+{% set postTitle = doc.title %}
 {% set codeinjection_head = doc.codeinjection_head %}
 {% set codeinjection_foot = doc.codeinjection_foot %}
 
+{% set bodyClass = 'post' %}
+
 {% block content %}
-    <article class="content">
+    <div class="post__title">{{ title(doc.title) }}</div>
+    <div class="post__hero">
         {% if doc.feature_image %}
-            <figure class="post-feature-image">
-                <img src="{{ doc.feature_image }}" alt="{{ title }}">
-            </figure>
+            {{ hero(doc.feature_image, doc.title) }}
         {% endif %}
-        <section class="post-full-content">
-            <h1 class="content-title">{{ title }}</h1>
-            <section class="content-body load-external-scripts">
-                {{ content | safe }}
-            </section>
-        </section>
-    </article>
+    </div>
+
+    <div class="post__content">
+        {{ editorContent(doc.html) }}
+    </div>
 {% endblock %}
 
 {%- block seo -%}
@@ -26,21 +31,21 @@
     <meta name="twitter:creator" content="{{ doc.primary_author.twitter }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ site.url + page.url }}">
-    <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+    <meta name="twitter:title" content="{{ postTitle }} – {{ site.title }}">
     <meta name="twitter:description" content="{{ doc.excerpt }}">
     <meta name="twitter:image" content="{{ doc.feature_image }}">
 
     <!--Schema-->
     <link rel="author" href="{{ doc.primary_author.website }}">
     <link rel="publisher" href="{{ site.url }}">
-    <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+    <meta itemprop="name" content="{{ postTitle }} – {{ site.title }}">
     <meta itemprop="description" content="{{ doc.excerpt }}">
     <meta itemprop="image" content="{{ doc.feature_image }}">
 
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{ site.url + page.url }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title }} – {{ site.title }}">
+    <meta property="og:title" content="{{ postTitle }} – {{ site.title }}">
     <meta property="og:image" content="{{ doc.feature_image }}">
     <meta property="og:description" content="{{ doc.excerpt }}">
     <meta property="og:site_name" content="{{ site.title }}">
