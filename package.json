@@ -1,7 +1,7 @@
 {
   "name": "pixely-ghost",
   "description": "Ghost theme for personal site of Graham Martin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "author": "Graham Martin",
   "homepage": "https://github.com/pixely/pixely-ghost",
@@ -10,7 +10,7 @@
     "url": "https://github.com/pixely/pixely-ghost.git"
   },
   "engines": {
-    "node": ">= 10.13.0"
+    "node": ">= 14.15.0"
   },
   "bugs": {
     "url": "https://github.com/pixely/pixely-ghost.git/issues"
