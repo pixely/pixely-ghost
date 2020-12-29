@@ -7,7 +7,7 @@
   "homepage": "https://github.com/pixely/pixely-ghost",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pixely/pixely-ghost.git"
+    "url": "https://github.com/pixely/pixely-ghost.git"
   },
   "engines": {
     "node": ">= 10.13.0"
