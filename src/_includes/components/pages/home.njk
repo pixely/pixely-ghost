@@ -1,0 +1,11 @@
+{% extends 'components/templates/default.njk' %}
+
+{% from "components/organisms/feed.njk" import feed %}
+
+{% set bodyClass = 'home' %}
+
+{% block content %}
+  <div class="home__feed">
+    {{ feed(posts, pagination) }}
+  </div>
+{% endblock%}

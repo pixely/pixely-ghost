@@ -5,14 +5,4 @@ pagination:
   alias: posts
 ---
 
-{% extends 'layouts/default.njk' %}
-
-{% from "components/organisms/feed.njk" import feed %}
-
-{% set bodyClass = 'home' %}
-
-{% block content %}
-  <div class="home__feed">
-    {{ feed(posts, pagination) }}
-  </div>
-{% endblock%}
+{% include 'components/pages/home.njk' %}
