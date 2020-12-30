@@ -2,8 +2,8 @@
 <html lang="{{ site.lang }}" class="no-js">
     <head>
         <title>
-            {%- if title -%}
-                {{ title }} – {{ site.title }}
+            {%- if pageTitle -%}
+                {{ pageTitle }} – {{ site.title }}
             {%- else -%}
                 {{ site.title }} – {{ site.description }}
             {%- endif -%}
@@ -22,21 +22,21 @@
             <meta name="twitter:creator" content="{{ site.twitter }}">
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:url" content="{{ site.url + page.url }}">
-            <meta name="twitter:title" content="{{ title + " – " + site.title if title else title }}">
+            <meta name="twitter:title" content="{{ pageTitle + " – " + site.title if pageTitle else pageTitle }}">
             <meta name="twitter:description" content="{{ site.description }}">
             <meta name="twitter:image" content="{{ site.cover_image }}">
 
             <!--Schema-->
             <link rel="author" href="{{ site.url }}">
             <link rel="publisher" href="{{ site.url }}">
-            <meta itemprop="name" content="{{ title + " – " + site.title if title else title }}">
+            <meta itemprop="name" content="{{ pageTitle + " – " + site.title if pageTitle else pageTitle }}">
             <meta itemprop="description" content="{{ site.description }}">
             <meta itemprop="image" content="{{ site.cover_image }}">
 
             <!-- Facebook OpenGraph -->
             <meta property="og:url" content="{{site.url + page.url}}">
             <meta property="og:type" content="website">
-            <meta property="og:title" content="{{ title + " – " + site.title if title else title }}">
+            <meta property="og:title" content="{{ pageTitle + " – " + site.title if pageTitle else pageTitle }}">
             <meta property="og:image" content="{{ site.cover_image }}">
             <meta property="og:description" content="{{ site.description }}">
             <meta property="og:site_name" content="{{ site.title }}">

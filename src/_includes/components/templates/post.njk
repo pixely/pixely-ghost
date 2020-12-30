@@ -6,7 +6,7 @@
 {% from "components/molecules/related-posts.njk" import relatedPosts %}
 {% from "components/organisms/editor-content.njk" import editorContent %}
 
-{% set postTitle = post.title %}
+{% set pageTitle = post.title %}
 {% set codeinjection_head = post.codeinjection_head %}
 {% set codeinjection_foot = post.codeinjection_foot %}
 
@@ -43,21 +43,21 @@
     <meta name="twitter:creator" content="{{ post.primary_author.twitter }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ site.url + page.url }}">
-    <meta name="twitter:title" content="{{ postTitle }} – {{ site.title }}">
+    <meta name="twitter:title" content="{{ pageTitle }} – {{ site.title }}">
     <meta name="twitter:description" content="{{ post.excerpt }}">
     <meta name="twitter:image" content="{{ post.feature_image }}">
 
     <!--Schema-->
     <link rel="author" href="{{ post.primary_author.website }}">
     <link rel="publisher" href="{{ site.url }}">
-    <meta itemprop="name" content="{{ postTitle }} – {{ site.title }}">
+    <meta itemprop="name" content="{{ pageTitle }} – {{ site.title }}">
     <meta itemprop="description" content="{{ post.excerpt }}">
     <meta itemprop="image" content="{{ post.feature_image }}">
 
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{ site.url + page.url }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ postTitle }} – {{ site.title }}">
+    <meta property="og:title" content="{{ pageTitle }} – {{ site.title }}">
     <meta property="og:image" content="{{ post.feature_image }}">
     <meta property="og:description" content="{{ post.excerpt }}">
     <meta property="og:site_name" content="{{ site.title }}">
