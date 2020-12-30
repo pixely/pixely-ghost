@@ -37,7 +37,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-ghost": "2.0.0",
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.30.0",
+    "sass": "^1.32.0",
     "stylelint": "^13.8.0",
     "stylelint-config-airbnb": "^0.0.0",
     "stylelint-order": "^4.1.0",
