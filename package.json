@@ -52,7 +52,6 @@
     "clean-css": "^4.2.3",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
-    "eleventy-plugin-lazyimages": "^2.1.0",
     "eleventy-plugin-local-images": "^0.4.0",
     "eleventy-plugin-sass": "^1.1.1",
     "eslint-utils": "^2.1.0",
