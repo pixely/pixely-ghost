@@ -1,3 +1,3 @@
-import nav from './modules/nav.js';
+import nav from './modules/nav.js'
 
-nav.init();
+nav.init()
