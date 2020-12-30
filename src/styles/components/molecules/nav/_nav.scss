@@ -74,12 +74,21 @@
     left: 0;
     bottom: 0;
     background: rgba(0,0,0,.75);
-    animation: navFadeOut .2s linear;
-    animation-fill-mode: both;
     cursor: pointer;
+    display: none;
     
     &.is-open {
+      display: block;
+    }
+
+    &.is-animating-in {
+      display: block;
       animation: navFadeIn .2s linear;
+    }
+
+    &.is-animating-out {
+      display: block;
+      animation: navFadeOut .2s linear;
     }
   }
 
@@ -97,12 +106,22 @@
     flex: 1 1 1;
     border-top: 10px solid  var(--color-secondary-dark);
     border-left: 10px solid var(--color-secondary-dark);
-    animation: navSlideOutUp .3s ease-in-out;
     transform-origin: top left;
     -webkit-overflow-scrolling: touch;
+    display: none;
 
     &.is-open {
-      animation: navSlideInDown .3s linear;
+      display: block;
+    }
+
+    &.is-animating-in {
+      display: block;
+      animation: navSlideInDown .2s linear;
+    }
+
+    &.is-animating-out {
+      display: block;
+      animation: navSlideOutUp .2s ease-in-out;
     }
   }
 
@@ -117,9 +136,9 @@
     display: grid;
     place-content: center center;
     background: transparent;
-    animation: navFadeInOut .2s linear;
-    animation-delay: .3s;
-    animation-fill-mode: backwards;
+    // animation: navFadeInOut .2s linear;
+    // animation-delay: .3s;
+    // animation-fill-mode: backwards;
 
     &:last-child {
       margin-bottom: 20px;
@@ -150,20 +169,27 @@
       border-left-width: 10px;
       width: 30vw;  
       padding-top: 90px;
-      animation: navSlideOut .3s ease-in-out;
-      animation-delay: .02s;
-      animation-fill-mode: both;
       align-content: start;
+      display: none;
 
       &.is-open {
-        animation: navSlideIn .3s ease-in-out;
+        display: block;
+      }
+
+      &.is-animating-in {
+        display: block;
+        animation: navSlideIn .2s linear;
+      }
+
+      &.is-animating-out {
+        display: block;
+        animation: navSlideOut .2s ease-in-out;
       }
     }
   }
 }
 
 @keyframes navFadeIn {
-  
   from {
     opacity: 0;
   }

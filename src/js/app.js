@@ -1,1 +1,3 @@
-console.log('app');
+import nav from './modules/nav.js';
+
+nav.init();
