@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
       run: yarn run lint:stylelint
     - name: Run unit tests
       run: yarn test
-    - name: Run Gatsby build
+    - name: Run build
       run: yarn build
       
   
