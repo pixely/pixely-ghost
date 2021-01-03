@@ -49,6 +49,10 @@
 
         <script>document.documentElement.classList.remove('no-js');</script>
 
+        {% if site.ghost_head %}
+            {{ site.ghost_head }}
+        {% endif %}
+
         {% if site.codeinjection_head %}
             {{ site.codeinjection_head }}
         {% endif %}
@@ -68,5 +72,8 @@
                 {% include 'components/organisms/footer' %}
             </div>
         </div>
+        {% if site.ghost_foot %}
+            {{ site.ghost_foot }}
+        {% endif %}
     </body>
 </html>
