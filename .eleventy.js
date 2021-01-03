@@ -10,7 +10,7 @@ const ghostHelpers = require("@tryghost/helpers");
 const rehype = require('rehype');
 const format = require('rehype-format');
 const partials = require('rehype-partials');
-const nunjucks = require('nunjucks');
+const { Liquid } = require('liquidjs');
 
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 const { resolve } = require("path");
@@ -42,9 +42,20 @@ const getRelatedPosts = async (idsToExclude = null, filter = null) => {
   return posts;
 }
 
-const templateHandler = (path, callback) => {
-  nunjucks.configure('src/_includes/');
-  nunjucks.render(path, callback);
+const templateHandler = (includePath, callback) => {
+  try {
+    const liquidEngine = new Liquid({
+      cache: process.env.NODE_ENV === 'production',
+      root: ['./src/_includes', '_includes'],
+      extname: '.liquid',
+      dynamicPartials: true,
+      strict_filters: true,
+    });
+    const renderedMarkup = liquidEngine.renderFileSync(includePath)
+    callback(null, renderedMarkup);
+  } catch (e) {
+    callback(e);
+  }
 };
 
 const formatHtml = async html => {
@@ -263,6 +274,11 @@ module.exports = function(config) {
     }
   });
 
+  config.setLiquidOptions({
+    dynamicPartials: true,
+    strict_filters: true
+  });
+  
   // Eleventy configuration
   return {
     dir: {
@@ -271,9 +287,8 @@ module.exports = function(config) {
     },
 
     // Files read by Eleventy, add as needed
-    templateFormats: ["css", "njk", "md", "txt"],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "liquid",
+    markdownTemplateEngine: "liquid",
     passthroughFileCopy: true
   };
 };
