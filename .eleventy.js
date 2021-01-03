@@ -72,14 +72,21 @@ const getRelatedPosts = async (idsToExclude = null, filter = null) => {
   const posts = await api.posts
     .browse({
       filter: `${filter ? `${filter}+`: ''}id:-[${idsToExclude}]`,
-      fields: ['id', 'title', 'slug'],
+      fields: ['id', 'title', 'url'],
       limit: relatedPerGroup,
     })
     .catch(err => {
       console.error(err);
     });
 
-  return posts;
+  const filteredPosts = posts.map(post => {
+    return {
+    ...post,
+    url: stripDomain(post.url),
+    };
+  });
+  
+  return filteredPosts;
 }
 
 const templateHandler = (includePath, callback) => {
@@ -112,22 +119,13 @@ module.exports = function(config) {
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
 
-  // Copy images over from Ghost
-  config.addPlugin(localImages, {
-    distPath: "dist",
-    assetPath: "/assets/images",
-    selector: "img",
-    attribute: "data-src", // Lazy images attribute
-    verbose: false
-  });
-  
   config.addFilter("stripDomain", url => {
     return stripDomain(url);
   });
 
   config.addFilter("getReadingTime", text => {
     const wordsPerMinute = 200;
-    const numberOfWords = text.split(/\s/g).length;
+    const numberOfWords = text.toString().split(/\s/g).length;
     return `${Math.ceil(numberOfWords / wordsPerMinute)} min read`;
   });
 
