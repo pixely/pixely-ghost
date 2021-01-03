@@ -62,7 +62,7 @@ const responsiveImageShortcode = async function(src, alt, srcset=null, sizes, lo
   return `<picture>
       ${Object.values(resized).map(imageFormat => {
         return `  <source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}" />`;
-      })}
+      }).join('')}
       <img src="${lowsrc.url}" width="${lowsrc.width}" height="${lowsrc.height}" loading="${loading}" alt="${alt}" class="image ${className}" />
     </picture>`;
 };
