@@ -118,7 +118,7 @@ module.exports = function(config) {
 
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
-
+  
   config.addFilter("stripDomain", url => {
     return stripDomain(url);
   });
@@ -320,6 +320,8 @@ module.exports = function(config) {
     strict_filters: true
   });
   
+  config.addPassthroughCopy("src/images");
+
   // Eleventy configuration
   return {
     dir: {
@@ -328,6 +330,7 @@ module.exports = function(config) {
     },
 
     // Files read by Eleventy, add as needed
+    templateFormats: ["css", "njk", "liquid", "md", "txt", "ico", "png"],
     htmlTemplateEngine: "liquid",
     markdownTemplateEngine: "liquid",
     passthroughFileCopy: true

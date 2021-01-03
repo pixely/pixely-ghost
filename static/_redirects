@@ -1,9 +1,0 @@
-# Netlify redirects file, edit with your domain
-# https://www.netlify.com/docs/redirects/
-
-https://pixely-ghost.netlify.app/*      https://pixely.co.uk/:splat    301!
-http://pixely-ghost.netlify.app/*       https://pixely.co.uk/:splat    301!
-
-# Route images via Cloudinary allowing for dynamic image transformations
-# Based on https://twitter.com/philhawksworth/status/1328340868726726656
-/content/images/* transform=:transform       https://res.cloudinary.com/pixely-web/image/fetch/:transform/https://ghost.pixely.co.uk/content/images/:splat    200
