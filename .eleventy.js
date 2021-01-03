@@ -12,9 +12,11 @@ const rehype = require('rehype');
 const format = require('rehype-format');
 const partials = require('rehype-partials');
 const { Liquid } = require('liquidjs');
+const visit = require('unist-util-visit')
+const is = require('hast-util-is-element')
 
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
-const { resolve } = require("path");
+const { resolve, extname } = require("path");
 
 // Init Ghost API
 const api = new ghostContentAPI({
@@ -28,28 +30,33 @@ const stripDomain = url => {
   return url.replace(process.env.GHOST_API_URL, "");
 };
 
-const responsiveImageShortcode = async function(src, alt, srcset=null, sizes, loading="lazy", className=null, blurUp=false) {
-  if(!src) return null;
-
+const generateSrcsetWidths = (srcset) => {
   // Standard config options
   const dpiSizes = [1, 2, 3];
-  // const formats = ["webp", "jpeg", "avif"];
-  const formats = ["webp", "jpeg"];
-
   const newSizes = [];
 
+  if (typeof srcset === 'string') {
+    srcset = srcset.split(',');
+  }
+
   // From the srcset sizes generate extra for different retina screens
-  srcset.split(',').forEach(size => {
+  srcset.forEach(size => {
     dpiSizes.forEach(dpi => {
       newSizes.push(size * dpi);
     });
   });
 
   const dedupedSizes = [...new Set(newSizes)];
-  const sortedSizes = dedupedSizes.sort((a, b) => a - b);  
+  const sortedSizes = dedupedSizes.sort((a, b) => a - b);
   
-  let resized = await image(src, {
-    widths: sortedSizes,
+  return sortedSizes;
+};
+
+// const formats = ["webp", "jpeg", "avif","svg"];
+  
+const generateImages = async (src, srcset, formats=["webp","jpeg"]) => {
+  return await image(src, {
+    widths: srcset,
     formats,
     outputDir: "./dist/images/",
     urlPath: "/images/",
@@ -57,6 +64,13 @@ const responsiveImageShortcode = async function(src, alt, srcset=null, sizes, lo
       duration: "1w",
     },
   });
+};
+
+const responsiveImageShortcode = async (src, alt, srcset=null, sizes, loading="lazy", className=null, blurUp=false) => {
+  if(!src) return null;
+  
+  const fullSrcset = generateSrcsetWidths(srcset);
+  const resized = await generateImages(src, fullSrcset);
 
   const lowsrc = resized.jpeg[0];
   
@@ -106,8 +120,92 @@ const templateHandler = (includePath, callback) => {
   }
 };
 
+const picture = () => {
+  const promises = [];
+  return transformer
+
+  async function transformer(tree) {
+    visit(tree, 'element', visitor);
+    await Promise.all(promises);
+    return;
+  }
+
+  function visitor(node, index, parent) {
+    const supportedFileTypes = ['jpeg', 'jpg', 'png', 'webp', 'gif', 'tiff', 'avif', 'svg'];
+    const src = node.properties.src;
+    let sizes = "(min-width: 575) 50vw, 90vw";
+    let sizesArray = [270, 325, 360, 480, 690, 810];
+    let extension;
+
+    if (!parent || !is(node, 'img') || !src) {
+      return
+    }
+
+    extension = extname(node.properties.src).slice(1);
+
+    if (!supportedFileTypes.includes(extension)) {
+      return
+    }
+
+    if (parent.properties.className.includes('kg-width-full')) {
+      sizes = "(min-width: 575) calc(100vw - 40px), calc(100vw - 10px)";
+      sizesArray = [310, 365, 400, 728, 985, 1400, 1640];
+    } else if (parent.properties.className.includes('kg-width-wide')) {
+      sizes = "(min-width: 575) 75vw, 92vw";
+      sizesArray = [290, 345, 380, 540, 735, 1045, 1225];
+    }
+      
+    const srcsetSizes = generateSrcsetWidths(sizesArray);
+    const promise = generateImages(node.properties.src, srcsetSizes).then(resized => {
+      return parent.children[index] = {
+        type: 'element',
+        tagName: 'picture',
+        properties: {},
+        children: [
+          ...sources(resized, sizes),
+          fallbackImage(node, resized.jpeg[0]),
+        ],
+      }
+    }).catch(e => { throw(e); });
+    promises.push(promise);
+  }
+
+  function sources(images, sizes) {
+    const nodes = [];
+    
+    Object.values(images).map(imageFormat => {
+      nodes.push({
+        type: 'element',
+        tagName: 'source',
+        properties: {
+          type: imageFormat.sourceType,
+          srcSet: imageFormat.map(entry => entry.srcset).join(", "),
+          sizes,
+        },  
+        children: []
+      });
+    });
+    return nodes;
+  }
+
+  function fallbackImage(originalNode, lowRes) {
+    return {
+      ...originalNode,
+      properties: {
+        className: [...originalNode.properties.className, "image"],
+        alt: originalNode.properties.alt,
+        loading: "lazy",
+        width: lowRes.width,
+        height: lowRes.height,
+        src: lowRes.url,
+      },
+    };
+  }
+};
+
 const formatHtml = async html => {
   return await rehype()
+    .use(picture)
     .use(partials, { cwd: './src/_includes/', handle: templateHandler })
     .use(format)
     .process(html);
