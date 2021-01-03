@@ -33,7 +33,8 @@ const responsiveImageShortcode = async function(src, alt, srcset=null, sizes, lo
 
   // Standard config options
   const dpiSizes = [1, 2, 3];
-  const formats = ["webp", "jpeg", "avif"];
+  // const formats = ["webp", "jpeg", "avif"];
+  const formats = ["webp", "jpeg"];
 
   const newSizes = [];
 
