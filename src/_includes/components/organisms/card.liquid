@@ -1,0 +1,20 @@
+<a href="{{ post.url }}" class="card {% if post.featured %}card--featured{% endif %}">
+    {% if post.feature_image %}
+        <div class="card__image">
+            {% include "components/atoms/image" image: post.feature_image, alt: post.title, srcset: "115, 200, 270, 300", sizes: "(min-width: 575px) 270px, calc(33vw - 10px)", class: "author__profile-image" %}
+        </div>
+    {% endif %}
+    <div class="card__body">
+        <h4 class="card__title {% if post.featured %}  text--inverted{% endif %}">{{ post.title }}</h4>
+        <p class="card__meta">
+            {% if post.featured %}
+                <span class="card__meta-item">Featured</span>
+            {% endif %}
+            <span class="card__meta-item">{{ post.published_at | getFormattedTime }}</span>
+            <span class="card__meta-item">{{ post.html | getReadingTime }}</span>
+            <span class="card__meta-item">{{ post.primary_author.name }}</span>
+            <span class="card__meta-item">{{ post | getTags }}</span>
+        </p>
+        <p>{{ post.excerpt }}</p>
+    </div>
+</a>

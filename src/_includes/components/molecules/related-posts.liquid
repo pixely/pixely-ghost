@@ -1,0 +1,16 @@
+{% if posts %}
+    <aside class="related-posts">
+        {% if title %}
+                <h5 class="related-posts__title text">{{ title }}</h5>
+            {% elsif tag.name and tag.url %}
+                <h5 class="related-posts__title text">Also on {% include "components/atoms/link" href: tag.url, text: tag.name %}</h5>    
+            {% endif %}
+            <ul class="related-posts__items">
+                {% for post in posts %}
+                    <li class="text-s related-posts__item">
+                        {% include "components/atoms/link" href: post.url, text: post.title %}
+                    </li>
+                {% endfor %}
+            </ul>
+    </aside>
+{% endif %}

@@ -1,0 +1,14 @@
+<section class="feed">
+    {% if feed.length %}
+        {% for post in feed %}
+            <div class="feed__card">
+                {% include "components/organisms/card" post: post %}
+            </div>
+        {% endfor %}
+        <div class="feed__pagination">
+            {% include "components/molecules/pagination" pagination: pagination %}
+        </div>
+    {% else %}
+        <p>No posts</p>
+    {% endif %}
+</section>

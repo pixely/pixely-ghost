@@ -1,0 +1,30 @@
+<form
+    name="contact"
+    method="post"
+    action="/contact-thanks/"
+    class="contact-form"
+    data-netlify="true"
+    data-netlify-honeypot="bot"
+>
+    {% include "components/atoms/input" id: "contact-form", name: "Contact Form", type: "hidden" %}
+    <div hidden>
+        <label htmlFor="bot">Ignore</label>
+        {% include "components/atoms/input" id: "bot", name: "bot" %}
+    </div>
+    <div class="contact-form__field contact-form__field--narrow">
+        <label htmlFor="name" class="contact-form__label text-s">Name</label>
+        {% include "components/atoms/input" id: "name", name: "name", required: true %}
+    </div>
+    <div class="contact-form__field contact-form__field--narrow">
+        <label htmlFor="email" class="contact-form__label text-s">Email address</label>
+        {% include "components/atoms/input" id: "email", name: "email", type: "email", required: true %}
+    </div>
+    <div class="contact-form__field">
+        <label htmlFor="message" class="contact-form__label text-s">Message</label>
+        {% include "components/atoms/textarea" id: "message", name: "message", required: true, spellcheck: true %}
+    </div>
+    <div class="contact-form__field contact-form__field--narrow">
+        {% include "components/atoms/button" text: "Send Message", type: "submit" %}
+    </div>
+</form>
+<script src="/js/contact.js" defer></script>

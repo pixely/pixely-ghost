@@ -1,0 +1,11 @@
+{% layout 'components/templates/default' %}
+
+{% assign bodyClass = 'home' %}
+
+{% block content %}
+    <div class="home__feed">
+        {% include "components/organisms/feed" feed: posts, pagination: pagination %}
+    </div>
+{% endblock %}
+
+{% include 'components/templates/default' %}
