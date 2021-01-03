@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
-const localImages = require("eleventy-plugin-local-images");
+const image = require("@11ty/eleventy-img");
 const ghostContentAPI = require("@tryghost/content-api");
 const ghostHelpers = require("@tryghost/helpers");
 
@@ -25,6 +25,45 @@ const api = new ghostContentAPI({
 // Strip Ghost domain from urls
 const stripDomain = url => {
   return url.replace(process.env.GHOST_API_URL, "");
+};
+
+const responsiveImageShortcode = async function(src, alt, srcset=null, sizes, loading="lazy", className=null, blurUp=false) {
+  if(!src) return null;
+
+  // Standard config options
+  const dpiSizes = [1, 2, 3];
+  const formats = ["webp", "jpeg", "avif"];
+
+  const newSizes = [];
+
+  // From the srcset sizes generate extra for different retina screens
+  srcset.split(',').forEach(size => {
+    dpiSizes.forEach(dpi => {
+      newSizes.push(size * dpi);
+    });
+  });
+
+  const dedupedSizes = [...new Set(newSizes)];
+  const sortedSizes = dedupedSizes.sort((a, b) => a - b);  
+  
+  let resized = await image(src, {
+    widths: sortedSizes,
+    formats,
+    outputDir: "./dist/images/",
+    urlPath: "/images/",
+    cacheOptions: {
+      duration: "1w",
+    },
+  });
+
+  const lowsrc = resized.jpeg[0];
+  
+  return `<picture>
+      ${Object.values(resized).map(imageFormat => {
+        return `  <source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}" />`;
+      })}
+      <img src="${lowsrc.url}" width="${lowsrc.width}" height="${lowsrc.height}" loading="${loading}" alt="${alt}" class="image ${className}" />
+    </picture>`;
 };
 
 const getRelatedPosts = async (idsToExclude = null, filter = null) => {
@@ -126,6 +165,9 @@ module.exports = function(config) {
   config.addFilter("htmlDateString", dateObj => {
     return new Date(dateObj).toISOString().split("T")[0];
   });
+
+  // Response image shortcode
+  config.addShortcode("responsiveimage", responsiveImageShortcode);
 
   // Don't ignore the same files ignored in the git repo
   config.setUseGitIgnore(false);
