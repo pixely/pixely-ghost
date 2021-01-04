@@ -1,3 +1,5 @@
+{% layout 'components/templates/default' %}
+
 {% assign pageTitle = "Error 404" %}
 {% assign codeinjection_head = doc.codeinjection_head %}
 {% assign codeinjection_foot = doc.codeinjection_foot %}
@@ -5,9 +7,7 @@
 {% assign bodyClass = 'tag' %}
 
 {% block content %}
-    <div class="tag__title">{% include "components/atoms/title" text: post.title %}</div>
+    <div class="tag__title">{% include "components/atoms/title" text: "404: Page not found" %}</div>
     <p class="tag__description">Sorry, this page couldn&apos;t be found. Perhaps try returning {% include "components/atoms/link" href: "/", text: "home" %}?</p>
     <div class="tag__image"></div>
 {% endblock %}
-
-{% include 'components/templates/default' %}
