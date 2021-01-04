@@ -17,7 +17,7 @@
         </div>
     {% endif %}
     <div class="author-bio__info">
-        <h5 class="author-bio__name">By {% include "components/atoms/link" href: author.url, text: author.name, inverted: box %}</h5>
+        <h3 class="author-bio__name heading-5">By {% include "components/atoms/link" href: author.url, text: author.name, inverted: box %}</h3>
         <p class="text-s">{{ author.bio }}</p>
         {% unless hideSocial %}
         <p class="text-s">
