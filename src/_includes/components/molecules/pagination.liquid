@@ -1,5 +1,5 @@
 {% if pagination.href.previous or pagination.href.next %}
-    <nav class="pagination" role="pagination">
+    <nav class="pagination" aria-label="pagination">
         {% if page.permalink != pagination.href.previous %}
             <p class="pagination__prev">
                 {% include "components/atoms/link" href: pagination.href.previous, text: "← Previous", rel: "prev" %}
