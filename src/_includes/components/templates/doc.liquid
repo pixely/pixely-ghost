@@ -1,0 +1,51 @@
+{% layout 'components/templates/default' %}
+
+{% assign pageTitle = doc.title %}
+
+{% assign codeinjection_head = doc.codeinjection_head %}
+{% assign codeinjection_foot = doc.codeinjection_foot %}
+
+{% assign bodyClass = 'post' %}
+
+{% block content %}
+    <div class="post__title">{% include "components/atoms/title" text: doc.title %}</div>
+    <div class="post__hero">
+        {% if doc.feature_image %}
+                {% include "components/atoms/hero" image: doc.feature_image, alt: doc.title, srcset: "365,405,1215", sizes: "(min-width: 575px) calc(75vw), calc(100vw - 50px)", loading: "eager" %}
+        {% endif %}
+    </div>
+
+    <div class="post__content">
+        {% include "components/organisms/editor-content" html: doc.html %}
+    </div>
+{% endblock %}
+
+{% block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:site" content="{{ site.twitter }}">
+    <meta name="twitter:creator" content="{{ post.primary_author.twitter }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ pageTitle }} – {{ site.title }}">
+    <meta name="twitter:description" content="{{ post.excerpt }}">
+    <meta name="twitter:image" content="{{ post.feature_image }}">
+
+    <!--Schema-->
+    <link rel="author" href="{{ post.primary_author.website }}">
+    <link rel="publisher" href="{{ site.url }}">
+    <meta itemprop="name" content="{{ pageTitle }} – {{ site.title }}">
+    <meta itemprop="description" content="{{ post.excerpt }}">
+    <meta itemprop="image" content="{{ post.feature_image }}">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ pageTitle }} – {{ site.title }}">
+    <meta property="og:image" content="{{ post.feature_image }}">
+    <meta property="og:description" content="{{ post.excerpt }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.lang }}">
+    <meta property="article:author" content="{{ site.url }}">
+{%- endblock -%}
+
+{% include 'components/templates/default' %}

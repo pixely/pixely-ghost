@@ -1,0 +1,14 @@
+---
+permalink: '_redirects'
+---
+
+# Netlify redirects file, edit with your domain
+# https://www.netlify.com/docs/redirects/
+
+https://pixely-ghost.netlify.app/*      https://pixely.co.uk/:splat    301!
+http://pixely-ghost.netlify.app/*       https://pixely.co.uk/:splat    301!
+
+# Route images via Cloudinary allowing for dynamic image transformations
+# Based on https://twitter.com/philhawksworth/status/1328340868726726656
+/images/c/*       https://res.cloudinary.com/pixely-web/image/fetch/q_auto/https://pixely.co.uk/images/:splat    200
+/images/blur/*    https://res.cloudinary.com/pixely-web/image/fetch/f_auto,w_300,e_blur:2000,q_50/https://pixely.co.uk/images/:splat    200

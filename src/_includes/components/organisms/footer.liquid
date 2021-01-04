@@ -1,0 +1,14 @@
+<footer class="footer">
+    {% if site.site_author %}
+        <div class="footer__bio">
+            {% include "components/molecules/author-bio" author: site.site_author, box: true %}
+        </div>
+    {% endif %}
+    <nav class="footer__nav text">
+        {% for item in site.secondary_navigation %}
+            <a {% if page.url == item.url %}aria-current="page"{% endif %} class="footer__nav-item" href="{{ item.url }}">
+                {{ item.label }}
+            </a>
+        {% endfor %}
+    </nav>
+</footer>

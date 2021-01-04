@@ -1,0 +1,81 @@
+{% layout 'components/templates/default' %}
+
+{% assign pageTitle = author.name %}
+
+{% assign codeinjection_head = post.codeinjection_head %}
+{% assign codeinjection_foot = post.codeinjection_foot %}
+
+{% assign bodyClass = 'author' %}
+
+{%- capture twitterUrl -%}
+    {%- if author.twitter -%}
+    https://twitter.com/{{ author.twitter | replace: '@', '' }}
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- capture facebookUrl -%}
+    {%- if author.facebook -%}
+    https://facebook.com/{{ author.facebook }}
+    {%- endif -%}
+{%- endcapture -%}
+
+{% block content %}
+    <div class="author__title">{% include "components/atoms/title" text: author.name %}</div>
+    {% if author.bio %}
+        <div class="author__bio">
+            {% if author.profile_image %}
+                {% include "components/atoms/image" image: author.profile_image, alt: author.name, srcset: "115, 200, 270, 300", sizes: "(min-width: 575px) 270px, calc(33vw - 10px)", class: "author__profile-image" %}
+            {% endif %}
+            <p class="text">{{ author.bio }}</p>
+            <p class="text-s">
+                {% if author.facebook %}
+                    {% include "components/atoms/link" href: facebookUrl, text: author.facebook %}
+                {% endif %}
+                {% if author.twitter %}
+                    {% include "components/atoms/link" href: twitterUrl, text: author.twitter %}
+                {% endif %}
+                {% if author.website %}
+                    {% include "components/atoms/link" href: author.website, text: author.website %}
+                {% endif %}
+            </p>
+        </div>
+    {% endif %}
+    <div class="author__image">
+        {% if author.cover_image %}
+            {% include "components/atoms/hero" image: author.cover_image, alt: author.name, srcset: "375,405,1640", sizes: "(min-width: 575px) calc(100vw - 40px), calc(100vw - 10px)", class: "author__image" %}
+        {% endif %}
+    </div>
+    <div class="author__feed">
+        {% include "components/organisms/feed" feed: author.posts, pagination: author.pagination %}
+    </div>
+{% endblock %}
+
+{%- block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:site" content="{{ site.twitter }}">
+    <meta name="twitter:creator" content="{{ site.twitter }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ pageTitle }} – {{ site.title }}">
+    <meta name="twitter:description" content="{{ tag.description }}">
+    <meta name="twitter:image" content="{{ tag.feature_image }}">
+
+    <!--Schema-->
+    <link rel="author" href="{{ author.website }}">
+    <link rel="publisher" href="{{ site.url }}">
+    <meta itemprop="name" content="{{ pageTitle }} – {{ site.title }}">
+    <meta itemprop="description" content="{{ content | strip_html }}">
+    <meta itemprop="image" content="{{ tag.feature_image }}">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ pageTitle }} – {{ site.title }}">
+    <meta property="og:image" content="{{ tag.feature_image }}">
+    <meta property="og:description" content="{{ content | strip_html }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.lang }}">
+    <meta property="article:author" content="{{ site.url }}">
+{%- endblock -%}
+
+{% include 'components/templates/default' %}

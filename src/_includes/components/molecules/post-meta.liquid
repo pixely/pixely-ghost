@@ -1,0 +1,21 @@
+<aside class="post-meta">
+    <p class="post-meta__row">{{ date | getFormattedTime }}</p>
+    {% if text %}
+        <p class="post-meta__row">{{ text | getReadingTime }}</p>
+    {% endif %}
+    <p class="post-meta__row">By {% include "components/atoms/link" href: author.url, text: author.name %}</p>
+    {% if tags.length %}
+        <p class="post-meta__row">
+            Posted in
+            {% for tag in tags %}
+                {% if forloop.last == true and forloop.first == false %}
+                    and
+                {% endif %}
+                {% if forloop.first == false and forloop.last == false %}
+                    , 
+                {% endif %}
+                {% include "components/atoms/link" href: tag.url, text: tag.name %}
+            {% endfor %}
+        </p>
+    {% endif %}
+</aside>

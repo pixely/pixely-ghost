@@ -1,0 +1,28 @@
+.header {
+  display: grid;
+  grid-template-columns: var(--grid-mobile);
+  grid-gap: var(--grid-gap-mobile);
+  z-index: 2;
+
+  &__logo {
+    grid-column: 1 / 6;    
+  }
+
+  &__nav {
+    grid-column-start: -2;
+    justify-self: right;
+  }
+}
+
+
+@media (min-width: 576px) {
+   
+  .header {
+    grid-template-columns: var(--grid-desktop);
+    grid-gap: var(--grid-gap-desktop);
+
+    &__logo {
+      grid-column-end: auto;
+    }
+  }      
+}

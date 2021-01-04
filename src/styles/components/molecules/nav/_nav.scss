@@ -1,0 +1,266 @@
+.nav {
+  background: var(--color-secondary);
+  display: flex;
+  transition: background-color .2s linear;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .3s ease-in-out;
+  
+  &.is-open {
+    transform: translateY(10px)
+  }
+
+  &__icon-bar {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 24px;
+    background: var(--color-primary);
+    opacity: 1;
+    left: 18px;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out; 
+    
+    &:nth-child(1) {
+      top: 21px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 28px;
+    }
+
+    &:nth-child(4) {
+      top: 35px;
+    }
+  }
+
+  &.is-open .nav__icon-bar {
+  
+    &:nth-child(1),
+    &:nth-child(4) {
+      top: 28px;
+      width: 0%;
+      left: 50%;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.is-open,
+  &:hover,
+  &:active,
+  &:focus {
+    background: var(--color-secondary-dark);
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.75);
+    cursor: pointer;
+    display: none;
+    
+    &.is-open {
+      display: block;
+    }
+
+    &.is-animating-in {
+      display: block;
+      animation: navFadeIn .2s linear;
+    }
+
+    &.is-animating-out {
+      display: block;
+      animation: navFadeOut .2s linear;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background: var(--color-secondary);
+    overflow: scroll;
+    display: grid;
+    padding: 60px 10px;
+    flex: 1 1 1;
+    border-top: 10px solid  var(--color-secondary-dark);
+    border-left: 10px solid var(--color-secondary-dark);
+    transform-origin: top left;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+
+    &.is-open {
+      display: block;
+    }
+
+    &.is-animating-in {
+      display: block;
+      animation: navSlideInDown .2s linear;
+    }
+
+    &.is-animating-out {
+      display: block;
+      animation: navSlideOutUp .2s ease-in-out;
+    }
+  }
+
+  &__menu-item {
+    color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.44rem;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    display: grid;
+    place-content: center center;
+    background: transparent;
+    // animation: navFadeInOut .2s linear;
+    // animation-delay: .3s;
+    // animation-fill-mode: backwards;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-secondary-dark);;
+    }
+
+    &:hover {
+      background: var(--color-secondary-dark);
+    }
+  }
+}
+
+@media (min-width: 576px) {
+
+  .nav {
+    
+    &.is-open {
+      transform: translateY(20px)
+    }
+
+    &__menu {
+      left: auto;
+      bottom: 0;
+      border-top: 0;
+      border-left-width: 10px;
+      width: 30vw;  
+      padding-top: 90px;
+      align-content: start;
+      display: none;
+
+      &.is-open {
+        display: block;
+      }
+
+      &.is-animating-in {
+        display: block;
+        animation: navSlideIn .2s linear;
+      }
+
+      &.is-animating-out {
+        display: block;
+        animation: navSlideOut .2s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes navFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes navFadeOut {
+  
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes navSlideIn {
+  
+  from {
+    transform: translate(100%);
+    opacity: .5;
+  }
+
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes navSlideOut {
+  
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(100%);
+    opacity: .5;
+  }
+}
+
+@keyframes navSlideInDown {
+  
+  from {
+    transform: translate(-100%, -100%) scale(0);
+    // transform: scale(0);
+    // opacity: 0;
+  }
+
+  to {
+    transform: translate(0) scale(1);
+    // transform: scale(1);
+    // opacity: 1;
+  }
+}
+
+@keyframes navSlideOutUp {
+  
+  from {
+    // transform: translate(0); 
+    opacity: 1;   
+  }
+
+  to {
+    // transform: translate(-100%, -100%);
+    opacity: 0;
+  }
+}

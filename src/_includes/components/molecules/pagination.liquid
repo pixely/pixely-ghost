@@ -1,0 +1,17 @@
+{% if pagination.href.previous or pagination.href.next %}
+    <nav class="pagination" role="pagination">
+        {% if page.permalink != pagination.href.previous %}
+            <p class="pagination__prev">
+                {% include "components/atoms/link" href: pagination.href.previous, text: "← Previous", rel: "prev" %}
+            </p>
+        {% endif %}
+        {% if pagination.hrefs.size > 1 %}
+            <span class="pagination__count text-s">{{ pagination.pageNumber | plus: 1 }} of {{ pagination.hrefs.size }}</span>
+        {% endif %}
+        {% if page.permalink != pagination.href.next %}
+            <p class="pagination__next">
+                {% include "components/atoms/link" href: pagination.href.next, text: "Next →", rel: "next" %}
+            </p>
+        {% endif %}
+    </nav>
+{% endif %}

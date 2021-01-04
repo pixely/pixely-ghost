@@ -1,0 +1,42 @@
+{%- capture twitterUrl -%}
+    {%- if author.twitter -%}
+    https://twitter.com/{{ author.twitter | replace: '@', '' }}
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- capture facebookUrl -%}
+    {%- if author.facebook -%}
+    https://facebook.com/{{ author.facebook }}
+    {%- endif -%}
+{%- endcapture -%}
+
+<aside class="author-bio {% if box %}author-bio--boxed{% endif %}">
+    {% if author.profile_image %}
+        <div class="author-bio__image">
+            {% include "components/atoms/image" image: author.profile_image, alt: author.name, srcset: "115, 200, 270, 300", sizes: "(min-width: 575px) 270px, calc(33vw - 10px)" %}
+        </div>
+    {% endif %}
+    <div class="author-bio__info">
+        <h5 class="author-bio__name">By {% include "components/atoms/link" href: author.url, text: author.name, inverted: box %}</h5>
+        <p class="text-s">{{ author.bio }}</p>
+        {% unless hideSocial %}
+        <p class="text-s">
+            {% if author.facebook %}
+                <span class="author-bio__link">
+                    {% include "components/atoms/link" href: facebookUrl, text: author.facebook, inverted: box %}
+                </span>
+            {% endif %}
+            {% if author.twitter %}
+                <span class="author-bio__link">
+                    {% include "components/atoms/link" href: twitterUrl, text: author.twitter, inverted: box %}
+                </span>
+            {% endif %}
+            {% if author.website %}
+                <span class="author-bio__link">
+                    {% include "components/atoms/link" href: author.website, text: author.website, inverted: box %}
+                </span>
+            {% endif %}
+        </p>
+        {% endunless %}
+    </div>
+</aside>

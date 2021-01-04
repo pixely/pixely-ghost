@@ -7,21 +7,11 @@ module.exports = {
             experimentalObjectRestSpread: true,
         },
     },
-    plugins: ['ghost', 'react'],
+    plugins: ['ghost'],
     extends: [
         'plugin:ghost/node',
         'plugin:ghost/ember',
-        'plugin:react/recommended',
     ],
-    settings: {
-        react: {
-            createClass: 'createReactClass',
-            pragma: 'React',
-            version: '16.0',
-            flowVersion: '0.53',
-        },
-        propWrapperFunctions: ['forbidExtraProps'],
-    },
     rules: {
         'ghost/sort-imports-es6-autofix/sort-imports-es6': 'off',
         'ghost/ember/use-ember-get-and-set': 'off',
@@ -46,12 +36,6 @@ module.exports = {
                 imports: 'always-multiline',
                 exports: 'always-multiline',
                 functions: 'ignore',
-            },
-        ],
-        'react/prop-types': [
-            'error',
-            {
-                ignore: ['children'],
             },
         ],
         indent: ['error', 4, {

@@ -1,0 +1,5 @@
+{%- capture classNames -%}
+    {{- class }} hero
+{%- endcapture -%}
+
+{% include "components/atoms/image" image: image, alt: alt, srcset: srcset, sizes: sizes, loading: loading, class: classNames %}
