@@ -13,7 +13,7 @@
 <aside class="author-bio {% if box %}author-bio--boxed{% endif %}">
     {% if author.profile_image %}
         <div class="author-bio__image">
-            {% include "components/atoms/image" image: author.profile_image, alt: author.name, srcset: "115, 200, 270, 300", sizes: "(min-width: 575px) 270px, calc(33vw - 10px)" %}
+            {% include "components/atoms/image" image: author.profile_image, alt: author.name, srcset: "70,150", sizes: "(min-width: 575px) 150px, 70px" %}
         </div>
     {% endif %}
     <div class="author-bio__info">
