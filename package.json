@@ -27,8 +27,8 @@
     "lint:es": "eslint . --ext .js --cache",
     "lint:stylelint": "stylelint \"**/**.scss\"",
     "test": "yarn lint",
-    "assets:watch": "parcel watch src/**/*.scss src/js/*.js",
-    "assets:build": "parcel build src/**/*.scss src/js/*.js"
+    "assets:watch": "yarn parcel watch src/**/*.scss src/js/*.js",
+    "assets:build": "yarn parcel build src/**/*.scss src/js/*.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
