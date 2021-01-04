@@ -1,11 +1,11 @@
 <a href="{{ post.url }}" class="card {% if post.featured %}card--featured{% endif %}">
     {% if post.feature_image %}
         <div class="card__image">
-            {% include "components/atoms/image" image: post.feature_image, alt: post.title, srcset: "115, 200, 270, 300", sizes: "(min-width: 575px) 270px, calc(33vw - 10px)", class: "author__profile-image" %}
+            {% include "components/atoms/image" image: post.feature_image, alt: post.title, srcset: "160,200,270,310,325", sizes: "(min-width: 575px) 15vw, 85vw" %}
         </div>
     {% endif %}
     <div class="card__body">
-        <h4 class="card__title {% if post.featured %}  text--inverted{% endif %}">{{ post.title }}</h4>
+        <h2 class="card__title {% if post.featured %}  text--inverted{% endif %} heading-4">{{ post.title }}</h2>
         <p class="card__meta">
             {% if post.featured %}
                 <span class="card__meta-item">Featured</span>

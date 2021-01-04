@@ -13,11 +13,11 @@
 <aside class="author-bio {% if box %}author-bio--boxed{% endif %}">
     {% if author.profile_image %}
         <div class="author-bio__image">
-            {% include "components/atoms/image" image: author.profile_image, alt: author.name, srcset: "115, 200, 270, 300", sizes: "(min-width: 575px) 270px, calc(33vw - 10px)" %}
+            {% include "components/atoms/image" image: author.profile_image, alt: author.name, srcset: "70,150", sizes: "(min-width: 575px) 150px, 70px" %}
         </div>
     {% endif %}
     <div class="author-bio__info">
-        <h5 class="author-bio__name">By {% include "components/atoms/link" href: author.url, text: author.name, inverted: box %}</h5>
+        <h3 class="author-bio__name heading-5">By {% include "components/atoms/link" href: author.url, text: author.name, inverted: box %}</h3>
         <p class="text-s">{{ author.bio }}</p>
         {% unless hideSocial %}
         <p class="text-s">

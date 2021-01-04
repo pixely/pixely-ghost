@@ -15,7 +15,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
   margin: 0;
   font-family: var(--font-headings);
   font-weight: bold;
@@ -23,28 +29,34 @@ h6 {
   color: var(--color-primary);
 }
 
-h1 {
+h1,
+.heading-1 {
   margin-top: 0;
   font-size: 2.488rem;
 }
 
-h2 {
+h2,
+.heading-2 {
   font-size: 2.074rem;
 }
 
-h3 {
+h3,
+.heading-3 {
   font-size: 1.728rem;
 }
 
-h4 {
+h4,
+.heading-4 {
   font-size: 1.44rem;
 }
 
-h5 {
+h5,
+.heading-5 {
   font-size: 1.2rem;
 }
 
-h6 {
+h6,
+.heading-6 {
   font-size: 1rem;
 }
 

@@ -20,6 +20,8 @@
     display: block;
     font-weight: var(--font-bold);
     padding-left: var(--grid-gap-desktop);
+    padding-top: var(--grid-gap-mobile);
+    padding-bottom: var(--grid-gap-mobile);
 
     &:hover {
       color: var(--color-text-dark);
