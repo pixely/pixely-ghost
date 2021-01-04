@@ -66,7 +66,7 @@ const generateImages = async (src, srcset, formats=["webp","jpeg"]) => {
   });
 };
 
-const responsiveImageShortcode = async (src, alt, srcset=null, sizes, loading="lazy", className=null, blurUp=false) => {
+const responsiveImageShortcode = async (src, alt, srcset=null, sizes, loading="lazy", className="", blurUp=false) => {
   if(!src) return null;
   
   const fullSrcset = generateSrcsetWidths(srcset);
