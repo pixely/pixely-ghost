@@ -1,6 +1,6 @@
 [build]
   command = "yarn build"
-  publish = "public/"
+  publish = "dist/"
 
 [template]
   incoming-hooks = ["Ghost"]
