@@ -55,15 +55,19 @@ const generateSrcsetWidths = (srcset) => {
 // const formats = ["webp", "jpeg", "avif","svg"];
   
 const generateImages = async (src, srcset, formats=["webp","jpeg"]) => {
-  return await image(src, {
-    widths: srcset,
-    formats,
-    outputDir: "./dist/images/",
-    urlPath: "/images/",
-    cacheOptions: {
-      duration: "1w",
-    },
-  });
+  try {
+    return await image(src, {
+      widths: srcset,
+      formats,
+      outputDir: "./dist/images/",
+      urlPath: "/images/",
+      cacheOptions: {
+        duration: "1w",
+      },
+    });
+  } catch(error) {
+    throw(error);
+  }
 };
 
 const responsiveImageShortcode = async (src, alt, srcset=null, sizes, loading="lazy", className="", blurUp=false) => {
@@ -205,7 +209,7 @@ const picture = () => {
 
 const formatHtml = async html => {
   return await rehype()
-    .use(picture)
+    // .use(picture)
     .use(partials, { cwd: './src/_includes/', handle: templateHandler })
     .use(format)
     .process(html);
