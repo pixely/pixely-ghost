@@ -316,7 +316,11 @@ module.exports = function(config) {
     collection = await Promise.all(collection.map(async post => {
       post.url = stripDomain(post.url);
       post.primary_author.url = stripDomain(post.primary_author.url);
-      post.tags = post.tags.map(tag => (tag.url = stripDomain(tag.url)));
+      
+      post.tags = post.tags.map(tag => ({
+        ...tag,
+        url: stripDomain(tag.url),
+      }));
       
       // Add in related content based on the primary tag
       post.related = await getRelatedPosts(post.id, `tag:${post.primary_tag.slug}`);
