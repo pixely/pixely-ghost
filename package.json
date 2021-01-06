@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-img": "^0.7.1",
+    "@11ty/eleventy-img": "^0.7.3",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@tryghost/content-api": "^1.4.11",
     "@tryghost/helpers": "^1.1.35",
