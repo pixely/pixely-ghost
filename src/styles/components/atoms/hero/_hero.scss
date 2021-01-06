@@ -1,12 +1,13 @@
+.image.hero,
 .hero {
   height: 100%;
-  min-height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 @media (min-width: 576px) {
 
+  .image.hero,
   .hero {
     max-height: 60vh;
   }

@@ -18,10 +18,10 @@
     p-queue "^6.6.2"
     short-hash "^1.0.0"
 
-"@11ty/eleventy-img@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy-img/-/eleventy-img-0.7.1.tgz#7754f7771e15ad7ebfa8b13ee98bc0786048d2ef"
-  integrity sha512-guNoWitmsJGt8Ep+dl14bqnbF4ApTs1fXEKfn6/fbCahLafa8GcqWsVhcgc35lTgcT0UDGZHUzzL+UnUD7t5kQ==
+"@11ty/eleventy-img@^0.7.3":
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy-img/-/eleventy-img-0.7.3.tgz#d40feedbb57a5f02a51c76192bfc8baf7c9f66bb"
+  integrity sha512-JwP+v6CRfUFH5zfB7055iQceVfv6YKjQGVzTFPGPEcKtaq5IOrakKc5lJH3G5WPgJjKnqfwuSFqS2be5y97Mxw==
   dependencies:
     "@11ty/eleventy-cache-assets" "^2.0.4"
     debug "^4.3.1"
@@ -10517,10 +10517,10 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass@^1.32.0:
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.0.tgz#10101a026c13080b14e2b374d4e15ee24400a4d3"
-  integrity sha512-fhyqEbMIycQA4blrz/C0pYhv2o4x2y6FYYAH0CshBw3DXh5D5wyERgxw0ptdau1orc/GhNrhF7DFN2etyOCEng==
+sass@^1.32.1:
+  version "1.32.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.1.tgz#ee479edd7d09067c0c0d4bb70a596e310e7fdf68"
+  integrity sha512-SLhQ8do4vKsjIGMh1n6JPiARIFVOhBvdKPlZTNNOfwCIwKOc8EP+0QZlXI/ZWGy0W9KVO+54fVSbUZehXtECNQ==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 

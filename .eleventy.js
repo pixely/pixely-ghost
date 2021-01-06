@@ -12,8 +12,9 @@ const rehype = require('rehype');
 const format = require('rehype-format');
 const partials = require('rehype-partials');
 const { Liquid } = require('liquidjs');
-const visit = require('unist-util-visit')
-const is = require('hast-util-is-element')
+const visit = require('unist-util-visit');
+const is = require('hast-util-is-element');
+
 
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 const { resolve, extname } = require("path");
@@ -54,9 +55,8 @@ const generateSrcsetWidths = (srcset) => {
 
 // const formats = ["webp", "jpeg", "avif","svg"];
   
-const generateImages = async (src, srcset, formats=["webp","jpeg"]) => {
-  try {
-    return await image(src, {
+const generateImages = (src, srcset, formats=["webp","jpeg"]) => {
+  return image(src, {
       widths: srcset,
       formats,
       outputDir: "./dist/images/",
@@ -65,9 +65,6 @@ const generateImages = async (src, srcset, formats=["webp","jpeg"]) => {
         duration: "1w",
       },
     });
-  } catch(error) {
-    throw(error);
-  }
 };
 
 const responsiveImageShortcode = async (src, alt, srcset=null, sizes, loading="lazy", className="", blurUp=false) => {
@@ -129,9 +126,13 @@ const picture = () => {
   return transformer
 
   async function transformer(tree) {
-    visit(tree, 'element', visitor);
-    await Promise.all(promises);
-    return;
+    try {
+      visit(tree, 'element', visitor);
+      await Promise.all(promises);
+    } catch(e) {
+      throw(e);
+    }
+    return
   }
 
   function visitor(node, index, parent) {
@@ -145,7 +146,7 @@ const picture = () => {
       return
     }
 
-    extension = extname(node.properties.src).slice(1);
+    extension = extname(src).slice(1);
 
     if (!supportedFileTypes.includes(extension)) {
       return
@@ -158,7 +159,7 @@ const picture = () => {
       sizes = "(min-width: 575) 75vw, 92vw";
       sizesArray = [290, 345, 380, 540, 735, 1045, 1225];
     }
-      
+
     const srcsetSizes = generateSrcsetWidths(sizesArray);
     const promise = generateImages(node.properties.src, srcsetSizes).then(resized => {
       return parent.children[index] = {
@@ -207,9 +208,9 @@ const picture = () => {
   }
 };
 
-const formatHtml = async html => {
-  return await rehype()
-    // .use(picture)
+const formatHtml = html => {
+  return rehype()
+    .use(picture)
     .use(partials, { cwd: './src/_includes/', handle: templateHandler })
     .use(format)
     .process(html);
@@ -226,7 +227,7 @@ module.exports = function(config) {
     return stripDomain(url);
   });
 
-  config.addFilter("getReadingTime", text => {
+  config.addFilter("getReadingTime", (text="") => {
     const wordsPerMinute = 200;
     const numberOfWords = text.toString().split(/\s/g).length;
     return `${Math.ceil(numberOfWords / wordsPerMinute)} min read`;
@@ -286,15 +287,17 @@ module.exports = function(config) {
         console.error(err);
       });
 
-    collection.map(async doc => {
-      doc.html = await formatHtml(doc.html);
+    collection = await Promise.all(collection.map(async doc => {
       doc.url = stripDomain(doc.url);
       doc.primary_author.url = stripDomain(doc.primary_author.url);
 
       // Convert publish date into a Date object
       doc.published_at = new Date(doc.published_at);
+
+      doc.html = await formatHtml(doc.html);
+      
       return doc;
-    });
+    }));
 
     return collection;
   });
@@ -310,11 +313,10 @@ module.exports = function(config) {
         console.error(err);
       });
 
-    collection.forEach(async post => {
-      post.html = await formatHtml(post.html);
+    collection = await Promise.all(collection.map(async post => {
       post.url = stripDomain(post.url);
       post.primary_author.url = stripDomain(post.primary_author.url);
-      post.tags.map(tag => (tag.url = stripDomain(tag.url)));
+      post.tags = post.tags.map(tag => (tag.url = stripDomain(tag.url)));
       
       // Add in related content based on the primary tag
       post.related = await getRelatedPosts(post.id, `tag:${post.primary_tag.slug}`);
@@ -325,8 +327,11 @@ module.exports = function(config) {
       
       // Convert publish date into a Date object
       post.published_at = new Date(post.published_at);
+      
+      post.html = await formatHtml(post.html);
 
-    });
+      return post;
+    }));
 
     // Bring featured post to the top of the list
     collection.sort((post, nextPost) => nextPost.featured - post.featured);
