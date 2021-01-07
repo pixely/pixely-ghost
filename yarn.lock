@@ -1188,17 +1188,17 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
-"@tryghost/content-api@^1.4.11":
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.4.11.tgz#1b04d586a7cdad6dbcf273414478f0011fab776f"
-  integrity sha512-TpJ0LJPfHCC8nOzcGq8vEgzL2/YDT4KBEUCb6+KmkX+LEdxbFb7TZDFtMUt32U9Hd3JGasjNwlmlBfxYqgkvmQ==
+"@tryghost/content-api@^1.4.12":
+  version "1.4.12"
+  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.4.12.tgz#328a61e3748640c5c4ff71ea1cd77d99807f39de"
+  integrity sha512-g7g9g4nS9/ulASX7pxzUwZiVT7Ir9f22p1T61qq+gIdlqBAxm4owUyxih7MBJ9mr9MUzsd2gjBoovIN/4mBSZA==
   dependencies:
-    axios "0.21.0"
+    axios "0.21.1"
 
-"@tryghost/helpers@^1.1.35":
-  version "1.1.35"
-  resolved "https://registry.yarnpkg.com/@tryghost/helpers/-/helpers-1.1.35.tgz#309dfc15e9171f4f5be0c01c4a382c52eec6fd3a"
-  integrity sha512-A3b5isKgVAeXb+WiXapa+/6syBYyVMegcggKIslWZcMJm15eqiHWKsHShuiXJwD8Wues00ZWBu3zZ5qw8O90NQ==
+"@tryghost/helpers@^1.1.36":
+  version "1.1.36"
+  resolved "https://registry.yarnpkg.com/@tryghost/helpers/-/helpers-1.1.36.tgz#1bab971f9fb3de5d9cb58cf2375786fb0db9db23"
+  integrity sha512-oVA+ouENmNufXliYooi1YMhoKFql70BWoJlcVT2ISMHVK1Syjk2ro2HHBrFVu4n3fKOAnugrxA44S9rWWvYabQ==
   dependencies:
     lodash-es "^4.17.11"
 
@@ -1870,10 +1870,10 @@ axios@0.19.0:
     follow-redirects "1.5.10"
     is-buffer "^2.0.2"
 
-axios@0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
-  integrity sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
+axios@0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
 
@@ -10517,10 +10517,10 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass@^1.32.1:
-  version "1.32.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.1.tgz#ee479edd7d09067c0c0d4bb70a596e310e7fdf68"
-  integrity sha512-SLhQ8do4vKsjIGMh1n6JPiARIFVOhBvdKPlZTNNOfwCIwKOc8EP+0QZlXI/ZWGy0W9KVO+54fVSbUZehXtECNQ==
+sass@^1.32.2:
+  version "1.32.2"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.2.tgz#66dc0250bc86c15d19ddee7135e93d0cf3d3257b"
+  integrity sha512-u1pUuzqwz3SAgvHSWp1k0mRhX82b2DdlVnP6UIetQPZtYbuJUDaPQhZE12jyjB7vYeOScfz9WPsZJB6Rpk7heA==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
