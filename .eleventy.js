@@ -54,7 +54,6 @@ const generateSrcsetWidths = (srcset) => {
 };
 
 // const formats = ["webp", "jpeg", "avif","svg"];
-  
 const generateImages = (src, srcset, formats=["webp","jpeg"]) => {
   return image(src, {
       widths: srcset,
@@ -79,7 +78,7 @@ const responsiveImageShortcode = async (src, alt, srcset=null, sizes, loading="l
       ${Object.values(resized).map(imageFormat => {
         return `  <source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}" />`;
       }).join('')}
-      <img src="${lowsrc.url}" width="${lowsrc.width}" height="${lowsrc.height}" loading="${loading}" alt="${alt}" class="image ${className}" />
+      <img src="${lowsrc.url}" width="${lowsrc.width}" height="${lowsrc.height}" loading="${loading}" alt="${alt}" class="image ${className}" decoding="async" />
     </picture>`;
 };
 
@@ -214,7 +213,32 @@ const formatHtml = html => {
     .use(partials, { cwd: './src/_includes/', handle: templateHandler })
     .use(format)
     .process(html);
-}
+};
+
+const formatPost = async post => {
+  post.url = stripDomain(post.url);
+  post.primary_author.url = stripDomain(post.primary_author.url);
+  
+  post.tags = post.tags?.map(tag => ({
+    ...tag,
+    url: stripDomain(tag.url),
+  }));
+  
+  // Add in related content based on the primary tag
+  post.related = await getRelatedPosts(post.id, `tag:${post.primary_tag?.slug}`);
+
+  // Get latest posts, excluding the current post and any other related posts
+  const postsToExclude = post.related.reduce((acc, cur) => `${acc}, ${cur.id}`, post.id);
+  post.latest = await getRelatedPosts(postsToExclude);
+  
+  // Convert publish date into a Date object
+  post.published_at = new Date(post.published_at);
+  
+  // Format HTML content
+  post.html = await formatHtml(post.html);
+
+  return post;
+};
 
 module.exports = function(config) {
   // Minify HTML
@@ -287,17 +311,7 @@ module.exports = function(config) {
         console.error(err);
       });
 
-    collection = await Promise.all(collection.map(async doc => {
-      doc.url = stripDomain(doc.url);
-      doc.primary_author.url = stripDomain(doc.primary_author.url);
-
-      // Convert publish date into a Date object
-      doc.published_at = new Date(doc.published_at);
-
-      doc.html = await formatHtml(doc.html);
-      
-      return doc;
-    }));
+    collection = await Promise.all(collection.map(formatPost));
 
     return collection;
   });
@@ -313,29 +327,7 @@ module.exports = function(config) {
         console.error(err);
       });
 
-    collection = await Promise.all(collection.map(async post => {
-      post.url = stripDomain(post.url);
-      post.primary_author.url = stripDomain(post.primary_author.url);
-      
-      post.tags = post.tags.map(tag => ({
-        ...tag,
-        url: stripDomain(tag.url),
-      }));
-      
-      // Add in related content based on the primary tag
-      post.related = await getRelatedPosts(post.id, `tag:${post.primary_tag.slug}`);
-
-      // Get latest posts, excluding the current post and any other related posts
-      const postsToExclude = post.related.reduce((acc, cur) => `${acc}, ${cur.id}`, post.id);
-      post.latest = await getRelatedPosts(postsToExclude);
-      
-      // Convert publish date into a Date object
-      post.published_at = new Date(post.published_at);
-      
-      post.html = await formatHtml(post.html);
-
-      return post;
-    }));
+    collection = await Promise.all(collection.map(formatPost));
 
     // Bring featured post to the top of the list
     collection.sort((post, nextPost) => nextPost.featured - post.featured);
