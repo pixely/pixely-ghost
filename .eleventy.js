@@ -55,7 +55,7 @@ const generateSrcsetWidths = (srcset) => {
 
 // const formats = ["webp", "jpeg", "avif","svg"];
   
-const generateImages = (src, srcset, formats=["webp","jpeg"]) => {
+const generateImages = (src, srcset, formats=["jpeg","webp","avif"]) => {
   return image(src, {
       widths: srcset,
       formats,
