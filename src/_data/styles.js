@@ -1,4 +1,4 @@
 module.exports = () => {
-    const cssPath = '/styles/styles.css';
+    const cssPath = '/styles/styles.css'
     return { cssPath }
 }
