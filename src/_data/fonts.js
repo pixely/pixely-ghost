@@ -21,7 +21,7 @@ module.exports = async function () {
         }
         return null
     })
-    
+
     writeFile(`./dist${filePath}`, fontCss, (err) => {
         if (err) {
             return console.log(err)
@@ -29,5 +29,5 @@ module.exports = async function () {
         return null
     })
 
-    return { cssPath: filePath }
+    return { cssPath: url }
 }
