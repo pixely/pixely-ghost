@@ -1,3 +1,4 @@
+const api = require('../utils/ghost-api')
 const { stripDomain } = require('../utils/url')
 
 const getRelatedPosts = async (idsToExclude = null, filter = null) => {

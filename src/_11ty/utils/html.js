@@ -1,4 +1,4 @@
 
-const { rehypeHtml } = require('./rehype')
+const { formatHtml } = require('./rehype')
 
-exports.formatHtml = rehypeHtml
+exports.formatHtml = formatHtml

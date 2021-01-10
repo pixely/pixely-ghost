@@ -1,5 +1,5 @@
 const { stripDomain } = require('../utils/url')
-const { getRelatedPosts } = require('../utils/relastedPosts')
+const { getRelatedPosts } = require('../utils/relatedPosts')
 const { formatHtml } = require('../utils/html')
 
 const formatPostObject = async (post) => {
