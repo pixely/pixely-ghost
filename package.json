@@ -47,6 +47,7 @@
     "@11ty/eleventy-cache-assets": "^2.0.4",
     "@11ty/eleventy-img": "^0.7.3",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
+    "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3",
     "@tryghost/content-api": "^1.4.12",
     "@tryghost/helpers": "^1.1.36",
     "cheerio": "1.0.0-rc.5",
