@@ -6,6 +6,7 @@ const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const image = require("@11ty/eleventy-img");
 const ghostContentAPI = require("@tryghost/content-api");
 const ghostHelpers = require("@tryghost/helpers");
+const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 
 // Rehype related dependencies
@@ -245,6 +246,7 @@ module.exports = function(config) {
   // Minify HTML
   config.addTransform("htmlmin", htmlMinTransform);
 
+  config.addPlugin(eleventyHelmetPlugin);
   config.addPlugin(cacheBuster({ outputDirectory: './dist' }));
 
   // Assist RSS feed template
