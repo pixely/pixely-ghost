@@ -50,7 +50,7 @@
             <meta property="article:author" content="{{ site.url }}">
         {% endblock %}
 
-        <link rel="stylesheet" href="{{ styles.cssPath }}" />
+        <link rel="stylesheet" href="{{ assets.css.main }}" />
         <link rel="stylesheet" href="{{ fonts.cssPath }}" />
         
         <script>document.documentElement.classList.remove('no-js');</script>
@@ -66,7 +66,7 @@
             {{ codeinjection_head }}
         {% endif %}
     
-        <script src="/js/app.js" type="module" defer></script>
+        <script src="{{ assets.js.main }}" type="module" defer></script>
     </head>
     <body class="base {% if bodyClass %} base--{{ bodyClass }} {{ bodyClass }}{% endif %}">
         <div class="base__inner">
