@@ -21,14 +21,14 @@
   "main": "n/a",
   "scripts": {
     "serve": "cross-env ELEVENTY_ENV=prod eleventy --serve && yarn assets:build",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy && yarn assets:build",
+    "build": "cross-env yarn assets:build && ELEVENTY_ENV=prod eleventy",
     "dev": "cross-env ELEVENTY_ENV=dev concurrently \"eleventy --serve\" \"yarn assets:watch\"",
     "lint": "yarn lint:es; yarn lint:stylelint",
     "lint:es": "eslint . --ext .js --cache",
     "lint:stylelint": "stylelint \"**/**.scss\"",
     "test": "yarn lint",
-    "assets:watch": "yarn parcel watch src/**/*.scss src/js/*.js",
-    "assets:build": "yarn parcel build src/**/*.scss src/js/*.js"
+    "assets:watch": "yarn parcel watch 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist",
+    "assets:build": "yarn parcel build 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -59,7 +59,7 @@
     "html-minifier": "^4.0.0",
     "liquidjs": "^9.19.0",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0-beta.1",
     "rehype": "^11.0.0",
     "rehype-format": "^3.1.0",
     "rehype-partials": "^1.0.6",
