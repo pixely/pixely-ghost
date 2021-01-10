@@ -20,15 +20,19 @@
     "eleventy", "ghost"
   ],
   "scripts": {
-    "serve": "cross-env ELEVENTY_ENV=prod eleventy --serve && yarn assets:build",
-    "build": "cross-env yarn assets:build && ELEVENTY_ENV=prod eleventy",
+    "serve": "cross-env ELEVENTY_ENV=prod eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy",
     "dev": "cross-env ELEVENTY_ENV=dev concurrently \"eleventy --serve\" \"yarn assets:watch\"",
     "lint": "yarn lint:es; yarn lint:stylelint",
     "lint:es": "eslint . --ext .js --cache",
     "lint:stylelint": "stylelint \"**/**.scss\"",
     "test": "yarn lint",
     "assets:watch": "yarn parcel watch 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist",
-    "assets:build": "PARCEL_BUNDLE_ANALYZER=1 yarn parcel build 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist"
+    "assets:build": "PARCEL_BUNDLE_ANALYZER=1 yarn parcel build 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist",
+    "fonts:compress": "yarn parcel build 'dist/styles/fonts.css' --dist-dir dist/styles",
+    "prebuild": "yarn assets:build",
+    "preserve": "yarn assets:build",
+    "postbuild": "yarn fonts:compress"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
