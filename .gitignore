@@ -74,3 +74,6 @@ public
 yarn-error.log
 .netlify/
 dist
+
+# ParcelJS
+.parcel-cache
