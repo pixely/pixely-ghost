@@ -28,7 +28,7 @@
     "lint:stylelint": "stylelint \"**/**.scss\"",
     "test": "yarn lint",
     "assets:watch": "yarn parcel watch 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist",
-    "assets:build": "yarn parcel build 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist"
+    "assets:build": "PARCEL_BUNDLE_ANALYZER=1 yarn parcel build 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

@@ -77,3 +77,4 @@ dist
 
 # ParcelJS
 .parcel-cache
+parcel-bundle-reports
