@@ -1,20 +1,19 @@
 require('dotenv').config()
 
 const api = require('../_11ty/utils/ghost-api')
+const { stripDomain } = require('../_11ty/utils/url')
 
 // Get all site information
 module.exports = async function () {
-    const siteData = await api.settings
-        .browse({
-            include: 'icon,url',
+    const siteAuthor = await api.authors
+        .read({
+            slug: 'graham',
         })
         .catch((err) => {
             console.error(err)
         })
-    
-    if (process.env.SITE_URL) {
-        siteData.url = process.env.SITE_URL
-    }
 
-    return siteData
+    siteAuthor.url = stripDomain(siteAuthor.url)
+
+    return siteAuthor
 }
