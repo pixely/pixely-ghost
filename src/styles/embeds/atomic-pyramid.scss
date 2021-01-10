@@ -1,39 +1,39 @@
 .pyramid-svg,
 .pyramid {
-    height: auto;
-    max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .pyramid__layer,
 .pyramid__text {
-    stroke: none;
-    fill: var(--color-primary-light)
+  stroke: none;
+  fill: var(--color-primary-light)
 }
 
 .pyramid,
 .pyramid__divide {
-    stroke: var(--color-primary-dark);
-    stroke-width: 5px;
-    fill: transparent
+  stroke: var(--color-primary-dark);
+  stroke-width: 5px;
+  fill: transparent
 }
 
 .pyramid--back {
-    fill: var(--color-primary-dark)
+  fill: var(--color-primary-dark)
 }
 
 .pyramid__text {
-    font-family: var(--font-sans-serif);
-    fill: var(--color-text-inverted);
-    font-size: 1.44rem
+  font-family: var(--font-sans-serif);
+  fill: var(--color-text-inverted);
+  font-size: 1.44rem
 }
-    
+  
 .pyramid__arrow {
-    fill: var(--color-secondary-dark);
-    stroke: var(--color-secondary-dark)
+  fill: var(--color-secondary-dark);
+  stroke: var(--color-secondary-dark)
 }
 
 .pyramid__arrow-text {
-    font-size: 1.2rem;
-    font-family: var(--font-sans-serif);
-    fill: var(--color-text);
+  font-size: 1.2rem;
+  font-family: var(--font-sans-serif);
+  fill: var(--color-text);
 }
