@@ -22,25 +22,31 @@
             <meta name="twitter:creator" content="{{ site.twitter }}">
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-            <meta name="twitter:title" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ pageTitle }}{% endif %}">
+            <meta name="twitter:title" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}">
             <meta name="twitter:description" content="{{ site.description }}">
+            {% if site.cover_image %}
             <meta name="twitter:image" content="{{ site.cover_image }}">
+            {% endif %}
 
             <!--Schema-->
             <link rel="author" href="{{ site.url }}">
             <link rel="publisher" href="{{ site.url }}">
-            <meta itemprop="name" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ pageTitle }}{% endif %}">
+            <meta itemprop="name" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}">
             <meta itemprop="description" content="{{ site.description }}">
-            <meta itemprop="image" content="{{ site.cover_image }}">
+            {% if site.cover_image %}
+            <meta name="image" content="{{ site.cover_image }}">
+            {% endif %}
 
             <!-- Facebook OpenGraph -->
             <meta property="og:url" content="{{site.url }}{{ page.url}}">
             <meta property="og:type" content="website">
-            <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ pageTitle }}{% endif %}">
-            <meta property="og:image" content="{{ site.cover_image }}">
+            <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+            {% if site.cover_image %}
+            <meta name="og:image" content="{{ site.cover_image }}">
+            {% endif %}
             <meta property="og:description" content="{{ site.description }}">
             <meta property="og:site_name" content="{{ site.title }}">
-            <meta property="og:locale" content="{{ site.lang }}">
+            <meta property="og:locale" content="{{ site.default_locale }}">
             <meta property="article:author" content="{{ site.url }}">
         {% endblock %}
 
@@ -60,7 +66,7 @@
             {{ codeinjection_head }}
         {% endif %}
     
-        <script src="/js/app.js" defer></script>
+        <script src="/js/app.js" type="module" defer></script>
     </head>
     <body class="base {% if bodyClass %} base--{{ bodyClass }} {{ bodyClass }}{% endif %}">
         <div class="base__inner">
