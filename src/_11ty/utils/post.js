@@ -14,6 +14,8 @@ const formatPostObject = async (post) => {
         }
     })
   
+    post.keywords = post.tags?.map(tag => tag.name)
+
     // Add in related content based on the primary tag
     post.related = await getRelatedPosts(post.id, `tag:${post.primary_tag?.slug}`)
 
@@ -25,7 +27,9 @@ const formatPostObject = async (post) => {
     post.published_at = new Date(post.published_at)
   
     // Resize featured image
-    post.feature_image = await generateImage(post.feature_image, 800)
+    if (post.feature_image) {
+        post.feature_image_resized = await generateImage(post.feature_image, 800)
+    }
 
     // Format HTML content
     post.html = await formatHtml(post.html)

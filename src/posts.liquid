@@ -8,16 +8,11 @@ layout: 'components/templates/post.liquid'
 permalink: '{{ post.url }}'
 eleventyComputed:
   meta:
-    site:
-      name: '{{ site.title }}'
-      description: '{{ site.description }}'
-      url: '{{ site.url }}'
-    language: '{{ site.default_locale }}'
     url: '{{ site.url }}{{ post.url }}'
     title: '{{ post.title }}'
     description: '{{ post.excerpt }}'
     image:
-      src: '{{ post.feature_image }}'
+      src: '{{ post.feature_image_resized }}'
     author:
       name: '{{ post.primary_author.name }}'
     published: '{{ post.published_at | htmlDateString }}'

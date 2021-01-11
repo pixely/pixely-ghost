@@ -52,6 +52,9 @@
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="{{ site.lang }}">
     <meta property="article:author" content="{{ site.url }}">
+
+    <!-- Structured Data -->
+    {% jsonLdScript meta, "post", doc.keywords %}
 {%- endblock -%}
 
 {% include 'components/templates/default' %}

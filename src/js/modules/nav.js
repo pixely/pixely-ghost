@@ -36,7 +36,6 @@ const nav = (() => {
     }
 
     const closeMenu = () => {
-        console.log('close menu')
         document.body.classList.remove(`is-locked`)
         window.scrollTo(0, parseInt(document.body.style.top || `0`) * -1)
         document.body.style.top = ''

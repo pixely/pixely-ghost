@@ -33,7 +33,10 @@ const generateImages = (src, srcset, formats = ['webp','jpeg']) => image(src, {
     },
 })
 
-const generateImage = (src, width = 800) => generateImages(src, [width], ['jpeg'])
+const generateImage = async (src, width = 800) => {
+    const resizedImage = await generateImages(src, [width], ['jpeg'])
+    return process.env.SITE_URL + resizedImage?.jpeg[0].url
+}
 
 exports.generateSrcsetWidths = generateSrcsetWidths
 exports.generateImages = generateImages
