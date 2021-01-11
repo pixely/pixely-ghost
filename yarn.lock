@@ -1998,6 +1998,11 @@
     chrome-trace-event "^1.0.2"
     nullthrows "^1.1.1"
 
+"@quasibit/eleventy-plugin-schema@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@quasibit/eleventy-plugin-schema/-/eleventy-plugin-schema-1.0.0.tgz#ede8336852312a31ecd8475111f9539fd8106dfe"
+  integrity sha512-eM61mM9xDYonJnq2IjPENa9be89mMP3CcRmpQpjQphB4gReoojUzE0MEBTtqNlX8Zl9qjzJznLGcnv3TNHMEQg==
+
 "@quasibit/eleventy-plugin-sitemap@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@quasibit/eleventy-plugin-sitemap/-/eleventy-plugin-sitemap-2.0.3.tgz#d3e75f088c08cceec7603ab1f13a65cc5e46773f"

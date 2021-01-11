@@ -4,7 +4,8 @@ const { readFileSync } = require('fs')
 const pluginRSS = require('@11ty/eleventy-plugin-rss')
 const eleventyHelmetPlugin = require('eleventy-plugin-helmet')
 const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
-const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+const sitemap = require('@quasibit/eleventy-plugin-sitemap')
+const schema = require('@quasibit/eleventy-plugin-schema')
 
 const htmlMinTransform = require('./transforms/html')
 const { getFormattedTime } = require('./filters/getFormattedTime')
@@ -12,6 +13,7 @@ const { getReadingTime } = require('./filters/getReadingTime')
 const { getTags } = require('./filters/getTags')
 const { htmlDateString } = require('./filters/htmlDateString')
 const { stripDomain } = require('./filters/stripDomain')
+const { getResizedImage } = require('./filters/getResizedImage')
 const responsiveImage = require('./shortcodes/responsiveImage')
 const collections = require('./collections')
 
@@ -28,13 +30,15 @@ module.exports = function (config) {
         sitemap: {
             hostname: process.env.SITE_URL,
         },
-    });
+    })
+    config.addPlugin(schema)
 
     config.addFilter('stripDomain', stripDomain)
     config.addFilter('getReadingTime', getReadingTime)
     config.addFilter('getTags', getTags)
     config.addFilter('getFormattedTime', getFormattedTime)
     config.addFilter('htmlDateString', htmlDateString)
+    config.addLiquidFilter('getResizedImage', getResizedImage)
 
     config.addShortcode('responsiveimage', responsiveImage)
 

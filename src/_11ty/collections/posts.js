@@ -15,7 +15,7 @@ const posts = async (collection) => {
 
     // Bring featured post to the top of the list
     collection.sort((post, nextPost) => nextPost.featured - post.featured)
-
+    
     return collection
 }
 

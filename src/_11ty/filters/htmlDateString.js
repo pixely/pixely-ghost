@@ -1,1 +1,1 @@
-exports.htmlDateString = dateObj => new Date(dateObj).toISOString().split('T')[0]
+exports.htmlDateString = dateObj => new Date(dateObj).toISOString()

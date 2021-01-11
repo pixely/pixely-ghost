@@ -1,6 +1,7 @@
 const { stripDomain } = require('../utils/url')
 const { getRelatedPosts } = require('../utils/relatedPosts')
 const { formatHtml } = require('../utils/html')
+const { generateImage } = require('../utils/image')
 
 const formatPostObject = async (post) => {
     post.url = stripDomain(post.url)
@@ -23,6 +24,9 @@ const formatPostObject = async (post) => {
     // Convert publish date into a Date object
     post.published_at = new Date(post.published_at)
   
+    // Resize featured image
+    post.feature_image = await generateImage(post.feature_image, 800);
+
     // Format HTML content
     post.html = await formatHtml(post.html)
 

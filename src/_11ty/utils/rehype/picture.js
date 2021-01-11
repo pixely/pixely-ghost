@@ -2,7 +2,7 @@ const visit = require('unist-util-visit')
 const is = require('hast-util-is-element')
 const { extname } = require('path')
 
-const { generateSrcsetWidths, generateImages } = require('../image');
+const { generateSrcsetWidths, generateImages } = require('../image')
 
 const picture = () => {
     const promises = []

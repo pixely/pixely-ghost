@@ -33,5 +33,8 @@ const generateImages = (src, srcset, formats = ['webp','jpeg']) => image(src, {
     },
 })
 
+const generateImage = (src, width = 800) => generateImages(src, [width], ['jpeg'])
+
 exports.generateSrcsetWidths = generateSrcsetWidths
 exports.generateImages = generateImages
+exports.generateImage = generateImage

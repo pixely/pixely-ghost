@@ -7,4 +7,4 @@ const api = new ghostContentAPI({
     version: 'v2',
 })
 
-module.exports = api;
+module.exports = api
