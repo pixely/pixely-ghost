@@ -1,5 +1,5 @@
 const Cache = require('@11ty/eleventy-cache-assets')
-const { mkdir, writeFile } = require('fs')
+const { mkdirSync, writeFileSync } = require('fs')
 
 module.exports = async function () {
     const url = 'https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Karla:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,700;1,400;1,700&display=swap'
@@ -15,19 +15,19 @@ module.exports = async function () {
         },
     })
 
-    mkdir('./dist/styles', { recursive: true }, (err) => {
+    mkdirSync('./dist/styles', { recursive: true }, (err) => {
         if (err) {
             return console.log(err)
         }
         return null
     })
 
-    writeFile(`./dist${filePath}`, fontCss, (err) => {
+    writeFileSync(`./dist${filePath}`, fontCss, (err) => {
         if (err) {
             return console.log(err)
         }
         return null
     })
 
-    return { cssPath: url }
+    return { cssPath: filePath }
 }

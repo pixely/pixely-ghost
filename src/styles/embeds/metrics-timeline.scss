@@ -1,0 +1,645 @@
+@-webkit-keyframes page-fade-1 {
+  
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  4% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  5%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@keyframes page-fade-1 {
+  
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  4% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  5%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes page-fade-2 {
+
+  0%,
+  10% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  14% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  15%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@keyframes page-fade-2 {
+
+  0%,
+  10% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  14% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  15%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes page-fade-3 {
+
+  0%,
+  20% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  24% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  25%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@keyframes page-fade-3 {
+
+  0%,
+  20% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  24% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  25%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes page-fade-4 {
+
+  0%,
+  30% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  34% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  35%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@keyframes page-fade-4 {
+
+  0%,
+  30% {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  34% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+
+  35%,
+  93% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100%,
+  98% {
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes element-fade-1 {
+
+  0%,
+  5% {
+    opacity: 0
+  }
+
+  100%,
+  7% {
+    opacity: 1
+  }
+}
+
+@keyframes element-fade-1 {
+
+  0%,
+  5% {
+    opacity: 0
+  }
+
+  100%,
+  7% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes element-fade-2 {
+
+  0%,
+  15% {
+    opacity: 0
+  }
+
+  100%,
+  17% {
+    opacity: 1
+  }
+}
+
+@keyframes element-fade-2 {
+
+  0%,
+  15% {
+    opacity: 0
+  }
+
+  100%,
+  17% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes element-fade-3 {
+
+  0%,
+  25% {
+    opacity: 0
+  }
+
+  100%,
+  27% {
+    opacity: 1
+  }
+}
+
+@keyframes element-fade-3 {
+
+  0%,
+  25% {
+    opacity: 0
+  }
+
+  100%,
+  27% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes element-fade-4 {
+
+  0%,
+  35% {
+    opacity: 1
+  }
+
+  100%,
+  37% {
+    opacity: 0
+  }
+}
+
+@keyframes element-fade-4 {
+
+  0%,
+  35% {
+    opacity: 1
+  }
+
+  100%,
+  37% {
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes arrow-fade-1 {
+
+  0%,
+  10%,
+  100%,
+  98% {
+    opacity: 0
+  }
+
+  15%,
+  93% {
+    opacity: 1
+  }
+}
+
+@keyframes arrow-fade-1 {
+
+  0%,
+  10%,
+  100%,
+  98% {
+    opacity: 0
+  }
+
+  15%,
+  93% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes arrow-fade-2 {
+
+  0%,
+  100%,
+  20%,
+  98% {
+    opacity: 0
+  }
+
+  25%,
+  93% {
+    opacity: 1
+  }
+}
+
+@keyframes arrow-fade-2 {
+
+  0%,
+  100%,
+  20%,
+  98% {
+    opacity: 0
+  }
+
+  25%,
+  93% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes arrow-fade-3 {
+
+  0%,
+  100%,
+  30%,
+  98% {
+    opacity: 0
+  }
+
+  35%,
+  93% {
+    opacity: 1
+  }
+}
+
+@keyframes arrow-fade-3 {
+
+  0%,
+  100%,
+  30%,
+  98% {
+    opacity: 0
+  }
+
+  35%,
+  93% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes title-fade-1 {
+
+  0%,
+  15% {
+    opacity: 0
+  }
+
+  100%,
+  17% {
+    opacity: 1
+  }
+}
+
+@keyframes title-fade-1 {
+
+  0%,
+  15% {
+    opacity: 0
+  }
+
+  100%,
+  17% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes title-fade-2 {
+
+  0%,
+  25% {
+    opacity: 0
+  }
+
+  100%,
+  27% {
+    opacity: 1
+  }
+}
+
+@keyframes title-fade-2 {
+
+  0%,
+  25% {
+    opacity: 0
+  }
+
+  100%,
+  27% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes title-fade-3 {
+
+  0%,
+  35% {
+    opacity: 0
+  }
+
+  100%,
+  37% {
+    opacity: 1
+  }
+}
+
+@keyframes title-fade-3 {
+
+  0%,
+  35% {
+    opacity: 0
+  }
+
+  100%,
+  37% {
+    opacity: 1
+  }
+}
+
+.pe-diagram {
+  height: auto;
+  max-width: 100%;
+  background: var(--color-primary-dark);
+  padding: 20px;
+  -ms-grid-column-span: -2;
+  grid-column-end: -1;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  overflow: visible
+}
+
+.pe-diagram__label {
+  fill: var(--color-text-inverted);
+  text-align: center
+}
+
+.pe-diagram__arrow {
+  fill: var(--color-primary-light)
+}
+
+.pe-diagram__page {
+  fill: #fff
+}
+
+.pe-diagram__furniture {
+  fill: var(--color-secondary)
+}
+
+.pe-diagram__loading {
+  fill: #f5f5f5
+}
+
+.pe-diagram__text {
+  fill: #f5f5f5
+}
+
+.pe-diagram__image {
+  fill: var(--color-primary-light)
+}
+
+.pe-diagram__arrow--disabled {
+  opacity: .1
+}
+
+.pe-diagram__frame--disabled {
+  opacity: .05
+}
+
+.pe-diagram__elem--4 {
+  opacity: 0
+}
+
+.pe-diagram.is-animated .pe-diagram__arrow,
+.pe-diagram.is-animated .pe-diagram__frame,
+.pe-diagram.is-animated .pe-diagram__frame--1 .pe-diagram__elem--1,
+.pe-diagram.is-animated .pe-diagram__frame--2 .pe-diagram__furniture,
+.pe-diagram.is-animated .pe-diagram__frame--3 .pe-diagram__image,
+.pe-diagram.is-animated .pe-diagram__frame--3 .pe-diagram__text,
+.pe-diagram.is-animated .pe-diagram__frame--4 .pe-diagram__elem--4,
+.pe-diagram.is-animated .pe-diagram__label {
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 12s;
+  animation-duration: 12s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--1 {
+  -webkit-transform-origin: 60px 80px;
+  transform-origin: 60px 80px;
+  -webkit-animation-name: page-fade-1;
+  animation-name: page-fade-1
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--2 {
+  -webkit-transform-origin: 240px 80px;
+  transform-origin: 240px 80px;
+  -webkit-animation-name: page-fade-2;
+  animation-name: page-fade-2
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--3 {
+  -webkit-transform-origin: 420px 80px;
+  transform-origin: 420px 80px;
+  -webkit-animation-name: page-fade-3;
+  animation-name: page-fade-3
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--4 {
+  -webkit-transform-origin: 600px 80px;
+  transform-origin: 600px 80px;
+  -webkit-animation-name: page-fade-4;
+  animation-name: page-fade-4
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--1 .pe-diagram__elem--1 {
+  -webkit-animation-name: element-fade-1;
+  animation-name: element-fade-1
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--2 .pe-diagram__furniture {
+  -webkit-animation-name: element-fade-2;
+  animation-name: element-fade-2
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--3 .pe-diagram__image,
+.pe-diagram.is-animated .pe-diagram__frame--3 .pe-diagram__text {
+  -webkit-animation-name: element-fade-3;
+  animation-name: element-fade-3
+}
+
+.pe-diagram.is-animated .pe-diagram__frame--4 .pe-diagram__elem--4 {
+  -webkit-animation-name: element-fade-4;
+  animation-name: element-fade-4
+}
+
+.pe-diagram.is-animated .pe-diagram__arrow--1 {
+  -webkit-animation-name: arrow-fade-1;
+  animation-name: arrow-fade-1
+}
+
+.pe-diagram.is-animated .pe-diagram__arrow--2 {
+  -webkit-animation-name: arrow-fade-2;
+  animation-name: arrow-fade-2
+}
+
+.pe-diagram.is-animated .pe-diagram__arrow--3 {
+  -webkit-animation-name: arrow-fade-3;
+  animation-name: arrow-fade-3
+}
+
+.pe-diagram.is-animated .pe-diagram__label--1 {
+  -webkit-animation-name: title-fade-1;
+  animation-name: title-fade-1
+}
+
+.pe-diagram.is-animated .pe-diagram__label--2 {
+  -webkit-animation-name: title-fade-2;
+  animation-name: title-fade-2
+}
+
+.pe-diagram.is-animated .pe-diagram__label--3 {
+  -webkit-animation-name: title-fade-3;
+  animation-name: title-fade-3
+}

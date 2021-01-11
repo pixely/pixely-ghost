@@ -30,19 +30,25 @@
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
     <meta name="twitter:title" content="{{ pageTitle }} – {{ site.title }}">
     <meta name="twitter:description" content="{{ tag.description }}">
+    {% if tag.feature_image %}
     <meta name="twitter:image" content="{{ tag.feature_image }}">
+    {% endif %}
 
     <!--Schema-->
     <link rel="publisher" href="{{ site.url }}">
     <meta itemprop="name" content="{{ pageTitle }} – {{ site.title }}">
     <meta itemprop="description" content="{{ content | strip_html }}">
+    {% if tag.feature_image %}
     <meta itemprop="image" content="{{ tag.feature_image }}">
+    {% endif %}
 
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ pageTitle }} – {{ site.title }}">
+    {% if tag.feature_image %}
     <meta property="og:image" content="{{ tag.feature_image }}">
+    {% endif %}
     <meta property="og:description" content="{{ content | strip_html }}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="{{ site.lang }}">

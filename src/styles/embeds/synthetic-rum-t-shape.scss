@@ -1,0 +1,35 @@
+.t-shape {
+  background: var(--color-secondary);
+  border: 2px solid var(--color-secondary-dark);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.t-shape__segment {
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+  display: grid;
+  place-content: center;
+  padding: 20px;
+}
+
+.t-shape__rum {
+  grid-row: 1 / span 1;
+  grid-column: 1 / -1;
+  min-height: 80px;
+  justify-content: left;
+}
+
+.t-shape__synthetic {
+  grid-row: 2 / -1;
+  grid-column: 3 / span 1;
+}
+
+.t-shape__overlap {
+  background: var(--color-primary-dark);
+  border: 2px dashed var(--color-primary-light);
+  border-top: unset;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}

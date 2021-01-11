@@ -40,24 +40,33 @@
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
     <meta name="twitter:title" content="{{ pageTitle }} – {{ site.title }}">
     <meta name="twitter:description" content="{{ post.excerpt }}">
-    <meta name="twitter:image" content="{{ post.feature_image }}">
+    {% if post.feature_image_resized %}
+    <meta name="twitter:image" content="{{ post.feature_image_resized }}">
+    {% endif %}
 
     <!--Schema-->
-    <link rel="author" href="{{ post.primary_author.website }}">
+    <link rel="author" href="{{ site.url }}">
     <link rel="publisher" href="{{ site.url }}">
     <meta itemprop="name" content="{{ pageTitle }} – {{ site.title }}">
     <meta itemprop="description" content="{{ post.excerpt }}">
-    <meta itemprop="image" content="{{ post.feature_image }}">
+    {% if post.feature_image_resized %}
+    <meta itemprop="image" content="{{ post.feature_image_resized }}">
+    {% endif %}
 
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ pageTitle }} – {{ site.title }}">
-    <meta property="og:image" content="{{ post.feature_image }}">
+    {% if post.feature_image_resized %}
+    <meta property="og:image" content="{{ post.feature_image_resized }}">
+    {% endif %}
     <meta property="og:description" content="{{ post.excerpt }}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="{{ site.lang }}">
     <meta property="article:author" content="{{ site.url }}">
+
+    <!-- Structured Data -->
+    {% jsonLdScript meta, "post", post.keywords %}
 {%- endblock -%}
 
 {% include 'components/templates/default' %}

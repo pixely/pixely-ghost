@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections.posts
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+layout: 'components/templates/post.liquid'
+permalink: '{{ post.url }}'
+eleventyComputed:
+  meta:
+    url: '{{ site.url }}{{ post.url }}'
+    title: '{{ post.title }}'
+    description: '{{ post.excerpt }}'
+    image:
+      src: '{{ post.feature_image_resized }}'
+    author:
+      name: '{{ post.primary_author.name }}'
+    published: '{{ post.published_at | htmlDateString }}'
+    modified: '{{ post.updated_at | htmlDateString }}'
+---

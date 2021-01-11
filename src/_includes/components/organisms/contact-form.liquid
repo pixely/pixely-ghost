@@ -5,6 +5,7 @@
     class="contact-form"
     data-netlify="true"
     data-netlify-honeypot="bot"
+    data-js-module="contact"
 >
     {% include "components/atoms/input" id: "contact-form", name: "Contact Form", type: "hidden" %}
     <div hidden>
@@ -27,4 +28,3 @@
         {% include "components/atoms/button" text: "Send Message", type: "submit" %}
     </div>
 </form>
-<script src="/js/contact.js" defer></script>
