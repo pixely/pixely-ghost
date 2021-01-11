@@ -25,7 +25,7 @@ const formatPostObject = async (post) => {
     post.published_at = new Date(post.published_at)
   
     // Resize featured image
-    post.feature_image = await generateImage(post.feature_image, 800);
+    post.feature_image = await generateImage(post.feature_image, 800)
 
     // Format HTML content
     post.html = await formatHtml(post.html)
