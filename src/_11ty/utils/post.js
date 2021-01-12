@@ -3,10 +3,12 @@ const { getRelatedPosts } = require('../utils/relatedPosts')
 const { formatHtml } = require('../utils/html')
 const { generateImage } = require('../utils/image')
 
-const stripDomainsFromTag = (tag) => ({
-    ...tag,
-    url: stripDomain(tag.url),
-})
+const stripDomainsFromTag = (tag) => {
+    return {
+        ...tag,
+        url: stripDomain(tag.url),
+    }
+}
 
 const formatPostObject = async (post) => {
     post.url = stripDomain(post.url)
