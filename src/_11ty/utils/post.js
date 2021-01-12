@@ -3,17 +3,21 @@ const { getRelatedPosts } = require('../utils/relatedPosts')
 const { formatHtml } = require('../utils/html')
 const { generateImage } = require('../utils/image')
 
+const stripDomainsFromTag = (tag) => ({
+    ...tag,
+    url: stripDomain(tag.url),
+})
+
 const formatPostObject = async (post) => {
     post.url = stripDomain(post.url)
     post.primary_author.url = stripDomain(post.primary_author.url)
   
-    post.tags = post.tags?.map((tag) => {
-        return {
-            ...tag,
-            url: stripDomain(tag.url),
-        }
-    })
-  
+    post.tags = post.tags?.map(stripDomainsFromTag)
+    
+    if (post.primary_tag) {
+        post.primary_tag = stripDomainsFromTag(post.primary_tag)
+    }
+    
     post.keywords = post.tags?.map(tag => tag.name)
 
     // Add in related content based on the primary tag
