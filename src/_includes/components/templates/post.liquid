@@ -25,7 +25,7 @@
     </div>
 
     <div class="post__footer">
-        {% if post.primary_tag and post.related %}
+        {% if post.primary_tag and post.related.size > 0 %}
             {% include "components/molecules/related-posts" posts: post.related, tag: post.primary_tag %}
         {% endif %}
         {% include "components/molecules/related-posts" posts: post.latest, title: "Also on other topics" %}
