@@ -7,6 +7,10 @@ module.exports = function htmlMinTransform(value, outputPath) {
             removeComments: true,
             collapseWhitespace: true,
             minifyCSS: true,
+            minifyJS: true,
+            processScripts: [
+                'application/ld+json',
+            ],
         })
         return minified
     }
