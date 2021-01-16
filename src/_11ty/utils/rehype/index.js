@@ -10,4 +10,10 @@ const formatHtml = html => rehype()
     .use(format)
     .process(html)
 
+const formatBasicHtml = html => rehype()
+    .use(picture, { basic: true })
+    .use(format)
+    .process(html)
+
 exports.formatHtml = formatHtml
+exports.formatBasicHtml = formatBasicHtml

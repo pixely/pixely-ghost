@@ -8,7 +8,7 @@ const sitemap = require('@quasibit/eleventy-plugin-sitemap')
 const schema = require('@quasibit/eleventy-plugin-schema')
 
 const htmlMinTransform = require('./transforms/html')
-const { getFormattedTime } = require('./filters/getFormattedTime')
+const { getFormattedTime, getRFC822Date } = require('./filters/getFormattedTime')
 const { getReadingTime } = require('./filters/getReadingTime')
 const { getTags } = require('./filters/getTags')
 const { htmlDateString } = require('./filters/htmlDateString')
@@ -37,6 +37,7 @@ module.exports = function (config) {
     config.addFilter('getReadingTime', getReadingTime)
     config.addFilter('getTags', getTags)
     config.addFilter('getFormattedTime', getFormattedTime)
+    config.addFilter('getRFC822Date', getRFC822Date)
     config.addFilter('htmlDateString', htmlDateString)
     config.addLiquidFilter('getResizedImage', getResizedImage)
 

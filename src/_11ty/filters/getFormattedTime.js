@@ -1,22 +1,11 @@
-exports.getFormattedTime = (dateObj) => {
-    const months = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-    ]
+const { DateTime } = require('luxon')
 
-    const date = new Date(dateObj)
-    const day = date.getDate()
-    const month = months[date.getMonth()]
-    const year = date.getFullYear()
-    return `${day} ${month} ${year}`
+exports.getFormattedTime = (dateObj) => {
+    const date = DateTime.fromISO(new Date(dateObj).toISOString())
+    return date.toFormat('DDD')
+}
+
+exports.getRFC822Date = (dateObj) => {
+    const date = DateTime.fromISO(new Date(dateObj).toISOString())
+    return date.toRFC2822()
 }

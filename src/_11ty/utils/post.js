@@ -1,6 +1,6 @@
 const { stripDomain } = require('../utils/url')
 const { getRelatedPosts } = require('../utils/relatedPosts')
-const { formatHtml } = require('../utils/html')
+const { formatHtml, formatBasicHtml } = require('../utils/html')
 const { generateImage } = require('../utils/image')
 
 const stripDomainsFromTag = (tag) => {
@@ -29,16 +29,22 @@ const formatPostObject = async (post) => {
     const postsToExclude = post.related.reduce((acc, cur) => `${acc}, ${cur.id}`, post.id)
     post.latest = await getRelatedPosts(postsToExclude)
   
-    // Convert publish date into a Date object
+    // Convert publish/updated date into a Date object
     post.published_at = new Date(post.published_at)
-  
+    post.updated_at = new Date(post.updated_at)
+
+    // Set `post.date` to match published_date – required for 11ty RSS plugin filters to work correctly
+    post.date = new Date(post.published_at)
+
     // Resize featured image
     if (post.feature_image) {
         post.feature_image_resized = await generateImage(post.feature_image, 800)
     }
 
     // Format HTML content
-    post.html = await formatHtml(post.html)
+    const html = post.html
+    post.html = await formatHtml(html)
+    post.basic_html = await formatBasicHtml(html)
 
     return post
 }

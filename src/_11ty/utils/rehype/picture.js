@@ -4,7 +4,14 @@ const { extname } = require('path')
 
 const { generateSrcsetWidths, generateImages } = require('../image')
 
-const picture = () => {
+const defaults = {
+    basic: false,
+}
+const picture = (opts = {}) => {
+    const options = {
+        ...defaults,
+        ...opts,
+    }
     const promises = []
     return transformer
 
@@ -17,8 +24,8 @@ const picture = () => {
     function visitor(node, index, parent) {
         const supportedFileTypes = ['jpeg', 'jpg', 'png', 'webp', 'gif', 'tiff', 'avif', 'svg']
         const src = node.properties.src
-        let sizes = '(min-width: 575) 50vw, 90vw'
-        let sizesArray = [270, 325, 360, 480, 690, 810]
+        let sizes = options.basic ? '100vw' : '(min-width: 575) 50vw, 90vw'
+        let sizesArray = options.basic ? [600] : [270, 325, 360, 480, 690, 810]
         let extension
 
         if (!parent || !is(node, 'img') || !src) {
@@ -31,15 +38,17 @@ const picture = () => {
             return
         }
 
-        if (parent.properties.className.includes('kg-width-full')) {
-            sizes = '(min-width: 575) calc(100vw - 40px), calc(100vw - 10px)'
-            sizesArray = [310, 365, 400, 728, 985, 1400, 1640]
-        } else if (parent.properties.className.includes('kg-width-wide')) {
-            sizes = '(min-width: 575) 75vw, 92vw'
-            sizesArray = [290, 345, 380, 540, 735, 1045, 1225]
+        if (!options.basic) {
+            if (parent.properties.className?.includes('kg-width-full')) {
+                sizes = '(min-width: 575) calc(100vw - 40px), calc(100vw - 10px)'
+                sizesArray = [310, 365, 400, 728, 985, 1400, 1640]
+            } else if (parent.properties.className?.includes('kg-width-wide')) {
+                sizes = '(min-width: 575) 75vw, 92vw'
+                sizesArray = [290, 345, 380, 540, 735, 1045, 1225]
+            }
         }
 
-        const srcsetSizes = generateSrcsetWidths(sizesArray)
+        const srcsetSizes = options.basic ? sizesArray : generateSrcsetWidths(sizesArray)
         const promise = generateImages(node.properties.src, srcsetSizes).then(resized => parent.children[index] = {
             type: 'element',
             tagName: 'picture',
