@@ -1,0 +1,17 @@
+[
+    {
+        "type": "application/atom+xml",
+        "title": "Atom Feed for Pixely",
+        "href": "/feed.xml"
+    },
+    {
+        "type": "application/rss+xml",
+        "title": "RSS Feed for Pixely",
+        "href": "/feed.rss"
+    },
+    {
+        "type": "application/json",
+        "title": "JSON Feed for Pixely",
+        "href": "/feed.json"
+    }
+]
