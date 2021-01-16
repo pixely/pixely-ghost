@@ -32,7 +32,7 @@
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
-      "content_html": {% if post.basic_html %}{{ post.basic_html | safe }}{% else %}""{% endif %},
+      "content_html": "{% if post.basic_html %}{{- post.basic_html | safe | replace('"', "\\\"") -}}{% endif %}",
       "date_published": "{{ post.published_at | dateToRfc3339 }}"
     }
     {% if not loop.last %},{% endif %}

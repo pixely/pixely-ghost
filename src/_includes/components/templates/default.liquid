@@ -54,7 +54,7 @@
         <link rel="stylesheet" href="{{ fonts.cssPath }}" />
 
         {% for feed in feeds %}
-            <link rel="alternate" type="{{ feed.type }}" href="{{ feed.href }}" title="{{ feed.title }}" />
+            <link rel="alternate" type="{{ feed.type }}" href="{{ site.url }}{{ feed.href }}" title="{{ feed.title }}" />
         {% endfor %}
         
         <script>document.documentElement.classList.remove('no-js');</script>
