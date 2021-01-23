@@ -4,13 +4,15 @@ module.exports = {
             url: [
                 "/",
                 "/2020-year-in-review/",
+                "/metrics-metrics-everywhere-where-to-start-with-web-performance-metrics/",
                 "/author/graham/",
+                "/tag/performance/",
             ],
-            numberOfRuns: 2,
+            numberOfRuns: 3,
             staticDistDir: "./dist",
         },
         assert: {
-            preset: "lighthouse:recommended",   
+            preset: "lighthouse:no-pwa",   
         },
         upload: {
             target: 'lhci',
