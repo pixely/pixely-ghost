@@ -1,12 +1,14 @@
 // Normalize
-@import "../../node_modules/normalize.css/normalize.css";
+@import "normalize.css";
 
 // Global styles
 @import "global";
 
+// Selection styles
 @import "selection";
 
 // Generic layer
 @import "grid";
 
+// Global typography
 @import "typography";
