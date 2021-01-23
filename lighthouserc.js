@@ -7,7 +7,7 @@ module.exports = {
                 "/author/graham/",
             ],
             numberOfRuns: 2,
-            staticDistDir: "./public",
+            staticDistDir: "./dist",
         },
         assert: {
             preset: "lighthouse:recommended",   
