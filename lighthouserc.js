@@ -15,7 +15,7 @@ module.exports = {
             preset: 'lighthouse:no-pwa',
             assertions: {
                 'unused-javascript': ['warn'],
-            }
+            },
         },
         upload: {
             target: 'lhci',
