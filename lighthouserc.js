@@ -12,7 +12,10 @@ module.exports = {
             staticDistDir: './dist',
         },
         assert: {
-            preset: 'lighthouse:no-pwa',   
+            preset: 'lighthouse:no-pwa',
+            assertions: {
+                'unused-javascript': ['warn'],
+            }
         },
         upload: {
             target: 'lhci',
