@@ -1,3 +1,5 @@
+@import "../settings/tokens";
+
 .pyramid-svg,
 .pyramid {
   height: auto;
@@ -22,7 +24,7 @@
 }
 
 .pyramid__text {
-  font-family: var(--font-sans-serif);
+  font-family: $font-family-body-copy;
   fill: var(--color-text-inverted);
   font-size: 1.44rem
 }
@@ -34,6 +36,6 @@
 
 .pyramid__arrow-text {
   font-size: 1.2rem;
-  font-family: var(--font-sans-serif);
+  font-family: $font-family-body-copy;
   fill: var(--color-text);
 }

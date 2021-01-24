@@ -4,7 +4,7 @@ $type--extra-small: .694rem;
 html { font-size: 18px } /*20px*/
 
 body {
-  font-family: var(--font-sans-serif);
+  font-family: $font-family-body-copy;
   font-weight: 400;
   line-height: 1.65;
   color: var(--color-text);
@@ -23,7 +23,7 @@ h6,
 .heading-5,
 .heading-6 {
   margin: 0;
-  font-family: var(--font-headings);
+  font-family: $font-family-heading;
   font-weight: bold;
   line-height: 1.15;
   color: var(--color-primary);

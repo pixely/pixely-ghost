@@ -60,7 +60,7 @@
   }
 
   blockquote {
-    font-family: var(--font-headings);
+    font-family: $font-family-heading;
     font-weight: 400;
     font-style: italic;
     font-size: 1.44rem;
@@ -69,7 +69,7 @@
 
   a {
     color: var(--color-text);
-    font-weight: var(--font-bold);
+    font-weight: $font-weight-bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-decoration-color: rgba(0,0,0,.3);
@@ -101,7 +101,7 @@
   }
 
   code {
-    font-family: var(--font-monospace);
+    font-family: $font-family-monospace;
   }
 
   hr {

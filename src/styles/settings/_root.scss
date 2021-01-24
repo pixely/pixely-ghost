@@ -1,5 +1,3 @@
-// Import design tokens
-@import "~/.tokens/scss/tokens";
 
 :root {
   // Colours
@@ -34,16 +32,4 @@
   // 6E9887 & FFB7C5 // cherry blossom
   // ad2139 & FFB7C5 // cherry blossom 2
   // 2D2D34 & FFB7C5 // cherry blossom 3
-
-  // Fonts
-  --font-headings: "Rubik", sans-serif;
-  --font-body-copy: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-monospace: "Anonymous Pro", monospace;
-
-  --font-sans-serif: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-serif: Georgia, Times, serif;
-  --font-light: 100;
-  --font-normal: 400;
-  --font-bold: 700;
-  --font-heavy: 800;
 }

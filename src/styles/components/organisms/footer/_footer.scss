@@ -18,7 +18,7 @@
   &__nav-item {
     color: var(--color-text);
     display: block;
-    font-weight: var(--font-bold);
+    font-weight: $font-weight-bold;
     padding-left: $grid-desktop-gap;
     padding-top: $grid-mobile-gap;
     padding-bottom: $grid-mobile-gap;
