@@ -1,6 +1,6 @@
 .button {
   appearance: none;
-  background: var(--color-secondary);
+  background: var(--color-secondary-normal);
   border: 2px solid var(--color-secondary-dark);
   border-radius: 4px;
   color: var(--color-text-dark);
@@ -13,12 +13,12 @@
   &:focus,
   &:active {
     background: var(--color-secondary-dark);
-    border-color: var(--color-text);
+    border-color: var(--color-text-normal);
   }
 
   &:focus,
   &:active {
     transform: scale(.99);
-    outline-color: var(--color-text);
+    outline-color: var(--color-text-normal);
   }
 }

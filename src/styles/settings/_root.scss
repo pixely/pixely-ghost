@@ -1,20 +1,15 @@
-
 :root {
-  // Colours
-  // --color-base: #f5f4f4; // Cooler - #f5f4f4 / Warmer #f3f1ea
-  --color-tertiary: #025f7d;
-  --color-text: #3c484e;
-  --color-text-dark: #000;
-  --color-text-inverted: #fff;
-
-  --color-base: #F5F1DE;
-  --color-primary: #2D3142;
-  --color-primary-light: #535664;
-  --color-primary-dark: #252937;
-  --color-secondary: #9ABD97;
-  --color-secondary-dark: #7F9B7C;
-
-  --color-error: #942e2e;
+  --color-primary-normal: $color-theme-default-primary-normal;
+  --color-primary-light: $color-theme-default-primary-light;
+  --color-primary-dark: $color-theme-default-primary-dark;
+  --color-secondary-normal: $color-theme-default-secondary-normal;
+  --color-secondary-dark: $color-theme-default-secondary-dark;
+  --color-tertiary: $color-theme-default-tertiary;
+  --color-text-normal: $color-theme-default-text-normal;
+  --color-text-dark: $color-theme-default-text-dark;
+  --color-text-inverted: $color-theme-default-text-inverted;
+  --color-base: $color-theme-default-base;
+  --color-error: $color-theme-default-error;
 
   // 003049 & FCBF49 ORIGINAL
   // 004E64 & 218380

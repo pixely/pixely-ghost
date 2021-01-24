@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  color: var(--color-text);
+  color: var(--color-text-normal);
   grid-template-columns: 1fr;
   text-decoration: none;
   transition: transform .15s ease-in-out;
@@ -20,7 +20,7 @@
   }
 
   &--featured {
-    background: var(--color-primary);
+    background: var(--color-primary-normal);
     color: var(--color-text-inverted);
   }
 }

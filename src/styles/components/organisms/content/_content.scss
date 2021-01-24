@@ -36,7 +36,7 @@
   h4,
   h5,
   h6 {
-    color: var(--color-primary);
+    color: var(--color-primary-normal);
   }
 
   h1 {
@@ -68,7 +68,7 @@
   }
 
   a {
-    color: var(--color-text);
+    color: var(--color-text-normal);
     font-weight: $font-weight-bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
@@ -94,7 +94,7 @@
     margin: 0;
     white-space: pre-wrap;
     padding: 20px;
-    background: var(--color-text);
+    background: var(--color-text-normal);
     color: var(--color-text-inverted);
     border-radius: 5px;
     font-size: .694rem;
@@ -106,7 +106,7 @@
 
   hr {
     border: 0;
-    border-top: 3px solid var(--color-primary);
+    border-top: 3px solid var(--color-primary-normal);
     margin: 0;
   }
 
@@ -126,7 +126,7 @@
   }
 
   mark {
-    background: var(--color-secondary);
+    background: var(--color-secondary-normal);
     color: var(--color-text-dark);
   }
 

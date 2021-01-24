@@ -21,7 +21,7 @@
   }
 
   &:before {
-    background: var(--color-primary);
+    background: var(--color-primary-normal);
     content: "";
     display: block;
     position: absolute;
@@ -52,7 +52,7 @@
     }
 
     &:after {
-      background: var(--color-secondary);
+      background: var(--color-secondary-normal);
       content: "";
       display: block;
       position: absolute;
@@ -85,7 +85,7 @@
     }
 
     &:after {
-      background: var(--color-secondary);
+      background: var(--color-secondary-normal);
       content: "";
       display: block;
       position: absolute;
