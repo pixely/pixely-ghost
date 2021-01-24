@@ -1,14 +1,14 @@
 .t-shape {
-  background: var(--color-secondary-normal);
-  border: 2px solid var(--color-secondary-dark);
+  background: var(--theme-secondary-normal);
+  border: 2px solid var(--theme-secondary-dark);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
 .t-shape__segment {
-  background: var(--color-primary-normal);
-  color: var(--color-text-inverted);
+  background: var(--theme-primary-normal);
+  color: var(--theme-text-inverted);
   display: grid;
   place-content: center;
   padding: 20px;
@@ -27,8 +27,8 @@
 }
 
 .t-shape__overlap {
-  background: var(--color-primary-dark);
-  border: 2px dashed var(--color-primary-light);
+  background: var(--theme-primary-dark);
+  border: 2px dashed var(--theme-primary-light);
   border-top: unset;
   grid-column: 3 / span 1;
   grid-row: 1 / span 1;

@@ -6,7 +6,12 @@
       "buildPath": ".tokens/css/",
       "files": [{
         "destination": "_tokens.scss",
-        "format": "css/variables"
+        "format": "css/variables",
+        "filter": {
+          "attributes": {
+            "category": "theme"
+          }
+        }
       }]
     },
     "scss": {
@@ -18,11 +23,11 @@
       }]
     },
     "js": {
-      "transforms": ["attribute/cti", "name/cti/kebab", "color/css"],
+      "transforms": ["attribute/cti", "name/cti/camel", "color/css"],
       "buildPath": ".tokens/js/",
       "files": [
         {
-          "format": "javascript/es6",
+          "format": "javascript/module",
           "destination": "_tokens.js"
         }
       ]

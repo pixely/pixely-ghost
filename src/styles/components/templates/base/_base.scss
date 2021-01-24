@@ -1,9 +1,9 @@
 .base {
-  background: var(--color-secondary-normal);
+  background: var(--theme-secondary-normal);
 
   &__inner {
     margin: $size-spacing-small 0 0 $size-spacing-small;
-    background: var(--color-base);
+    background: var(--theme-base);
 
     display: grid;
     grid-template-columns: $grid-mobile-template;

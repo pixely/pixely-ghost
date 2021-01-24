@@ -1,5 +1,5 @@
-// Design tokens
+// Import SCSS design tokens – for use at build time
 @import "tokens";
 
-// Root
-@import "root";
+// Import CSS variables – for use in the browser
+@import "../../../.tokens/css/tokens";

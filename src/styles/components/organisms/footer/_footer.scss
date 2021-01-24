@@ -1,5 +1,5 @@
 .footer {
-  background: var(--color-secondary-normal);
+  background: var(--theme-secondary-normal);
   display: grid;
   grid-template-columns: 1fr;
   padding: $grid-mobile-gap 0;
@@ -16,7 +16,7 @@
   }
   
   &__nav-item {
-    color: var(--color-text-normal);
+    color: var(--theme-text-normal);
     display: block;
     font-weight: $font-weight-bold;
     padding-left: $grid-desktop-gap;
@@ -24,7 +24,7 @@
     padding-bottom: $grid-mobile-gap;
 
     &:hover {
-      color: var(--color-text-dark);
+      color: var(--theme-text-dark);
     }
   }
 

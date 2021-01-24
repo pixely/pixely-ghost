@@ -1,5 +1,5 @@
 .link {
-  color: var(--color-text-normal);
+  color: var(--theme-text-normal);
   font-weight: var(  --font-bold);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -17,7 +17,7 @@
   }
 
   &--inverted {
-    color: var(--color-text-inverted);
+    color: var(--theme-text-inverted);
     text-decoration-color: rgba(255,255,255,.3);
 
     &:hover,

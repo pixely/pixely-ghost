@@ -1,5 +1,5 @@
 .nav {
-  background: var(--color-secondary-normal);
+  background: var(--theme-secondary-normal);
   display: flex;
   transition: background-color .2s linear;
   padding: 0;
@@ -22,7 +22,7 @@
     position: absolute;
     height: 3px;
     width: 24px;
-    background: var(--color-primary-normal);
+    background: var(--theme-primary-normal);
     opacity: 1;
     left: 18px;
     transform: rotate(0deg);
@@ -64,7 +64,7 @@
   &:hover,
   &:active,
   &:focus {
-    background: var(--color-secondary-dark);
+    background: var(--theme-secondary-dark);
   }
 
   &__overlay {
@@ -99,13 +99,13 @@
     left: 0;
     bottom: 0;
     height: 100%;
-    background: var(--color-secondary-normal);
+    background: var(--theme-secondary-normal);
     overflow: scroll;
     display: grid;
     padding: 60px 10px;
     flex: 1 1 1;
-    border-top: 10px solid  var(--color-secondary-dark);
-    border-left: 10px solid var(--color-secondary-dark);
+    border-top: 10px solid  var(--theme-secondary-dark);
+    border-left: 10px solid var(--theme-secondary-dark);
     transform-origin: top left;
     -webkit-overflow-scrolling: touch;
     display: none;
@@ -126,7 +126,7 @@
   }
 
   &__menu-item {
-    color: var(--color-primary-normal);
+    color: var(--theme-primary-normal);
     font-weight: bold;
     text-decoration: none;
     font-size: 1.44rem;
@@ -145,11 +145,11 @@
     }
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--color-secondary-dark);;
+      border-bottom: 1px solid var(--theme-secondary-dark);;
     }
 
     &:hover {
-      background: var(--color-secondary-dark);
+      background: var(--theme-secondary-dark);
     }
   }
 }

@@ -19,11 +19,11 @@
 
   &--boxed {
     padding: 20px;
-    background: var(--color-primary-normal);
-    color: var(--color-text-inverted);
+    background: var(--theme-primary-normal);
+    color: var(--theme-text-inverted);
 
     & .author-bio__name {
-      color: var(--color-text-inverted);
+      color: var(--theme-text-inverted);
     }
   }
 }

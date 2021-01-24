@@ -9,11 +9,11 @@
   &__hero {
     grid-column: 1 / -1;
     grid-row: 1 / 4;
-    background: var(--color-primary-light);
+    background: var(--theme-primary-light);
   }
 
   &__meta {
-    background: var(--color-secondary-normal);
+    background: var(--theme-secondary-normal);
     grid-column: 1 / span 8;
     grid-row-start: 5;
 
