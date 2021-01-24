@@ -1,6 +1,6 @@
 .author-bio {
   display: grid;
-  grid-gap: var(--grid-gap-mobile);
+  grid-gap: $grid-mobile-gap;
   grid-template-columns: 1fr 4fr;
   
   &__image {
@@ -31,7 +31,7 @@
 @media (min-width: 576px) {
   
   .author-bio {
-    grid-gap: var(--grid-gap-desktop);
+    grid-gap: $grid-desktop-gap;
   }
 }
   

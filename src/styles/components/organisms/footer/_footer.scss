@@ -2,8 +2,8 @@
   background: var(--color-secondary);
   display: grid;
   grid-template-columns: 1fr;
-  padding: var(--grid-gap-mobile) 0;
-  grid-gap: var(--grid-gap-mobile);
+  padding: $grid-mobile-gap 0;
+  grid-gap: $grid-mobile-gap;
   height: 100%;
 
   &__bio,
@@ -19,9 +19,9 @@
     color: var(--color-text);
     display: block;
     font-weight: var(--font-bold);
-    padding-left: var(--grid-gap-desktop);
-    padding-top: var(--grid-gap-mobile);
-    padding-bottom: var(--grid-gap-mobile);
+    padding-left: $grid-desktop-gap;
+    padding-top: $grid-mobile-gap;
+    padding-bottom: $grid-mobile-gap;
 
     &:hover {
       color: var(--color-text-dark);
@@ -35,9 +35,9 @@
    
   .footer {
     display: grid;
-    grid-template-columns: var(--grid-desktop);
-    padding: var(--grid-gap-desktop) 0 0 0;
-    grid-gap: var(--grid-gap-desktop);
+    grid-template-columns: $grid-desktop-template;
+    padding: $grid-desktop-gap 0 0 0;
+    grid-gap: $grid-desktop-gap;
   
     &__bio {
       grid-column: 5 / span 4;

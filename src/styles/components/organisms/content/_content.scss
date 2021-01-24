@@ -1,7 +1,7 @@
 .content {
   display: grid;
-  grid-template-columns: var(--grid-mobile);
-  grid-gap: var(--grid-gap-mobile);
+  grid-template-columns: $grid-mobile-template;
+  grid-gap: $grid-mobile-gap;
 
   & > * {
     grid-column: 2 / -2;
@@ -181,8 +181,8 @@
 @media (min-width: 576px) {
 
   .content {
-    grid-template-columns: var(--grid-desktop);
-    grid-gap: var(--grid-gap-desktop);
+    grid-template-columns: $grid-desktop-template;
+    grid-gap: $grid-desktop-gap;
 
     & > * {
       grid-column: 3 / -3;

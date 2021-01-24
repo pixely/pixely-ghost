@@ -2,23 +2,23 @@
   "source": ["src/styles/tokens/**/*.json"],
   "platforms": {
     "css": {
-      "transformGroup": "css",
+      "transforms": ["attribute/cti", "name/cti/kebab", "color/css"],
       "buildPath": ".tokens/css/",
       "files": [{
-        "destination": "_variables.scss",
+        "destination": "_tokens.scss",
         "format": "css/variables"
       }]
     },
     "scss": {
-      "transformGroup": "scss",
+      "transforms": ["attribute/cti", "name/cti/kebab", "color/css"],
       "buildPath": ".tokens/scss/",
       "files": [{
-        "destination": "_variables.scss",
+        "destination": "_tokens.scss",
         "format": "scss/map-deep"
       }]
     },
     "js": {
-      "transformGroup": "js",
+      "transforms": ["attribute/cti", "name/cti/kebab", "color/css"],
       "buildPath": ".tokens/js/",
       "files": [
         {
