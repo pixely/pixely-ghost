@@ -31,6 +31,9 @@
     "assets:watch": "yarn parcel watch 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist",
     "assets:build": "PARCEL_BUNDLE_ANALYZER=1 yarn parcel build 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir dist",
     "fonts:compress": "yarn parcel build 'dist/styles/fonts.css' --dist-dir dist/styles",
+    "tokens": "yarn style-dictionary build -c ./styledictionary.json",
+    "preassets:watch": "yarn tokens",
+    "preassets:build": "yarn tokens",
     "prebuild": "yarn assets:build",
     "preserve": "yarn assets:build",
     "postbuild": "yarn fonts:compress"
@@ -42,6 +45,7 @@
     "eslint": "7.18.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-ghost": "2.0.0",
+    "style-dictionary": "^2.10.2",
     "stylelint": "^13.9.0",
     "stylelint-config-airbnb": "^0.0.0",
     "stylelint-order": "^4.1.0",
