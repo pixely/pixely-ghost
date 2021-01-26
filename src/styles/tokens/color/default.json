@@ -1,21 +1,21 @@
 {
     "theme": {
         "primary": {
-            "light": { "value": "{color.theme.default.primary.light.value}" },
-            "normal": { "value": "{color.theme.default.primary.normal.value}" },
-            "dark": { "value": "{color.theme.default.primary.dark.value}" }
+            "light": { "value": "{color.theme.light.primary.light.value}" },
+            "normal": { "value": "{color.theme.light.primary.normal.value}" },
+            "dark": { "value": "{color.theme.light.primary.dark.value}" }
         },
         "secondary": {
-            "normal": { "value": "{color.theme.default.secondary.normal.value}" },
-            "dark": { "value": "{color.theme.default.secondary.dark.value}" }
+            "normal": { "value": "{color.theme.light.secondary.normal.value}" },
+            "dark": { "value": "{color.theme.light.secondary.dark.value}" }
         },
-        "tertiary": { "value": "{color.theme.default.tertiary.value}" },
+        "tertiary": { "value": "{color.theme.light.tertiary.value}" },
         "text": {
-            "normal": { "value": "{color.theme.default.text.normal.value}" },
-            "dark": { "value": "{color.theme.default.text.dark.value}" },
-            "inverted": { "value": "{color.theme.default.text.inverted.value}" }
+            "normal": { "value": "{color.theme.light.text.normal.value}" },
+            "dark": { "value": "{color.theme.light.text.dark.value}" },
+            "inverted": { "value": "{color.theme.light.text.inverted.value}" }
         },
-        "base": { "value": "{color.theme.default.base.value}" },
-        "error": { "value": "{color.theme.default.error.value}" }
+        "base": { "value": "{color.theme.light.base.value}" },
+        "error": { "value": "{color.theme.light.error.value}" }
     }
 }

@@ -1,0 +1,21 @@
+{
+    "dark-theme": {
+        "primary": {
+            "light": { "value": "{color.theme.dark.primary.light.value}" },
+            "normal": { "value": "{color.theme.dark.primary.normal.value}" },
+            "dark": { "value": "{color.theme.dark.primary.dark.value}" }
+        },
+        "secondary": {
+            "normal": { "value": "{color.theme.dark.secondary.normal.value}" },
+            "dark": { "value": "{color.theme.dark.secondary.dark.value}" }
+        },
+        "tertiary": { "value": "{color.theme.dark.tertiary.value}" },
+        "text": {
+            "normal": { "value": "{color.theme.dark.text.normal.value}" },
+            "dark": { "value": "{color.theme.dark.text.dark.value}" },
+            "inverted": { "value": "{color.theme.dark.text.inverted.value}" }
+        },
+        "base": { "value": "{color.theme.dark.base.value}" },
+        "error": { "value": "{color.theme.dark.error.value}" }
+    }
+}

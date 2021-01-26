@@ -1,7 +1,7 @@
 {
     "color": {
         "theme": {
-            "default": {
+            "light": {
                 "primary": {
                     "light": { "value": "#535664" },
                     "normal": { "value": "#2D3142" },
@@ -18,6 +18,25 @@
                     "inverted": { "value": "#fff" }
                 },
                 "base": { "value": "#F5F1DE" },
+                "error": { "value": "#942e2e" }
+            },
+            "dark": {
+                "primary": {
+                    "light": { "value": "#535664" },
+                    "normal": { "value": "#2D3142" },
+                    "dark": { "value": "#252937" }
+                },
+                "secondary": {
+                    "normal": { "value": "#9ABD97" },
+                    "dark": { "value": "#7F9B7C" }
+                },
+                "tertiary": { "value": "#025f7d" },
+                "text": {
+                    "normal": { "value": "#3c484e" },
+                    "dark": { "value": "#000" },
+                    "inverted": { "value": "#fff" }
+                },
+                "base": { "value": "#000" },
                 "error": { "value": "#942e2e" }
             }
         }

@@ -1,19 +1,6 @@
 {
   "source": ["src/styles/tokens/**/*.json"],
   "platforms": {
-    "css": {
-      "transforms": ["attribute/cti", "name/cti/kebab", "color/css"],
-      "buildPath": ".tokens/css/",
-      "files": [{
-        "destination": "_tokens.scss",
-        "format": "css/variables",
-        "filter": {
-          "attributes": {
-            "category": "theme"
-          }
-        }
-      }]
-    },
     "scss": {
       "transforms": ["attribute/cti", "name/cti/kebab", "color/css"],
       "buildPath": ".tokens/scss/",
@@ -28,7 +15,17 @@
       "files": [
         {
           "format": "javascript/module",
-          "destination": "_tokens.js"
+          "destination": "tokens.js"
+        }
+      ]
+    },
+    "json": {
+      "transforms": ["attribute/cti", "name/cti/camel", "color/css"],
+      "buildPath": ".tokens/json/",
+      "files": [
+        {
+          "format": "json",
+          "destination": "tokens.json"
         }
       ]
     }
