@@ -67,7 +67,7 @@
     "liquidjs": "^9.19.0",
     "luxon": "^1.25.0",
     "normalize.css": "^8.0.1",
-    "parcel": "^2.0.0-beta.1",
+    "parcel": "^2.0.0-nightly.553",
     "rehype": "^11.0.0",
     "rehype-format": "^3.1.0",
     "rehype-partials": "^1.0.6",
