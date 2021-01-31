@@ -18,16 +18,6 @@
           "destination": "tokens.js"
         }
       ]
-    },
-    "json": {
-      "transforms": ["attribute/cti", "name/cti/camel", "color/css"],
-      "buildPath": ".tokens/json/",
-      "files": [
-        {
-          "format": "json",
-          "destination": "tokens.json"
-        }
-      ]
     }
   }
 }
