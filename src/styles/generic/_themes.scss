@@ -32,3 +32,10 @@
         @include tokens($theme);
     }    
 }
+
+// Animate all colour properties by default
+* {
+    transition-property: background-color, color, border-color;
+    transition-duration: .15s;
+    transition-timing-function: ease-in-out;
+}
