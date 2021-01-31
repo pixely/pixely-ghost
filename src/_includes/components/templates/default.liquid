@@ -73,9 +73,11 @@
             {{ codeinjection_head }}
         {% endif %}
     
+        <script>localStorage.getItem('theme') && document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));</script>
         <script src="{{ assets.js.main }}" type="module" defer></script>
     </head>
     <body class="base {% if bodyClass %} base--{{ bodyClass }} {{ bodyClass }}{% endif %}">
+        {% include 'components/organisms/theme-drawer' %}
         <div class="base__inner">
             <div class="base__header">
                 {% include 'components/organisms/header' %}

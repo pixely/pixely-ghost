@@ -1,0 +1,24 @@
+<div class="theme-drawer">
+    <form class="theme-drawer__themes">
+        {% for theme in themes %}
+            <div 
+                class="theme-drawer__card theme-drawer__card--{{ theme.name }} text-xs"
+            >
+                <input 
+                    id="theme-{{ theme.name }}"
+                    class="theme-drawer__checkbox js-theme-switcher"
+                    type="radio"
+                    name="theme"
+                    value="{{ theme.name }}"
+                    {% if theme.default %}{% endif %} 
+                />
+                <label 
+                    class="theme-drawer__label theme-drawer__label--{{ theme.name }}"
+                    for="theme-{{ theme.name }}"
+                >
+                    {{ theme.displayName }}  
+                </label>
+            </div>
+        {% endfor %}
+    </form>
+</div>
