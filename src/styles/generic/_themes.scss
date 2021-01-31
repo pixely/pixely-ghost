@@ -7,6 +7,7 @@
     --theme-secondary-normal: #{map.get($theme, "secondary", "normal")};
     --theme-secondary-dark: #{map.get($theme, "secondary", "dark")};
     --theme-tertiary: #{map.get($theme, "tertiary")};
+    --theme-text-heading: #{map.get($theme, "text", "heading")};
     --theme-text-normal: #{map.get($theme, "text", "normal")};
     --theme-text-dark: #{map.get($theme, "text", "dark")};
     --theme-text-inverted: #{map.get($theme, "text", "inverted")};
