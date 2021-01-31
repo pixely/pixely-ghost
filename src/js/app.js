@@ -1,5 +1,5 @@
-import nav from './modules/nav.js'
-import ThemeSwitcher from './modules/theme-switcher.js';
+import nav from './modules/nav'
+import ThemeSwitcher from './modules/theme-switcher'
 
 nav.init()
 
