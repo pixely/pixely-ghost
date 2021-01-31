@@ -1,134 +1,144 @@
 @use "sass:map";
 
 @mixin theme-card($theme) {
-    background-color: #{map.get($theme, "base")};
-    background-image: 
-        linear-gradient(90deg, 
-            #{map.get($theme, "primary", "light")} 17%,
-            #{map.get($theme, "primary", "normal")} 17%,
-            #{map.get($theme, "primary", "normal")} 33%,
-            #{map.get($theme, "primary", "dark")} 33%,
-            #{map.get($theme, "primary", "dark")} 50%,
-            #{map.get($theme, "secondary", "normal")} 50%,
-            #{map.get($theme, "secondary", "normal")} 75%,
-            #{map.get($theme, "secondary", "dark")} 75%
-        );
-    border-color: #{map.get($theme, "base")};
-    color: #{map.get($theme, "text", "normal")};
+  background-color: #{map.get($theme, "base")};
+  // stylelint-disable indentation
+  background-image: linear-gradient(90deg, 
+    #{map.get($theme, "primary", "light")} 17%,
+    #{map.get($theme, "primary", "normal")} 17%,
+    #{map.get($theme, "primary", "normal")} 33%,
+    #{map.get($theme, "primary", "dark")} 33%,
+    #{map.get($theme, "primary", "dark")} 50%,
+    #{map.get($theme, "secondary", "normal")} 50%,
+    #{map.get($theme, "secondary", "normal")} 75%,
+    #{map.get($theme, "secondary", "dark")} 75%
+  );
+  // stylelint-enable indentation
+  border-color: #{map.get($theme, "base")};
+  color: #{map.get($theme, "text", "normal")};
 }
 
 @mixin theme-card-focus($theme) {
-    border-color: #{map.get($theme, "primary", "dark")};
+  border-color: #{map.get($theme, "primary", "dark")};
 }
 
 @keyframes active-theme {
-    0%,
-    100%   { box-shadow: 0 0 0px 2px rgba(255,255,255,.5); }
-    40% { box-shadow: 0 0 0px 4px rgba(255,255,255,.5); }
+  
+  0%,
+  100% { box-shadow: 0 0 0px 2px rgba(255,255,255,.5); }
+
+  40% { box-shadow: 0 0 0px 4px rgba(255,255,255,.5); }
 }
 
 .theme-drawer {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    padding: 15px 10px;
-    
-    &__themes {
-        padding: 5px;
-        display: flex;
-        width: fit-content;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 15px 10px;
+  
+  &__themes {
+    padding: 5px;
+    display: flex;
+    width: fit-content;
+  }
+
+  &__card {
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,.1);
+    background-clip: padding-box;
+    background: rgba(0,0,0,.1);
+    text-align: center;
+    width: 150px;
+    margin: 0 10px;
+
+    @each $name, $theme in map.get($tokens, "color", "theme") {
+      &--#{$name} .theme-drawer__checkbox:focus ~ .theme-drawer__label {
+        @include theme-card-focus($theme);
+      } 
+    }
+  }
+
+  &__label {
+    padding: 10px 10px 20px;
+    border-radius: 4px;
+    color: #333;
+    line-height: 1;
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border-width: 2px;
+    border-style: solid;
+    text-transform: capitalize;
+    display: block;
+    box-shadow: 0 0 0px 2px rgba(255,255,255,.2);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out, border-color .2s ease-in-out;
+
+    // Set the default light card theme 
+    @include theme-card(map.get($tokens, "theme"));
+
+    @each $name, $theme in map.get($tokens, "color", "theme") {
+      &--#{$name} {
+        @include theme-card($theme);
+      }  
     }
 
-    &__card {
-        position: relative;
-        border-radius: 4px;
-        box-shadow: 0px 0px 3px 1px rgba(0,0,0,.1);
-        background-clip: padding-box;
-        background: rgba(0,0,0,.1);
-        text-align: center;
-        width: 150px;
-        margin: 0 10px;
+    &--default:after {
+      content: ": Light";
+    }
+  }
 
-        @each $name, $theme in map.get($tokens, "color", "theme") {
-            &--#{$name} .theme-drawer__checkbox:focus ~ .theme-drawer__label {
-                @include theme-card-focus($theme);
-            } 
-        }
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+
+    &:focus ~ .theme-drawer__label {
+      border-color: var(--theme-primary-dark);
+    }
+  
+    &:hover ~ .theme-drawer__label {
+      transform: scale(1.01);
+      box-shadow: 0 0 0px 4px rgba(255,255,255,.5);
     }
 
-    &__label {
-        padding: 10px 10px 20px;
-        border-radius: 4px;
-        color: #333;
-        line-height: 1;
-        background-size: 100% 10px;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        border-width: 2px;
-        border-style: solid;
-        text-transform: capitalize;
-        display: block;
-        box-shadow: 0 0 0px 2px rgba(255,255,255,.2);
-        transition: box-shadow .2s ease-in-out, transform .2s ease-in-out, border-color .2s ease-in-out;
-
-        // Set the default light card theme 
-        @include theme-card(map.get($tokens, "theme"));
-
-        &--default:after {
-            content: ': Light';
-        }
-
-        @media (prefers-color-scheme: dark) {
-            @include theme-card(map.get($tokens, "dark-theme"));
-
-            &--default:after {
-                content: ': Dark';
-            }
-        }
-
-        @each $name, $theme in map.get($tokens, "color", "theme") {
-            &--#{$name} {
-                @include theme-card($theme);
-            }    
-        }
+    &:active ~ .theme-drawer__label {
+      transform: scale(.98);
     }
 
-    &__checkbox {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        height: 100%;
-        width: 100%;
-        cursor: pointer;
-
-        &:focus ~ .theme-drawer__label {
-            border-color: var(--theme-primary-dark);
-        }
-    
-        &:hover ~ .theme-drawer__label {
-            transform: scale(1.01);
-            box-shadow: 0 0 0px 4px rgba(255,255,255,.5);
-        }
-
-        &:active ~ .theme-drawer__label {
-            transform: scale(0.99);
-        }
-
-        &:checked ~ .theme-drawer__label {
-            box-shadow: 0 0 0px 4px rgba(255,255,255,.5);
-            font-weight: $font-weight-bold;
-        }
-
-        &:checked:not(:hover) ~ .theme-drawer__label {
-            animation: active-theme 1.3s ease-in-out infinite;
-        }
+    &:checked ~ .theme-drawer__label {
+      box-shadow: 0 0 0px 4px rgba(255,255,255,.5);
+      font-weight: $font-weight-bold;
     }
+
+    &:checked:not(:hover) ~ .theme-drawer__label {
+      animation: active-theme 1.3s ease-in-out infinite;
+    }
+  }
 }
 
 @media (min-width: 576px) {
-    .theme-drawer__card {
-        width: 200px;
+
+  .theme-drawer__card {
+    width: 200px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+    
+  .theme-drawer { 
+    
+    &__label {
+      @include theme-card(map.get($tokens, "dark-theme"));
+        
+      &--default:after {
+        content: ": Dark";
+      }
     }
+  }      
 }
