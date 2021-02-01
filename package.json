@@ -57,7 +57,7 @@
     "@quasibit/eleventy-plugin-sitemap": "^2.0.4",
     "@tryghost/content-api": "^1.4.13",
     "@tryghost/helpers": "^1.1.37",
-    "clean-css": "^4.2.3",
+    "clean-css": "^5.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "eleventy-plugin-helmet": "^0.2.1",
