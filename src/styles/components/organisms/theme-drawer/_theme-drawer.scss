@@ -76,6 +76,15 @@
     // Set the default light card theme 
     @include theme-card(map.get($tokens, "theme"));
 
+    @media (prefers-color-scheme: dark) {
+      @include theme-card(map.get($tokens, "dark-theme"));
+      
+      // stylelint-disable-next-line max-nesting-depth
+      &--default:after {
+        content: ": Dark";
+      }
+    }
+
     @each $name, $theme in map.get($tokens, "color", "theme") {
       &--#{$name} {
         @include theme-card($theme);
@@ -127,18 +136,4 @@
   .theme-drawer__card {
     width: 200px;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-    
-  .theme-drawer { 
-    
-    &__label {
-      @include theme-card(map.get($tokens, "dark-theme"));
-        
-      &--default:after {
-        content: ": Dark";
-      }
-    }
-  }      
 }
