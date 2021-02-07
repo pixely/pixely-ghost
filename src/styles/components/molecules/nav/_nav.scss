@@ -13,6 +13,27 @@
   transform: rotate(0deg);
   transition: .3s ease-in-out;
   
+  &--theme {
+    background: rgba(var(--theme-secondary-normal), .8);
+    padding: 18px;
+
+    &:hover path,
+    &:active path,
+    &:focus path {
+      stroke: transparent;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    path {
+      fill: var(--theme-primary-normal);
+      transition: .3s ease-in-out;
+    }
+  }
+
   &.is-open {
     transform: translateY(10px)
   }
@@ -60,7 +81,7 @@
     }
   }
 
-  &.is-open,
+  &:not(.nav--theme).is-open,
   &:hover,
   &:active,
   &:focus {
@@ -83,12 +104,12 @@
 
     &.is-animating-in {
       display: block;
-      animation: navFadeIn .2s linear;
+      animation: navFadeIn .2s cubic-bezier(.42, 0, .17, 1.24);
     }
 
     &.is-animating-out {
       display: block;
-      animation: navFadeOut .2s linear;
+      animation: navFadeOut .2s ease-in;
     }
   }
 

@@ -11,6 +11,8 @@
   &__nav {
     grid-column-start: -2;
     justify-self: right;
+    display: grid;
+    grid-auto-flow: column;
   }
 }
 

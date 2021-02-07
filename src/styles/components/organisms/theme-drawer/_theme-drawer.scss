@@ -31,13 +31,36 @@
 }
 
 .theme-drawer {
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding: 15px 10px;
+  display: none;
+  max-height: 0;
+  background: var(--theme-secondary-dark);
+  text-align: center;
+  border-bottom: 2px solid rgb(0, 0, 0, .2);
+  position: sticky;
+  top: 0;
+  z-index: 200;
   
+  &.is-open {
+    display: block;
+    animation: themeDrawerOpen .4s cubic-bezier(.42, 0, .17, 1.24);
+    animation-fill-mode: both;
+  }
+
+  &.is-animating-out {
+    display: block;
+    animation: themeDrawerClose .2s ease-in;
+    animation-fill-mode: both;
+  }
+
   &__themes {
-    padding: 5px;
+    padding: 5px 10px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__cards {
     display: flex;
+    margin: 15px auto 5px;
     width: fit-content;
   }
 
@@ -113,7 +136,7 @@
   
     &:hover ~ .theme-drawer__label {
       transform: scale(1.01);
-      box-shadow: 0 0 0px 4px rgba(255,255,255,.5);
+      box-shadow: 0 0 0px 4px rgba(255, 255, 255, .5);
     }
 
     &:active ~ .theme-drawer__label {
@@ -121,12 +144,54 @@
     }
 
     &:checked ~ .theme-drawer__label {
-      box-shadow: 0 0 0px 4px rgba(255,255,255,.5);
+      box-shadow: 0 0 0px 4px rgba(255, 255, 255, .5);
       font-weight: $font-weight-bold;
     }
 
     &:checked:not(:hover) ~ .theme-drawer__label {
       animation: active-theme 1.3s ease-in-out infinite;
+    }
+  }
+
+  &__close {
+    background: transparent;
+    border: unset;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px calc(5px + .694rem);
+    cursor: pointer;
+    position: relative;
+    color: var(--theme-primary-normal);
+
+    &:before,
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: .694rem;
+      background: var(--theme-primary-normal);
+      opacity: 1;
+      left: 0;
+      top: 11.5px;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--theme-primary-dark);
+
+      // stylelint-disable-next-line max-nesting-depth
+      &:before,
+      &:after {
+        background: var(--theme-primary-dark);
+      }
     }
   }
 }
@@ -135,5 +200,38 @@
 
   .theme-drawer__card {
     width: 200px;
+  }
+}
+
+@keyframes themeDrawerOpen {
+
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-200px); 
+  }
+
+  40% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 150px;
+  }
+}
+
+@keyframes themeDrawerClose {
+
+  0% {
+    max-height: 150px;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0;
   }
 }
