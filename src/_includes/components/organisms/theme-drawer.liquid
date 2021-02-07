@@ -1,24 +1,27 @@
-<div class="theme-drawer">
+<div class="theme-drawer js-theme-drawer" id="themeDrawer" role="region" aria-live="polite">
     <form class="theme-drawer__themes">
-        {% for theme in themes %}
-            <div 
-                class="theme-drawer__card theme-drawer__card--{{ theme.name }} text-xs"
-            >
-                <input 
-                    id="theme-{{ theme.name }}"
-                    class="theme-drawer__checkbox js-theme-switcher"
-                    type="radio"
-                    name="theme"
-                    value="{{ theme.name }}"
-                    {% if theme.default %}{% endif %} 
-                />
-                <label 
-                    class="theme-drawer__label theme-drawer__label--{{ theme.name }}"
-                    for="theme-{{ theme.name }}"
+        <div class="theme-drawer__cards">
+            {% for theme in themes %}
+                <div 
+                    class="theme-drawer__card theme-drawer__card--{{ theme.name }} text-xs"
                 >
-                    {{ theme.displayName }}  
-                </label>
-            </div>
-        {% endfor %}
+                    <input 
+                        id="theme-{{ theme.name }}"
+                        class="theme-drawer__checkbox js-theme-switcher"
+                        type="radio"
+                        name="theme"
+                        value="{{ theme.name }}"
+                        {% if theme.default %}{% endif %} 
+                    />
+                    <label 
+                        class="theme-drawer__label theme-drawer__label--{{ theme.name }}"
+                        for="theme-{{ theme.name }}"
+                    >
+                        {{ theme.displayName }}  
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
     </form>
+    <button class="theme-drawer__close text-xs js-theme-close-button">Close</button>
 </div>
