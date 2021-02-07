@@ -17,8 +17,8 @@
                     "normal": { "value": "#29363D" },
                     "dark": { "value": "#212B31" },
                     "inverted": { "value": "#fff" },
-                    "primary": { "value": "#29363D" },
-                    "secondary": { "value": "#29363D" }
+                    "primary": { "value": "#fff" },
+                    "secondary": { "value": "#181f23" }
                 },
                 "base": { "value": "#F4F6F3" },
                 "error": { "value": "#942e2e" }
@@ -62,7 +62,7 @@
                     "dark": { "value": "#060B0E" },
                     "inverted": { "value": "#fff" },
                     "primary": { "value": "#0c161d" },
-                    "secondary": { "value": "#0c161d" }
+                    "secondary": { "value": "#f5f5f5" }
                 },
                 "base": { "value": "#F5F5F5" },
                 "error": { "value": "#942e2e" }

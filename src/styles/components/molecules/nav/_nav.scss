@@ -29,7 +29,7 @@
     }
 
     path {
-      fill: var(--theme-primary-normal);
+      fill: var(--theme-text-secondary);
       transition: .3s ease-in-out;
     }
   }
@@ -43,7 +43,7 @@
     position: absolute;
     height: 3px;
     width: 24px;
-    background: var(--theme-primary-normal);
+    background: var(--theme-text-secondary);
     opacity: 1;
     left: 18px;
     transform: rotate(0deg);
@@ -147,7 +147,7 @@
   }
 
   &__menu-item {
-    color: var(--theme-primary-normal);
+    color: var(--theme-text-secondary);
     font-weight: bold;
     text-decoration: none;
     font-size: 1.44rem;
