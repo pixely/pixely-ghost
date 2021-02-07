@@ -45,7 +45,6 @@
     "eslint": "7.19.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-ghost": "2.0.0",
-    "style-dictionary": "^2.10.2",
     "stylelint": "^13.9.0",
     "stylelint-config-airbnb": "^0.0.0",
     "stylelint-order": "^4.1.0",
@@ -76,6 +75,7 @@
     "rehype-format": "^3.1.0",
     "rehype-partials": "^1.0.6",
     "sass": "^1.32.5",
+    "style-dictionary": "^2.10.2",
     "unist-util-visit": "^2.0.3"
   }
 }
