@@ -16,7 +16,9 @@
                     "heading": { "value": "#29363D" },
                     "normal": { "value": "#29363D" },
                     "dark": { "value": "#212B31" },
-                    "inverted": { "value": "#fff" }
+                    "inverted": { "value": "#fff" },
+                    "primary": { "value": "#29363D" },
+                    "secondary": { "value": "#29363D" }
                 },
                 "base": { "value": "#F4F6F3" },
                 "error": { "value": "#942e2e" }
@@ -36,7 +38,9 @@
                     "heading": { "value": "#FFF8EB" },
                     "normal": { "value": "#FFF8EB" },
                     "dark": { "value": "#FFF1D6" },
-                    "inverted": { "value": "#fff" }
+                    "inverted": { "value": "#fff" },
+                    "primary": { "value": "#FFF8EB" },
+                    "secondary": { "value": "#FFF8EB" }
                 },
                 "base": { "value": "#11151C" },
                 "error": { "value": "#942e2e" }
@@ -56,7 +60,9 @@
                     "heading": { "value": "#1d3749" },
                     "normal": { "value": "#0c161d" },
                     "dark": { "value": "#060B0E" },
-                    "inverted": { "value": "#fff" }
+                    "inverted": { "value": "#fff" },
+                    "primary": { "value": "#0c161d" },
+                    "secondary": { "value": "#0c161d" }
                 },
                 "base": { "value": "#F5F5F5" },
                 "error": { "value": "#942e2e" }
@@ -76,7 +82,9 @@
                     "heading": { "value": "#f25757" },
                     "normal": { "value": "#f5f5f5" },
                     "dark": { "value": "#EBEBEB" },
-                    "inverted": { "value": "#f5f5f5" }
+                    "inverted": { "value": "#f5f5f5" },
+                    "primary": { "value": "#f5f5f5" },
+                    "secondary": { "value": "#f5f5f5" }
                 },
                 "base": { "value": "#1d3749" },
                 "error": { "value": "#942e2e" }
@@ -96,7 +104,9 @@
                     "heading": { "value": "#A3B18A" },
                     "normal": { "value": "#DAD7CD" },
                     "dark": { "value": "#D4D0C4" },
-                    "inverted": { "value": "#344E41" }
+                    "inverted": { "value": "#344E41" },
+                    "primary": { "value": "#DAD7CD" },
+                    "secondary": { "value": "#DAD7CD" }
                 },
                 "base": { "value": "#293D33" },
                 "error": { "value": "#942e2e" }
@@ -116,7 +126,9 @@
                     "heading": { "value": "#212529" },
                     "normal": { "value": "#212529" },
                     "dark": { "value": "#1B1F22" },
-                    "inverted": { "value": "#f8f9fa" }
+                    "inverted": { "value": "#f8f9fa" },
+                    "primary": { "value": "#212529" },
+                    "secondary": { "value": "#212529" }
                 },
                 "base": { "value": "#F8F9FA" },
                 "error": { "value": "#942e2e" }
@@ -136,7 +148,9 @@
                     "heading": { "value": "{color.theme.light.primary.normal}" },
                     "normal": { "value": "#3c484e" },
                     "dark": { "value": "#000" },
-                    "inverted": { "value": "#fff" }
+                    "inverted": { "value": "#fff" },
+                    "primary": { "value": "#3c484e" },
+                    "secondary": { "value": "#3c484e" }
                 },
                 "base": { "value": "#F5F1DE" },
                 "error": { "value": "#942e2e" }

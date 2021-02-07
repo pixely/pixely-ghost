@@ -13,7 +13,9 @@
         "text": {
             "normal": { "value": "{color.theme.dark.text.normal.value}" },
             "dark": { "value": "{color.theme.dark.text.dark.value}" },
-            "inverted": { "value": "{color.theme.dark.text.inverted.value}" }
+            "inverted": { "value": "{color.theme.dark.text.inverted.value}" },
+            "primary": { "value": "{color.theme.dark.text.primary.value}" },
+            "secondary": { "value": "{color.theme.dark.text.secondary.value}" }
         },
         "base": { "value": "{color.theme.dark.base.value}" },
         "error": { "value": "{color.theme.dark.error.value}" }

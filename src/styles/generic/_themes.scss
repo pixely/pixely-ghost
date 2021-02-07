@@ -11,6 +11,8 @@
   --theme-text-normal: #{map.get($theme, "text", "normal")};
   --theme-text-dark: #{map.get($theme, "text", "dark")};
   --theme-text-inverted: #{map.get($theme, "text", "inverted")};
+  --theme-text-primary: #{map.get($theme, "text", "primary")};
+  --theme-text-secondary: #{map.get($theme, "text", "secondary")};
   --theme-base: #{map.get($theme, "base")};
   --theme-error: #{map.get($theme, "error")};
 }
