@@ -23,7 +23,7 @@ const generateSrcsetWidths = (srcset) => {
 }
 
 // const formats = ["webp", "jpeg", "avif", "svg"];
-const generateImages = (src, srcset, formats = ['webp','jpeg']) => image(src, {
+const generateImages = (src, srcset, formats = ['avif','webp','jpeg']) => image(src, {
     widths: srcset,
     formats,
     outputDir: './dist/images/',
