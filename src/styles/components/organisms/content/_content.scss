@@ -1,7 +1,7 @@
 .content {
   display: grid;
-  grid-template-columns: var(--grid-mobile);
-  grid-gap: var(--grid-gap-mobile);
+  grid-template-columns: $grid-mobile-template;
+  grid-gap: $grid-mobile-gap;
 
   & > * {
     grid-column: 2 / -2;
@@ -36,7 +36,7 @@
   h4,
   h5,
   h6 {
-    color: var(--color-primary);
+    color: var(--theme-primary-normal);
   }
 
   h1 {
@@ -60,7 +60,7 @@
   }
 
   blockquote {
-    font-family: var(--font-headings);
+    font-family: $font-family-heading;
     font-weight: 400;
     font-style: italic;
     font-size: 1.44rem;
@@ -68,8 +68,8 @@
   }
 
   a {
-    color: var(--color-text);
-    font-weight: var(--font-bold);
+    color: var(--theme-text-normal);
+    font-weight: $font-weight-bold;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-decoration-color: rgba(0,0,0,.3);
@@ -94,19 +94,19 @@
     margin: 0;
     white-space: pre-wrap;
     padding: 20px;
-    background: var(--color-text);
-    color: var(--color-text-inverted);
+    background: var(--theme-text-normal);
+    color: var(--theme-text-inverted);
     border-radius: 5px;
     font-size: .694rem;
   }
 
   code {
-    font-family: var(--font-monospace);
+    font-family: $font-family-monospace;
   }
 
   hr {
     border: 0;
-    border-top: 3px solid var(--color-primary);
+    border-top: 3px solid var(--theme-primary-normal);
     margin: 0;
   }
 
@@ -126,8 +126,8 @@
   }
 
   mark {
-    background: var(--color-secondary);
-    color: var(--color-text-dark);
+    background: var(--theme-secondary-normal);
+    color: var(--theme-text-dark);
   }
 
   .kg-embed-card {
@@ -173,7 +173,7 @@
 
     &:not(:last-of-type) {
       padding-bottom: 10px;
-      border-bottom: 1px solid var(--color-primary-light);
+      border-bottom: 1px solid var(--theme-primary-light);
     }
   }
 }
@@ -181,8 +181,8 @@
 @media (min-width: 576px) {
 
   .content {
-    grid-template-columns: var(--grid-desktop);
-    grid-gap: var(--grid-gap-desktop);
+    grid-template-columns: $grid-desktop-template;
+    grid-gap: $grid-desktop-gap;
 
     & > * {
       grid-column: 3 / -3;

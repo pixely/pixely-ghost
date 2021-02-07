@@ -1,0 +1,18 @@
+{
+    "font": {
+      "weight": {
+        "light" : {
+          "value": "100"
+        },
+        "normal": {
+          "value": "400"
+        },
+        "bold": {
+          "value": "700"
+        },
+        "heavy": {
+          "value": "800"
+        }
+      }
+    }
+}

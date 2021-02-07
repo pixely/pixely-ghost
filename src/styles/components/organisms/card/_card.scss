@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  color: var(--color-text);
+  color: var(--theme-text-normal);
   grid-template-columns: 1fr;
   text-decoration: none;
   transition: transform .15s ease-in-out;
@@ -10,7 +10,7 @@
   }
 
   &__meta {
-    font-family: var(--font-body-copy);
+    font-family: $font-family-body-copy;
     font-size: .694rem;
     margin: 5px 0 10px;
   }
@@ -20,8 +20,8 @@
   }
 
   &--featured {
-    background: var(--color-primary);
-    color: var(--color-text-inverted);
+    background: var(--theme-primary-normal);
+    color: var(--theme-text-inverted);
   }
 }
 

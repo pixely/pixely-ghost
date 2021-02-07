@@ -78,3 +78,6 @@ dist
 # ParcelJS
 .parcel-cache
 parcel-bundle-reports
+
+#Styledictionary
+.tokens

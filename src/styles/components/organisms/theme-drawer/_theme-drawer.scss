@@ -1,0 +1,237 @@
+@use "sass:map";
+
+@mixin theme-card($theme) {
+  background-color: #{map.get($theme, "base")};
+  // stylelint-disable indentation
+  background-image: linear-gradient(90deg, 
+    #{map.get($theme, "primary", "light")} 17%,
+    #{map.get($theme, "primary", "normal")} 17%,
+    #{map.get($theme, "primary", "normal")} 33%,
+    #{map.get($theme, "primary", "dark")} 33%,
+    #{map.get($theme, "primary", "dark")} 50%,
+    #{map.get($theme, "secondary", "normal")} 50%,
+    #{map.get($theme, "secondary", "normal")} 75%,
+    #{map.get($theme, "secondary", "dark")} 75%
+  );
+  // stylelint-enable indentation
+  border-color: #{map.get($theme, "base")};
+  color: #{map.get($theme, "text", "normal")};
+}
+
+@mixin theme-card-focus($theme) {
+  border-color: #{map.get($theme, "primary", "dark")};
+}
+
+@keyframes active-theme {
+  
+  0%,
+  100% { box-shadow: 0 0 0px 2px rgba(255,255,255,.5); }
+
+  40% { box-shadow: 0 0 0px 4px rgba(255,255,255,.5); }
+}
+
+.theme-drawer {
+  display: none;
+  max-height: 0;
+  background: var(--theme-secondary-dark);
+  text-align: center;
+  border-bottom: 2px solid rgb(0, 0, 0, .2);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  
+  &.is-open {
+    display: block;
+    animation: themeDrawerOpen .4s cubic-bezier(.42, 0, .17, 1.24);
+    animation-fill-mode: both;
+  }
+
+  &.is-animating-out {
+    display: block;
+    animation: themeDrawerClose .2s ease-in;
+    animation-fill-mode: both;
+  }
+
+  &__themes {
+    padding: 5px 10px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__cards {
+    display: flex;
+    margin: 15px auto 5px;
+    width: fit-content;
+  }
+
+  &__card {
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,.1);
+    background-clip: padding-box;
+    background: rgba(0,0,0,.1);
+    text-align: center;
+    width: 150px;
+    margin: 0 10px;
+
+    @each $name, $theme in map.get($tokens, "color", "theme") {
+      &--#{$name} .theme-drawer__checkbox:focus ~ .theme-drawer__label {
+        @include theme-card-focus($theme);
+      } 
+    }
+  }
+
+  &__label {
+    padding: 10px 10px 20px;
+    border-radius: 4px;
+    color: #333;
+    line-height: 1;
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border-width: 2px;
+    border-style: solid;
+    text-transform: capitalize;
+    display: block;
+    box-shadow: 0 0 0px 2px rgba(255,255,255,.2);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out, border-color .2s ease-in-out;
+
+    // Set the default light card theme 
+    @include theme-card(map.get($tokens, "theme"));
+
+    @media (prefers-color-scheme: dark) {
+      @include theme-card(map.get($tokens, "dark-theme"));
+      
+      // stylelint-disable-next-line max-nesting-depth
+      &--default:after {
+        content: ": Dark";
+      }
+    }
+
+    @each $name, $theme in map.get($tokens, "color", "theme") {
+      &--#{$name} {
+        @include theme-card($theme);
+      }  
+    }
+
+    &--default:after {
+      content: ": Light";
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+
+    &:focus ~ .theme-drawer__label {
+      border-color: var(--theme-primary-dark);
+    }
+  
+    &:hover ~ .theme-drawer__label {
+      transform: scale(1.01);
+      box-shadow: 0 0 0px 4px rgba(255, 255, 255, .5);
+    }
+
+    &:active ~ .theme-drawer__label {
+      transform: scale(.98);
+    }
+
+    &:checked ~ .theme-drawer__label {
+      box-shadow: 0 0 0px 4px rgba(255, 255, 255, .5);
+      font-weight: $font-weight-bold;
+    }
+
+    &:checked:not(:hover) ~ .theme-drawer__label {
+      animation: active-theme 1.3s ease-in-out infinite;
+    }
+  }
+
+  &__close {
+    background: transparent;
+    border: unset;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px calc(5px + .694rem);
+    cursor: pointer;
+    position: relative;
+    color: var(--theme-primary-normal);
+
+    &:before,
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: .694rem;
+      background: var(--theme-primary-normal);
+      opacity: 1;
+      left: 0;
+      top: 11.5px;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--theme-primary-dark);
+
+      // stylelint-disable-next-line max-nesting-depth
+      &:before,
+      &:after {
+        background: var(--theme-primary-dark);
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+
+  .theme-drawer__card {
+    width: 200px;
+  }
+}
+
+@keyframes themeDrawerOpen {
+
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-200px); 
+  }
+
+  40% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 150px;
+  }
+}
+
+@keyframes themeDrawerClose {
+
+  0% {
+    max-height: 150px;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0;
+  }
+}

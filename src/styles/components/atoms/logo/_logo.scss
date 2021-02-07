@@ -1,13 +1,13 @@
 .logo {
   margin: 0;
-  color: var(--color-text-inverted);
-  font-family: var(--font-sans-serif);
+  color: var(--theme-text-inverted);
+  font-family: $font-family-body-copy;
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: -1px;
 
   &__link {
-    background: var(--color-primary);
+    background: var(--theme-primary-normal);
     color: currentColor;
     display: block;
     padding: 20px;
@@ -22,7 +22,7 @@
     &:hover,
     &:active,
     &:focus {
-      background: var(--color-primary-dark);
+      background: var(--theme-primary-dark);
     }
   }
 }

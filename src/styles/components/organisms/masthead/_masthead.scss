@@ -8,7 +8,7 @@
   height: 75px;
 
   &__logo a {
-    color: var(--color-base);
+    color: var(--theme-base);
     position: relative;
     z-index: 5;
     height: 55px;
@@ -16,12 +16,12 @@
     align-items: center;
     left: 20px;
     font-size: 16px;
-    font-family: var(--font-body-copy);
+    font-family: $font-family-body-copy;
     letter-spacing: -.8px;
   }
 
   &:before {
-    background: var(--color-primary);
+    background: var(--theme-primary-normal);
     content: "";
     display: block;
     position: absolute;
@@ -52,7 +52,7 @@
     }
 
     &:after {
-      background: var(--color-secondary);
+      background: var(--theme-secondary-normal);
       content: "";
       display: block;
       position: absolute;
@@ -85,7 +85,7 @@
     }
 
     &:after {
-      background: var(--color-secondary);
+      background: var(--theme-secondary-normal);
       content: "";
       display: block;
       position: absolute;

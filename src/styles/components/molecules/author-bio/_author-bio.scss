@@ -1,6 +1,6 @@
 .author-bio {
   display: grid;
-  grid-gap: var(--grid-gap-mobile);
+  grid-gap: $grid-mobile-gap;
   grid-template-columns: 1fr 4fr;
   
   &__image {
@@ -19,11 +19,11 @@
 
   &--boxed {
     padding: 20px;
-    background: var(--color-primary);
-    color: var(--color-text-inverted);
+    background: var(--theme-primary-normal);
+    color: var(--theme-text-inverted);
 
     & .author-bio__name {
-      color: var(--color-text-inverted);
+      color: var(--theme-text-inverted);
     }
   }
 }
@@ -31,7 +31,7 @@
 @media (min-width: 576px) {
   
   .author-bio {
-    grid-gap: var(--grid-gap-desktop);
+    grid-gap: $grid-desktop-gap;
   }
 }
   

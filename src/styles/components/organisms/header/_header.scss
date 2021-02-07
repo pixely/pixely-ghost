@@ -1,7 +1,7 @@
 .header {
   display: grid;
-  grid-template-columns: var(--grid-mobile);
-  grid-gap: var(--grid-gap-mobile);
+  grid-template-columns: $grid-mobile-template;
+  grid-gap: $grid-mobile-gap;
   z-index: 2;
 
   &__logo {
@@ -11,6 +11,8 @@
   &__nav {
     grid-column-start: -2;
     justify-self: right;
+    display: grid;
+    grid-auto-flow: column;
   }
 }
 
@@ -18,8 +20,8 @@
 @media (min-width: 576px) {
    
   .header {
-    grid-template-columns: var(--grid-desktop);
-    grid-gap: var(--grid-gap-desktop);
+    grid-template-columns: $grid-desktop-template;
+    grid-gap: $grid-desktop-gap;
 
     &__logo {
       grid-column-end: auto;

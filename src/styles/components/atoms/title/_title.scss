@@ -1,6 +1,6 @@
 .title {
-  background: var(--color-primary);
-  padding: var(--spacing-medium);
-  color: var(--color-text-inverted);
+  background: var(--theme-primary-normal);
+  padding: $size-spacing-medium;
+  color: var(--theme-text-inverted);
 }
 

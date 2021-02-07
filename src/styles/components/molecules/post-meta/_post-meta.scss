@@ -2,11 +2,11 @@
   padding-bottom: 5px;
 
   &__row {
-    font-family: var(--font-body-copy);
+    font-family: $font-family-body-copy;
     font-size: .694rem;
     line-height: 1.5;
     padding: 5px 10px;
-    color: var(--color-text);
+    color: var(--theme-text-secondary);
     text-align: right;
 
     &:not(:last-child) {
@@ -21,7 +21,7 @@
     padding: 0;
 
     &__row {
-      padding: var(--spacing-small);
+      padding: $size-spacing-small;
     }
   }
 }

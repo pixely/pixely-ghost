@@ -1,0 +1,25 @@
+{
+    "grid": {
+      "mobile": {
+        "template": {
+          "value": "10px 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr 10px"
+        },
+        "gap": {
+          "value": "{size.spacing.small.value}"
+        }
+      },
+      "desktop": {
+        "template": {
+          "value": "2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr"
+        },
+        "gap": {
+          "value": "{size.spacing.medium.value}"
+        }
+      },
+      "breakppont": {
+          "tablet": {
+              "value": "400px"
+          }
+      }
+    }
+}

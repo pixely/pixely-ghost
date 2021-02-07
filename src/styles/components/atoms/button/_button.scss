@@ -1,9 +1,9 @@
 .button {
   appearance: none;
-  background: var(--color-secondary);
-  border: 2px solid var(--color-secondary-dark);
+  background: var(--theme-secondary-normal);
+  border: 2px solid var(--theme-secondary-dark);
   border-radius: 4px;
-  color: var(--color-text-dark);
+  color: var(--theme-text-dark);
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
@@ -12,13 +12,13 @@
   &:hover,
   &:focus,
   &:active {
-    background: var(--color-secondary-dark);
-    border-color: var(--color-text);
+    background: var(--theme-secondary-dark);
+    border-color: var(--theme-text-normal);
   }
 
   &:focus,
   &:active {
     transform: scale(.99);
-    outline-color: var(--color-text);
+    outline-color: var(--theme-text-normal);
   }
 }

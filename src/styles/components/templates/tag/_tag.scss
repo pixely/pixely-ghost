@@ -12,7 +12,7 @@
   }
 
   &__image {
-    background: linear-gradient(45deg, var(--color-tertiary), var(--color-primary-dark));
+    background: linear-gradient(45deg, var(--theme-tertiary), var(--theme-primary-dark));
     grid-row: 1 / span 3;
     grid-column: 1 / -1;
     height: 100%;

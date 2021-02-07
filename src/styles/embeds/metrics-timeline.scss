@@ -495,7 +495,7 @@
 .pe-diagram {
   height: auto;
   max-width: 100%;
-  background: var(--color-primary-dark);
+  background: var(--theme-primary-dark);
   padding: 20px;
   -ms-grid-column-span: -2;
   grid-column-end: -1;
@@ -505,12 +505,12 @@
 }
 
 .pe-diagram__label {
-  fill: var(--color-text-inverted);
+  fill: var(--theme-text-inverted);
   text-align: center
 }
 
 .pe-diagram__arrow {
-  fill: var(--color-primary-light)
+  fill: var(--theme-primary-light)
 }
 
 .pe-diagram__page {
@@ -518,7 +518,7 @@
 }
 
 .pe-diagram__furniture {
-  fill: var(--color-secondary)
+  fill: var(--theme-secondary-normal)
 }
 
 .pe-diagram__loading {
@@ -530,7 +530,7 @@
 }
 
 .pe-diagram__image {
-  fill: var(--color-primary-light)
+  fill: var(--theme-primary-light)
 }
 
 .pe-diagram__arrow--disabled {
