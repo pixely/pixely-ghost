@@ -1,7 +1,8 @@
-import nav from './modules/nav'
+import Nav from './modules/nav'
 import ThemeSwitcher from './modules/theme-switcher'
 
-nav.init()
+// Main Menu/Theme drawer combo menu
+new Nav()
 
 new ThemeSwitcher()
 
