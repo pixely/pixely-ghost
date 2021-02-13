@@ -1,4 +1,4 @@
-const htmlmin = require('html-minifier')
+const htmlmin = require('html-minifier');
 
 module.exports = function htmlMinTransform(value, outputPath) {
     if (outputPath.indexOf('.html') > -1) {
@@ -11,8 +11,8 @@ module.exports = function htmlMinTransform(value, outputPath) {
             processScripts: [
                 'application/ld+json',
             ],
-        })
-        return minified
+        });
+        return minified;
     }
-    return value
-}
+    return value;
+};

@@ -1,5 +1,5 @@
-const api = require('../utils/ghost-api')
-const { stripDomain } = require('../utils/url')
+const api = require('../utils/ghost-api');
+const { stripDomain } = require('../utils/url');
 
 const authors = async (collection) => {
     collection = await api.authors
@@ -7,8 +7,8 @@ const authors = async (collection) => {
             limit: 'all',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
 
     // Get all posts with their authors attached
     const posts = await api.posts
@@ -17,23 +17,23 @@ const authors = async (collection) => {
             limit: 'all',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
 
     // Attach posts to their respective authors
     collection.forEach(async (author) => {
         const authorsPosts = posts.filter((post) => {
-            post.url = stripDomain(post.url)
-            return post.primary_author.id === author.id
-        })
+            post.url = stripDomain(post.url);
+            return post.primary_author.id === author.id;
+        });
         if (authorsPosts.length) {
-            author.posts = authorsPosts
+            author.posts = authorsPosts;
         }
 
-        author.url = stripDomain(author.url)
-    })
+        author.url = stripDomain(author.url);
+    });
 
-    return collection
-}
+    return collection;
+};
 
-module.exports = authors
+module.exports = authors;

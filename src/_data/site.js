@@ -1,9 +1,9 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const tokens = require('../../.tokens/js/tokens')
+const tokens = require('../../.tokens/js/tokens');
 
-const api = require('../_11ty/utils/ghost-api')
-const { generateImages } = require('../_11ty/utils/image')
+const api = require('../_11ty/utils/ghost-api');
+const { generateImages } = require('../_11ty/utils/image');
 
 // Get all site information
 module.exports = async function () {
@@ -12,22 +12,22 @@ module.exports = async function () {
             include: 'url',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
     
     // const icons = await generateImages(siteData.icon, [192, 512], ['png'])
 
-    const iconSizes = [48, 192, 512, 1024]
-    const iconFormats = ['png', 'svg']
-    const iconRounded = await generateImages('src/images/favicons/favicon-round.svg', iconSizes, iconFormats)
-    const iconSquare = await generateImages('src/images/favicons/favicon-square.svg', iconSizes, iconFormats)
+    const iconSizes = [48, 192, 512, 1024];
+    const iconFormats = ['png', 'svg'];
+    const iconRounded = await generateImages('src/images/favicons/favicon-round.svg', iconSizes, iconFormats);
+    const iconSquare = await generateImages('src/images/favicons/favicon-square.svg', iconSizes, iconFormats);
     
     const icons = {
         ico: '/favicon.ico',
         svg: '/favicon.svg',
         maskIcon: '/favicon-transparent.svg',
-        apple: iconSquare.png.filter((image) => image.width === 192).pop().url,
-    }
+        apple: iconSquare.png.filter(image => image.width === 192).pop().url,
+    };
 
     const formatIcons = (icon, purpose = 'any') => {
         return {
@@ -35,8 +35,8 @@ module.exports = async function () {
             type: icon.sourceType,
             sizes: `${icon.width}x${icon.height}`,
             purpose,
-        }
-    }
+        };
+    };
 
     const manifest = {
         colours: {
@@ -49,14 +49,14 @@ module.exports = async function () {
             ...iconRounded.png.map(icon => formatIcons(icon)),
             ...iconSquare.png.map(icon => formatIcons(icon, 'maskable')),
         ],
-    }
+    };
 
     if (process.env.SITE_URL) {
-        siteData.url = process.env.SITE_URL
+        siteData.url = process.env.SITE_URL;
     }
     return {
         ...siteData,
         manifest,
         icons,
-    }
-}
+    };
+};

@@ -1,7 +1,7 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const api = require('../_11ty/utils/ghost-api')
-const { generateImage } = require('../_11ty/utils/image')
+const api = require('../_11ty/utils/ghost-api');
+const { generateImage } = require('../_11ty/utils/image');
 
 // Get site meta information
 module.exports = async function () {
@@ -10,11 +10,11 @@ module.exports = async function () {
             include: 'icon,url',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
     
     if (process.env.SITE_URL) {
-        siteData.url = process.env.SITE_URL
+        siteData.url = process.env.SITE_URL;
     }
 
     const meta = {
@@ -27,7 +27,7 @@ module.exports = async function () {
                 src: await generateImage(siteData.icon, 300),
             },
         },
-    }
+    };
 
-    return meta
-}
+    return meta;
+};

@@ -23,4 +23,4 @@ module.exports = {
             failOnUploadFailure: true,
         },
     },
-}
+};

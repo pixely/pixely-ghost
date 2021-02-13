@@ -1,3 +1,3 @@
-const { stripDomain } = require('../utils/url')
+const { stripDomain } = require('../utils/url');
 
-exports.stripDomain = stripDomain
+exports.stripDomain = stripDomain;

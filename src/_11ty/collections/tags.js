@@ -1,5 +1,5 @@
-const api = require('../utils/ghost-api')
-const { stripDomain } = require('../utils/url')
+const api = require('../utils/ghost-api');
+const { stripDomain } = require('../utils/url');
 
 const tags = async (collection) => {
     collection = await api.tags
@@ -8,8 +8,8 @@ const tags = async (collection) => {
             limit: 'all',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
 
     // Get all posts with their tags attached
     const posts = await api.posts
@@ -18,23 +18,23 @@ const tags = async (collection) => {
             limit: 'all',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
 
     // Attach posts to their respective tags
     collection.forEach(async (tag) => {
         const taggedPosts = posts.filter((post) => {
-            post.url = stripDomain(post.url)
-            return post.primary_tag && post.primary_tag.slug === tag.slug
-        })
+            post.url = stripDomain(post.url);
+            return post.primary_tag && post.primary_tag.slug === tag.slug;
+        });
         if (taggedPosts.length) {
-            tag.posts = taggedPosts
+            tag.posts = taggedPosts;
         }
 
-        tag.url = stripDomain(tag.url)
-    })
+        tag.url = stripDomain(tag.url);
+    });
 
-    return collection
-}
+    return collection;
+};
 
-module.exports = tags
+module.exports = tags;

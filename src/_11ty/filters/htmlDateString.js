@@ -1,1 +1,1 @@
-exports.htmlDateString = dateObj => new Date(dateObj).toISOString()
+exports.htmlDateString = dateObj => new Date(dateObj).toISOString();
