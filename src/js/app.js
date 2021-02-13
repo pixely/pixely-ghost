@@ -1,14 +1,14 @@
-import Nav from './modules/nav'
-import ThemeSwitcher from './modules/theme-switcher'
+import Nav from './modules/nav';
+import ThemeSwitcher from './modules/theme-switcher';
 
 // Main Menu/Theme drawer combo menu
-new Nav()
+new Nav();
 
-new ThemeSwitcher()
+new ThemeSwitcher();
 
 // Import contact form module when required
 if (document.querySelectorAll('[data-js-module="contact"]').length) {
     import(`./modules/contact`).then(function (contact) {
-        contact.default.init()
-    })
+        contact.default.init();
+    });
 }

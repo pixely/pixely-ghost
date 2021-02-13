@@ -11,10 +11,6 @@
         <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        {% if site.icon %}
-            <link rel="shortcut icon" type="image/png" href="{{ site.icon }}"/>
-        {% endif %}
         
         {% block seo %}
             <!--Twitter Card-->
@@ -38,7 +34,7 @@
             {% endif %}
 
             <!-- Facebook OpenGraph -->
-            <meta property="og:url" content="{{site.url }}{{ page.url}}">
+            <meta property="og:url" content="{{ site.url }}{{ page.url}}">
             <meta property="og:type" content="website">
             <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}">
             {% if site.cover_image %}
@@ -72,7 +68,18 @@
         {% if codeinjection_head %}
             {{ codeinjection_head }}
         {% endif %}
-    
+
+        <link rel="shortcut icon" type="image/svg+xml" href="{{ site.icons.svg }}">
+        <link rel="alternate icon" href="{{ site.icons.ico }}">
+        <link rel="apple-touch-icon" href="{{ site.icons.apple }}">
+        <link rel="mask-icon" href="{{ site.icons.maskIcon }}" color="{{ site.manifest.colours.theme }}">
+
+        <link rel="manifest" href="{{ site.url }}manifest.json">
+        
+        <meta name="application-name" content="{{ site.title }}">
+        <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+        <meta name="theme-color" content="{{ site.manifest.colours.theme }}">
+
         <script>localStorage.getItem('theme') && document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));</script>
         <script src="{{ assets.js.main }}" type="module" defer></script>
     </head>

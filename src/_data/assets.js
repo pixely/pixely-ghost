@@ -6,7 +6,7 @@ module.exports = () => {
         js: {
             main: '/js/app.js',
         },
-    }
+    };
 
-    return assetPaths
-}
+    return assetPaths;
+};

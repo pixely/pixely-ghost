@@ -1,5 +1,5 @@
-const api = require('../utils/ghost-api')
-const { formatPostObject } = require('../utils/post')
+const api = require('../utils/ghost-api');
+const { formatPostObject } = require('../utils/post');
 
 const posts = async (collection) => {
     collection = await api.posts
@@ -8,15 +8,15 @@ const posts = async (collection) => {
             limit: 'all',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
 
-    collection = await Promise.all(collection.map(formatPostObject))
+    collection = await Promise.all(collection.map(formatPostObject));
 
     // Bring featured post to the top of the list
-    collection.sort((post, nextPost) => nextPost.featured - post.featured)
+    collection.sort((post, nextPost) => nextPost.featured - post.featured);
     
-    return collection
-}
+    return collection;
+};
 
-module.exports = posts
+module.exports = posts;

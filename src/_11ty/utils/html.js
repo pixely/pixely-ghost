@@ -1,4 +1,4 @@
-const { formatHtml, formatBasicHtml } = require('./rehype')
+const { formatHtml, formatBasicHtml } = require('./rehype');
 
-exports.formatHtml = formatHtml
-exports.formatBasicHtml = formatBasicHtml
+exports.formatHtml = formatHtml;
+exports.formatBasicHtml = formatBasicHtml;

@@ -1,5 +1,5 @@
-const partials = require('rehype-partials')
-const { Liquid } = require('liquidjs')
+const partials = require('rehype-partials');
+const { Liquid } = require('liquidjs');
 
 const partialsHandler = (includePath, callback) => {
     try {
@@ -9,13 +9,13 @@ const partialsHandler = (includePath, callback) => {
             extname: '.liquid',
             dynamicPartials: true,
             strict_filters: true,
-        })
-        const renderedMarkup = liquidEngine.renderFileSync(includePath)
-        callback(null, renderedMarkup)
+        });
+        const renderedMarkup = liquidEngine.renderFileSync(includePath);
+        callback(null, renderedMarkup);
     } catch (e) {
-        callback(e)
+        callback(e);
     }
-}
+};
 
-exports.partials = partials
-exports.partialsHandler = partialsHandler
+exports.partials = partials;
+exports.partialsHandler = partialsHandler;

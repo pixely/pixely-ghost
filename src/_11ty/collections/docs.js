@@ -1,5 +1,5 @@
-const api = require('../utils/ghost-api')
-const { formatPostObject } = require('../utils/post')
+const api = require('../utils/ghost-api');
+const { formatPostObject } = require('../utils/post');
 
 const docs = async (collection) => {
     collection = await api.pages
@@ -8,12 +8,12 @@ const docs = async (collection) => {
             limit: 'all',
         })
         .catch((err) => {
-            console.error(err)
-        })
+            console.error(err);
+        });
 
-    collection = await Promise.all(collection.map(formatPostObject))
+    collection = await Promise.all(collection.map(formatPostObject));
 
-    return collection
-}
+    return collection;
+};
 
-module.exports = docs
+module.exports = docs;

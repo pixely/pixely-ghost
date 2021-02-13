@@ -1,3 +1,3 @@
-const ghostHelpers = require('@tryghost/helpers')
+const ghostHelpers = require('@tryghost/helpers');
 
-exports.getTags = tags => ghostHelpers.tags(tags)
+exports.getTags = tags => ghostHelpers.tags(tags);
