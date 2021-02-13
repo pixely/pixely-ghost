@@ -1,4 +1,4 @@
-const themes = require('../../.tokens/js/tokens')
+const tokens = require('../../.tokens/js/tokens')
 
 module.exports = function () {
     const defaultTheme = {
@@ -8,7 +8,7 @@ module.exports = function () {
         properties: [],
     }
     const allThemes = Object
-        .entries(themes.color.theme)
+        .entries(tokens.color.theme)
         .map((theme) => {
             return {
                 name: theme[0],
@@ -16,6 +16,7 @@ module.exports = function () {
                 properties: theme[1],
             }
         })
+
     return [
         defaultTheme,
         ...allThemes,
