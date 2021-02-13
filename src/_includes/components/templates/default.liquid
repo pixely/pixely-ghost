@@ -34,7 +34,7 @@
             {% endif %}
 
             <!-- Facebook OpenGraph -->
-            <meta property="og:url" content="{{site.url }}{{ page.url}}">
+            <meta property="og:url" content="{{ site.url }}{{ page.url}}">
             <meta property="og:type" content="website">
             <meta property="og:title" content="{% if pageTitle %}{{ pageTitle }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}">
             {% if site.cover_image %}
@@ -74,7 +74,7 @@
         <link rel="apple-touch-icon" href="{{ site.icons.apple }}">
         <link rel="mask-icon" href="{{ site.icons.maskIcon }}" color="{{ site.manifest.colours.theme }}">
 
-        <link rel="manifest" href="/manifest.json">
+        <link rel="manifest" href="{{ site.url }}manifest.json">
         
         <meta name="application-name" content="{{ site.title }}">
         <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
