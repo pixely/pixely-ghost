@@ -3,7 +3,7 @@ require('dotenv').config();
 const { readFileSync } = require('fs');
 const pluginRSS = require('@11ty/eleventy-plugin-rss');
 const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
-const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
+// const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const schema = require('@quasibit/eleventy-plugin-schema');
 
@@ -24,7 +24,7 @@ module.exports = function (config) {
     config.addTransform('htmlmin', htmlMinTransform);
 
     config.addPlugin(eleventyHelmetPlugin);
-    config.addPlugin(cacheBuster({ outputDirectory: './dist' }));
+    // config.addPlugin(cacheBuster({ outputDirectory: './dist' }));
     config.addPlugin(pluginRSS);
     config.addPlugin(sitemap, {
         sitemap: {
