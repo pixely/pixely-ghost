@@ -28,7 +28,7 @@ module.exports = async function () {
         maskIcon: '/favicon-transparent.svg',
         apple: iconSquare.png.filter((image) => image.width === 192).pop().url,
     }
-    
+
     const formatIcons = (icon, purpose = 'any') => {
         return {
             src: icon.url,
@@ -45,9 +45,9 @@ module.exports = async function () {
         },
         icons: [
             ...iconRounded.svg.map(icon => formatIcons(icon)),
+            ...iconSquare.svg.map(icon => formatIcons(icon, 'maskable')),
             ...iconRounded.png.map(icon => formatIcons(icon)),
             ...iconSquare.png.map(icon => formatIcons(icon, 'maskable')),
-            ...iconSquare.svg.map(icon => formatIcons(icon, 'maskable')),
         ],
     }
 
