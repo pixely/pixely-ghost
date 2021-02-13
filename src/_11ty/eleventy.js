@@ -69,6 +69,7 @@ module.exports = function (config) {
     });
     
     config.addPassthroughCopy('src/images');
+    config.addPassthroughCopy({ 'src/images/favicons': '/' });
 
     // Eleventy configuration
     return {
