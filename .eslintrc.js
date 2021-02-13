@@ -26,7 +26,6 @@ module.exports = {
             { requireReturnForObjectLiteral: true },
         ],
         'jsx-quotes': ['error', 'prefer-double'],
-        semi: ['error', 'never'],
         'object-curly-spacing': ['error', 'always'],
         'comma-dangle': [
             'error',
@@ -42,5 +41,5 @@ module.exports = {
             ignoredNodes: ['TemplateLiteral'],
         }],
     },
-}
+};
 
