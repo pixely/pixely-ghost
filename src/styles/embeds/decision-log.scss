@@ -33,6 +33,38 @@
     &__con {
         fill: crimson;
     }
+
+    &__arrow {
+        fill: none;
+        stroke: var(--theme-tertiary);
+        stroke-width: 2px;
+        stroke-miterlimit: 10;
+    }
+
+    &__arrow-head {
+        fill: var(--theme-tertiary);
+    }
+
+    &__box {
+        fill: var(--theme-secondary-normal);
+    }
+
+    &__text {
+        font-family: $font-family-body-copy;
+        fill: var(--theme-text-secondary);
+        // font-size: 1.44rem;
+        pointer-events: none;
+    }
+
+    &--fade-1 {
+        fill-opacity: .75;
+        stroke-opacity: .75;
+    }
+
+    &--fade-2 {
+        fill-opacity: .5;
+        stroke-opacity: .5;
+    }
 }
 
 @keyframes cursorFade {
