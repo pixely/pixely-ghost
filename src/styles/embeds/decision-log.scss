@@ -1,87 +1,86 @@
 @import "../settings/tokens";
 
 .decision-log {
-    background: var(--theme-primary-normal);
-    height: auto;
-    width: 100%;
+  background: var(--theme-primary-normal);
+  height: auto;
+  width: 100%;
 
-    &__base {
-        fill: var(--theme-base);
+  &__base {
+    fill: var(--theme-base);
+  }
+
+  &__cursor {
+    animation: 1s cursorFade ease-in-out infinite;
+    stroke: var(--theme-tertiary);
+  }
+
+  &__heading {
+    fill: var(--theme-secondary-normal);
+  }
+
+  &__checkbox {
+    fill: #fff;
+  }
+
+  &__text {
+    fill: var(--theme-text-normal);
+  }
+
+  &__pro {
+    fill: darkolivegreen;
+  }
+
+  &__con {
+    fill: crimson;
+  }
+
+  &__arrow {
+    fill: none;
+    stroke: var(--theme-tertiary);
+    stroke-width: 2px;
+    stroke-miterlimit: 10;
+
+    &--dashed {
+      stroke-dasharray: 6 6;
     }
+  }
 
-    &__cursor {
-        animation: 1s cursorFade ease-in-out infinite;
-        stroke: var(--theme-tertiary);
-    }
+  &__arrow-head {
+    fill: var(--theme-tertiary);
+  }
 
-    &__heading {
-        fill: var(--theme-secondary-normal);
-    }
+  &__box {
+    fill: var(--theme-secondary-normal);
+  }
 
-    &__checkbox {
-        fill: #fff;
-    }
+  &__text {
+    font-family: $font-family-body-copy;
+    fill: var(--theme-text-secondary);
+    font-size: .67rem;
+    pointer-events: none;
+    text-anchor: middle;
+  }
 
-    &__text {
-        fill: var(--theme-text-normal);
-    }
+  &--fade-1 {
+    fill-opacity: .75;
+    stroke-opacity: .75;
+  }
 
-    &__pro {
-        fill: darkolivegreen;
-    }
-
-    &__con {
-        fill: crimson;
-    }
-
-    &__arrow {
-        fill: none;
-        stroke: var(--theme-tertiary);
-        stroke-width: 2px;
-        stroke-miterlimit: 10;
-
-        &--dashed {
-            stroke-dasharray: 6 6;
-        }
-    }
-
-    &__arrow-head {
-        fill: var(--theme-tertiary);
-    }
-
-    &__box {
-        fill: var(--theme-secondary-normal);
-    }
-
-    &__text {
-        font-family: $font-family-body-copy;
-        fill: var(--theme-text-secondary);
-        font-size: 0.67rem;
-        pointer-events: none;
-        text-anchor: middle;
-    }
-
-    &--fade-1 {
-        fill-opacity: .75;
-        stroke-opacity: .75;
-    }
-
-    &--fade-2 {
-        fill-opacity: .5;
-        stroke-opacity: .5;
-    }
+  &--fade-2 {
+    fill-opacity: .5;
+    stroke-opacity: .5;
+  }
 }
 
 @keyframes cursorFade {
 
-    0%,
-    100% {
-      opacity: 0;
-    }
-  
-    40%,
-    60% {
-      opacity: 1;
-    }
-  
+  0%,
+  100% {
+    opacity: 0;
   }
+  
+  40%,
+  60% {
+    opacity: 1;
+  }
+}
