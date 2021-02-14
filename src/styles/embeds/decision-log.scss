@@ -1,0 +1,50 @@
+@import "../settings/tokens";
+
+.decision-log {
+    background: var(--theme-primary-normal);
+    height: auto;
+    width: 100%;
+
+    &__base {
+        fill: var(--theme-base);
+    }
+
+    &__cursor {
+        animation: 1s cursorFade ease-in-out infinite;
+        stroke: var(--theme-tertiary);
+    }
+
+    &__heading {
+        fill: var(--theme-secondary-normal);
+    }
+
+    &__checkbox {
+        fill: #fff;
+    }
+
+    &__text {
+        fill: var(--theme-text-normal);
+    }
+
+    &__pro {
+        fill: darkolivegreen;
+    }
+
+    &__con {
+        fill: crimson;
+    }
+}
+
+@keyframes cursorFade {
+
+    0%,
+    100% {
+      opacity: 0;
+    }
+  
+    40%,
+    60% {
+      opacity: 1;
+    }
+  
+  }
