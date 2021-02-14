@@ -9,7 +9,7 @@
 .pyramid__layer,
 .pyramid__text {
   stroke: none;
-  fill: var(--theme-primary-light)
+  fill: var(--theme-primary-light);
 }
 
 .pyramid,
@@ -20,18 +20,18 @@
 }
 
 .pyramid--back {
-  fill: var(--theme-primary-dark)
+  fill: var(--theme-primary-dark);
 }
 
 .pyramid__text {
   font-family: $font-family-body-copy;
   fill: var(--theme-text-inverted);
-  font-size: 1.44rem
+  font-size: 1.44rem;
 }
   
 .pyramid__arrow {
   fill: var(--theme-secondary-dark);
-  stroke: var(--theme-secondary-dark)
+  stroke: var(--theme-secondary-dark);
 }
 
 .pyramid__arrow-text {
