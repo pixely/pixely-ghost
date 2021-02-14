@@ -1,39 +1,39 @@
-name: Lighthouse
+# name: Lighthouse
 
-on: [push, pull_request]
+# on: [push, pull_request]
 
-jobs:
-  lhci:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2.1.4
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2.1.4
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
-      - name: Run build
-        run: yarn build
-        env:
-          GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
-          GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
-          SITE_URL: "https://localhost:8080/"
-      - name: Run Lighthouse CI
-        run: yarn lhci autorun --settings.skipAudits='redirects-http'
-        env:
-          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+# jobs:
+#   lhci:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [14.x]
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v2.1.4
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - name: Get yarn cache directory path
+#         id: yarn-cache-dir-path
+#         run: echo "::set-output name=dir::$(yarn cache dir)"
+#       - uses: actions/cache@v2.1.4
+#         id: yarn-cache
+#         with:
+#           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+#           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-yarn-
+#       - name: Install dependencies
+#         run: yarn --frozen-lockfile
+#       - name: Run build
+#         run: yarn build
+#         env:
+#           GHOST_API_URL: ${{ secrets.GHOST_API_URL }}
+#           GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
+#           SITE_URL: "https://localhost:8080/"
+#       - name: Run Lighthouse CI
+#         run: yarn lhci autorun --settings.skipAudits='redirects-http'
+#         env:
+#           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+#           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

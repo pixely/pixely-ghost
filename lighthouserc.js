@@ -2,11 +2,11 @@ module.exports = {
     ci: {
         collect: {
             url: [
-                '/',
-                '/2020-year-in-review/',
-                '/metrics-metrics-everywhere-where-to-start-with-web-performance-metrics/',
-                '/author/graham/',
-                '/tag/performance/',
+                'https://pixely.co.uk/',
+                'https://pixely.co.uk/2020-year-in-review/',
+                'https://pixely.co.uk/metrics-metrics-everywhere-where-to-start-with-web-performance-metrics/',
+                'https://pixely.co.uk/author/graham/',
+                'https://pixely.co.uk/tag/performance/',
             ],
             numberOfRuns: 3,
             staticDistDir: './dist',
