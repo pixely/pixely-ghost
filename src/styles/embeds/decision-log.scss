@@ -39,6 +39,10 @@
         stroke: var(--theme-tertiary);
         stroke-width: 2px;
         stroke-miterlimit: 10;
+
+        &--dashed {
+            stroke-dasharray: 6 6;
+        }
     }
 
     &__arrow-head {
@@ -52,7 +56,7 @@
     &__text {
         font-family: $font-family-body-copy;
         fill: var(--theme-text-secondary);
-        // font-size: 1.44rem;
+        font-size: 0.67rem;
         pointer-events: none;
     }
 
