@@ -13,9 +13,6 @@ module.exports = {
         },
         assert: {
             preset: 'lighthouse:no-pwa',
-            settings: {
-                skipAudits: ['redirects-http'],
-            },
             assertions: {
                 'unused-javascript': ['warn'],
             },

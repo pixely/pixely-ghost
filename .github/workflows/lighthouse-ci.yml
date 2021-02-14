@@ -33,7 +33,7 @@ jobs:
           GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
           SITE_URL: "https://localhost:8080/"
       - name: Run Lighthouse CI
-        run: yarn lhci autorun
+        run: yarn lhci autorun --settings.skipAudits='redirects-http'
         env:
           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
