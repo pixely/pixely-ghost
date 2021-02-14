@@ -176,6 +176,32 @@
       border-bottom: 1px solid var(--theme-primary-light);
     }
   }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  thead th {
+    border-bottom: 2px solid var(--theme-secondary-dark);
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 10px;
+    font-size: .833rem;
+    vertical-align: top;
+  }
+
+  th:not(:last-child),
+  td:not(:last-child) {
+    border-right: 1px solid var(--theme-secondary-normal);
+  }
+
+  tr:not(:last-child) td {
+    border-bottom: 1px solid var(--theme-secondary-normal);
+  }
+  
 }
 
 @media (min-width: 576px) {
