@@ -2,17 +2,20 @@ module.exports = {
     ci: {
         collect: {
             url: [
-                'https://pixely.co.uk/',
-                'https://pixely.co.uk/2020-year-in-review/',
-                'https://pixely.co.uk/metrics-metrics-everywhere-where-to-start-with-web-performance-metrics/',
-                'https://pixely.co.uk/author/graham/',
-                'https://pixely.co.uk/tag/performance/',
+                '/',
+                '/2020-year-in-review/',
+                '/metrics-metrics-everywhere-where-to-start-with-web-performance-metrics/',
+                '/author/graham/',
+                '/tag/performance/',
             ],
             numberOfRuns: 3,
             staticDistDir: './dist',
         },
         assert: {
             preset: 'lighthouse:no-pwa',
+            settings: {
+                skipAudits: ['redirects-http'],
+            },
             assertions: {
                 'unused-javascript': ['warn'],
             },
