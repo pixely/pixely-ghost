@@ -75,6 +75,7 @@
     text-decoration-color: rgba(0,0,0,.3);
     transition: all linear .2s;
     box-shadow: 0px 0px 0px 2px transparent;
+    word-break: break-word;
 
     &:hover,
     &:focus,
@@ -95,9 +96,14 @@
     white-space: pre-wrap;
     padding: 20px;
     background: var(--theme-text-normal);
-    color: var(--theme-text-inverted);
+    color: var(--theme-base);
     border-radius: 5px;
     font-size: .694rem;
+    overflow-x: auto;
+  }
+
+  pre code {
+    color: var(--theme-base);
   }
 
   code {
