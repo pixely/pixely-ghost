@@ -5979,7 +5979,7 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
-file-entry-cache@^6.0.0, file-entry-cache@^6.0.1:
+file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/file-entry-cache/-/file-entry-cache-6.0.1.tgz#211b2dd9659cb0394b073e7323ac3c933d522027"
   integrity sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==
@@ -8277,10 +8277,10 @@ liquidjs@^6.4.3:
   resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-6.4.3.tgz#c7caf7a3f6c87dc6a22a5a351328cf8f7298c243"
   integrity sha512-m1xSB10Ncu22NR3X0xdaqu/GvP1xadDCFYGqGgd6me8DAWjyA68BKE5DHJmSxw1CGsWPsX+Hj2v/87J2w/LvMQ==
 
-liquidjs@^9.23.1:
-  version "9.23.1"
-  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.23.1.tgz#139c3d8f44623039c8d4ba5859232f03c9aa59e1"
-  integrity sha512-crXVNWw3eAgJ+GaTntwGAV5BX2Nhzs/rzDsAlx6DTMDIq14jt84X07PX4y5GyZRFD9N4k6Wr48FZn0peD7la8w==
+liquidjs@^9.23.2:
+  version "9.23.2"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.23.2.tgz#99a195f3a2e0a375a848b440e72fdf8bfdf3b156"
+  integrity sha512-aqun2s+esc8v1TIMQROeiTcR9/MOdK3sLz/ngFNh67pyMKC4NFp6Ttzc2HBPOAndbeoIC4NQXwSEITcYeE7Q3A==
 
 list-to-array@^1.1.0:
   version "1.1.0"
