@@ -1,7 +1,9 @@
 name: Lighthouse
 
 on: 
-  pull_request
+  pull_request:
+    branches-ignore:
+      - dependabot/*
   push:
     branches-ignore:
       - master
