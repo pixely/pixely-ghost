@@ -8,8 +8,6 @@ on:
     branches-ignore:
       - master
 
-on: [push, pull_request]
-
 jobs:
   lhci:
     runs-on: ubuntu-latest
