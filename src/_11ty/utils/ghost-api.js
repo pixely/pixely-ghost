@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const ghostContentAPI = require('@tryghost/content-api');
 
 // Init Ghost API
