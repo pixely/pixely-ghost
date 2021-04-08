@@ -1774,10 +1774,10 @@
   resolved "https://registry.yarnpkg.com/@quasibit/eleventy-plugin-schema/-/eleventy-plugin-schema-1.0.0.tgz#ede8336852312a31ecd8475111f9539fd8106dfe"
   integrity sha512-eM61mM9xDYonJnq2IjPENa9be89mMP3CcRmpQpjQphB4gReoojUzE0MEBTtqNlX8Zl9qjzJznLGcnv3TNHMEQg==
 
-"@quasibit/eleventy-plugin-sitemap@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@quasibit/eleventy-plugin-sitemap/-/eleventy-plugin-sitemap-2.0.4.tgz#b30fb565f5d74fae0f1bb74d89d083e322013827"
-  integrity sha512-UjfyzleWGVOtDKpEXSUu2C7IoIg2cPFD+7b67/Wph6BeEGsGo8QljvP8tip/PRo0WVU/NhF+CNQL2Vz4+MgN+Q==
+"@quasibit/eleventy-plugin-sitemap@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@quasibit/eleventy-plugin-sitemap/-/eleventy-plugin-sitemap-2.1.0.tgz#ad23522d4195f4156c37ecc19a6612b4d698c928"
+  integrity sha512-Usa4d/tZHZMnZQFtmfRSZgYPT2jSDkXCWfwkX1TquHSUlGFwLUZj6HhbDQRMLtWjIY3CWEDq+02rlB0y15Dt6w==
   dependencies:
     sitemap "^6.3.2"
 
