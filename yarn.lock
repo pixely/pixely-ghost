@@ -1808,10 +1808,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tryghost/content-api@^1.4.14":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.5.1.tgz#7ec54fa8123228e4800487401ff2e5c31f9ce5f8"
-  integrity sha512-+LrltFFR5NRrhVMPMP8s2notVQSErE4pfeIK0SoQ+kAFQvcK96kQu9qQJ+Z9zR2qu/f2iJkqOEN9/fpuSKC/zg==
+"@tryghost/content-api@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.5.3.tgz#94f3fa5b8fb85876ad67365ef2b1b456408befe2"
+  integrity sha512-vrDKdwKVKl+meBpeScM2mlwJCpzBOPfLsjqoHofcYvY8oHq4vts65xY1m0CVGGz9tpl4hXPuR4eD2bov18RuEQ==
   dependencies:
     axios "0.21.1"
 
