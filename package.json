@@ -61,7 +61,7 @@
     "@quasibit/eleventy-plugin-sitemap": "^2.0.4",
     "@tryghost/content-api": "^1.4.14",
     "@tryghost/helpers": "^1.1.39",
-    "@parcel/transformer-sass": "2.0.0-beta.2",
+    "@parcel/transformer-sass": "2.0.0-nightly.649",
     "clean-css": "^5.1.0",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
