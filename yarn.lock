@@ -7983,10 +7983,10 @@ liquidjs@^6.4.3:
   resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-6.4.3.tgz#c7caf7a3f6c87dc6a22a5a351328cf8f7298c243"
   integrity sha512-m1xSB10Ncu22NR3X0xdaqu/GvP1xadDCFYGqGgd6me8DAWjyA68BKE5DHJmSxw1CGsWPsX+Hj2v/87J2w/LvMQ==
 
-liquidjs@^9.23.1:
-  version "9.23.2"
-  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.23.2.tgz#99a195f3a2e0a375a848b440e72fdf8bfdf3b156"
-  integrity sha512-aqun2s+esc8v1TIMQROeiTcR9/MOdK3sLz/ngFNh67pyMKC4NFp6Ttzc2HBPOAndbeoIC4NQXwSEITcYeE7Q3A==
+liquidjs@^9.24.1:
+  version "9.24.1"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.24.1.tgz#328744ed2e65cdd9904e4ecbb47213d78229a5b5"
+  integrity sha512-pDgJ0iClC05+HV9M9+NbjQnQ9gZraYTNtfdf36GU97h/EnQCtoNTybKJySOBqo8UKPNTqn7wmkt1EK/EFCBbWw==
 
 list-to-array@^1.1.0:
   version "1.1.0"
