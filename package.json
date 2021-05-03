@@ -79,6 +79,6 @@
     "rehype-partials": "^1.0.6",
     "sass": "^1.32.8",
     "style-dictionary": "^2.10.2",
-    "unist-util-visit": "^2.0.3"
+    "unist-util-visit": "^3.0.0"
   }
 }
