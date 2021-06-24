@@ -1558,6 +1558,13 @@
   dependencies:
     "@parcel/types" "2.0.0-beta.2"
 
+"@parcel/plugin@2.0.0-nightly.734+41a9a11a":
+  version "2.0.0-nightly.734"
+  resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.0.0-nightly.734.tgz#e814809b77a99847f2f6df29dc87c92acf1802d3"
+  integrity sha512-KtivbGBGgII1bByQWSKwRAIMrXee4qn4V2yISvvo83iHqrDzDj5yhcAirjlx5aHZFfP3qd5gCdruDthzaJY5TA==
+  dependencies:
+    "@parcel/types" "2.0.0-nightly.734+41a9a11a"
+
 "@parcel/reporter-cli@2.0.0-beta.2":
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@parcel/reporter-cli/-/reporter-cli-2.0.0-beta.2.tgz#367faf7dacf40141d56cc26fd02e59c40dbaf9f6"
@@ -1645,6 +1652,14 @@
   dependencies:
     node-addon-api "^3.0.0"
     node-gyp-build "^4.2.3"
+
+"@parcel/source-map@2.0.0-rc.4":
+  version "2.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@parcel/source-map/-/source-map-2.0.0-rc.4.tgz#e2a58bde612b5e383d2b2ca9e81f07d592adfcde"
+  integrity sha512-Yl6pNy34YNQfXtx03CCTKTrV6X3hh7v2vSrFDzJe/m6HFSlc1/n2pz05bbPOoeojR8zVNRRVoAdSH0iDMKGRuQ==
+  dependencies:
+    detect-libc "^1.0.3"
+    globby "^11.0.3"
 
 "@parcel/transformer-babel@2.0.0-beta.2":
   version "2.0.0-beta.2"
@@ -1775,19 +1790,24 @@
     react-refresh "^0.9.0"
     semver "^5.4.1"
 
-"@parcel/transformer-sass@2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.0.0-beta.2.tgz#94a0afc37a2b2fe76e2be54cc331c2756918b25b"
-  integrity sha512-xJ21lbkSqq8p0+o6BMwE7BcyTmxq54QUW92KybdE5oP2Cc8DhP7vS/AdWsbl9L+6Gzf41SYIze8JCO+i5Ls6Rg==
+"@parcel/transformer-sass@2.0.0-nightly.734":
+  version "2.0.0-nightly.734"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.0.0-nightly.734.tgz#fccd24122a3b0292cfc5ff0fe09961059e5c9a2b"
+  integrity sha512-4WNyvGv74I4WNfCh8OOUXJB2QCDv+LBiUbJdWYIujVgzDaBBBdPFdGN/4lSH2G31b+TFSimrreEWhFlF1jP3jg==
   dependencies:
-    "@parcel/plugin" "2.0.0-beta.2"
-    "@parcel/source-map" "2.0.0-alpha.4.21"
+    "@parcel/plugin" "2.0.0-nightly.734+41a9a11a"
+    "@parcel/source-map" "2.0.0-rc.4"
     sass "^1.32.4"
 
 "@parcel/types@2.0.0-beta.2":
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-beta.2.tgz#39530f885a546ccc8759ba8b970440bb7aadc146"
   integrity sha512-ri2BPGAFDntQbA5p3m/4QgnEqWYToUMkAtLelXSPbwnTM0KARavTAwSRqz1xwTdXa8gQyv4SSV7xURwaPaZ3GA==
+
+"@parcel/types@2.0.0-nightly.734+41a9a11a":
+  version "2.0.0-nightly.734"
+  resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.734.tgz#e877c48a3b01e2f4076d8cd72a950c1551a7e2d2"
+  integrity sha512-Y1FKyhMHj3EZ/gqCmpvPqD8mnb+bpp2MkSsWCOnjC7IPcFqj8U8frjLTwHuI9sVxveOmRjy1QacpmQBrpQZJ5A==
 
 "@parcel/utils@2.0.0-beta.2":
   version "2.0.0-beta.2"
@@ -3629,7 +3649,7 @@ charenc@0.0.2:
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
 
-"chokidar@>=2.0.0 <4.0.0", "chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.1:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.1.tgz#ee9ce7bbebd2b79f49f304799d5468e31e14e68a"
   integrity sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==
@@ -11512,14 +11532,7 @@ safe-regex@^2.1.1:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.32.4:
-  version "1.32.8"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.8.tgz#f16a9abd8dc530add8834e506878a2808c037bdc"
-  integrity sha512-Sl6mIeGpzjIUZqvKnKETfMf0iDAswD9TNlv13A7aAF3XZlRPMq4VvJWBC2N2DXbp94MQVdNSFG6LfF/iOXrPHQ==
-  dependencies:
-    chokidar ">=2.0.0 <4.0.0"
-
-sass@^1.32.8:
+sass@^1.32.4, sass@^1.32.8:
   version "1.32.12"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.12.tgz#a2a47ad0f1c168222db5206444a30c12457abb9f"
   integrity sha512-zmXn03k3hN0KaiVTjohgkg98C3UowhL1/VSGdj4/VAAiMKGQOE80PFPxFP2Kyq0OUskPKcY5lImkhBKEHlypJA==
