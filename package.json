@@ -60,7 +60,7 @@
     "@parcel/transformer-sass": "2.0.0-beta.2",
     "@quasibit/eleventy-plugin-schema": "^1.0.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.4",
-    "@tryghost/content-api": "^1.4.14",
+    "@tryghost/content-api": "^1.5.10",
     "@tryghost/helpers": "^1.1.39",
     "clean-css": "^5.1.0",
     "cross-env": "^7.0.3",
