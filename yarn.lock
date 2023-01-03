@@ -8187,15 +8187,15 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
+liquidjs@^10.4.0:
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-10.4.0.tgz#4993135c87a582389bccd3a4be2cabf044c01474"
+  integrity sha512-4fpR8KFJ96bXkzynK9Yo1jwn7sjOkJfKawSbEXINc39DZfy7r5SYtcAM5T/Ccg5n0xoZf6ap5Gap4VwFCJiQ1g==
+
 liquidjs@^6.4.3:
   version "6.4.3"
   resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-6.4.3.tgz#c7caf7a3f6c87dc6a22a5a351328cf8f7298c243"
   integrity sha512-m1xSB10Ncu22NR3X0xdaqu/GvP1xadDCFYGqGgd6me8DAWjyA68BKE5DHJmSxw1CGsWPsX+Hj2v/87J2w/LvMQ==
-
-liquidjs@^9.23.1:
-  version "9.25.0"
-  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.25.0.tgz#6975764b74827c81bc1363b5ca4e9bc1140b7bb6"
-  integrity sha512-TIccrphsWN53fVF9G/wDaKD1cHaB097ULLf+FzxxqN2iyJjzp/Oe9xlFjZCR1ZrAeISusWSPg3r7Dg8BD2Uztg==
 
 list-to-array@^1.1.0:
   version "1.1.0"
