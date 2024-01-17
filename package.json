@@ -69,7 +69,7 @@
     "eslint-utils": "^2.1.0",
     "hast-util-is-element": "^1.1.0",
     "html-minifier": "^4.0.0",
-    "liquidjs": "^9.23.1",
+    "liquidjs": "^10.10.0",
     "luxon": "^1.26.0",
     "normalize.css": "^8.0.1",
     "parcel": "^2.0.0",
