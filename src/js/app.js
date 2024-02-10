@@ -1,7 +1,7 @@
 import Nav from './modules/nav';
 import ThemeSwitcher from './modules/theme-switcher';
 
-// Main Menu/Theme drawer combo menu
+// // Main Menu/Theme drawer combo menu
 new Nav();
 
 new ThemeSwitcher();
