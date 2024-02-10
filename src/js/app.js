@@ -1,3 +1,5 @@
+import '../styles/styles.scss';
+
 import Nav from './modules/nav';
 import ThemeSwitcher from './modules/theme-switcher';
 
