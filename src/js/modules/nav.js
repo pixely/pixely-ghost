@@ -16,7 +16,7 @@ class Nav {
                 animatingOut: 'is-animating-out',
             },
         };
-        let menu, menuButton, themeDrawer, themeDrawerButton, themeDrawerCloseButton, overlay;
+        let menu; let menuButton; let themeDrawer; let themeDrawerButton; let themeDrawerCloseButton; let overlay;
 
         let menuVisible = false;
         let themeDrawerVisible = false;

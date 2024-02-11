@@ -1,9 +1,6 @@
 [build]
-  command = "yarn build"
+  command = "npm run build:eleventy"
   publish = "dist/"
 
 [template]
   incoming-hooks = ["Ghost"]
-
-[[plugins]]
-  package = "netlify-plugin-submit-sitemap"

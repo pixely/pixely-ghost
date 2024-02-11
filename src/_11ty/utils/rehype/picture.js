@@ -1,5 +1,3 @@
-const visit = require('unist-util-visit');
-const is = require('hast-util-is-element');
 const { extname } = require('path');
 
 const { generateSrcsetWidths, generateImages } = require('../image');
@@ -16,19 +14,21 @@ const picture = (opts = {}) => {
     return transformer;
 
     async function transformer(tree) {
+        const { visit } = await import ('unist-util-visit');
         visit(tree, 'element', visitor);
         await Promise.all(promises);
         return;
     }
 
-    function visitor(node, index, parent) {
+    async function visitor(node, index, parent) {
+        const { isElement } = await import ('hast-util-is-element');
         const supportedFileTypes = ['jpeg', 'jpg', 'png', 'webp', 'gif', 'tiff', 'avif', 'svg'];
         const src = node.properties.src;
         let sizes = options.basic ? '100vw' : '(min-width: 575) 50vw, 90vw';
         let sizesArray = options.basic ? [600] : [270, 325, 360, 480, 690, 810];
         let extension;
 
-        if (!parent || !is(node, 'img') || !src) {
+        if (!parent || !isElement(node, 'img') || !src) {
             return;
         }
 
@@ -66,7 +66,7 @@ const picture = (opts = {}) => {
     function sources(images, sizes) {
         const nodes = [];
     
-        Object.values(images).map((imageFormat) => {
+        Object.values(images).forEach((imageFormat) => {
             nodes.push({
                 type: 'element',
                 tagName: 'source',
