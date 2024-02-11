@@ -42,14 +42,13 @@
     "@lhci/cli": "^0.9.0",
     "babel-eslint": "^10.1.0",
     "concurrently": "^6.0.0",
-    "eslint": "7.25.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-ghost": "2.2.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-ghost": "3.4.0",
     "normalize": "^0.3.1",
-    "stylelint": "^13.12.0",
-    "stylelint-config-airbnb": "^0.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.19.0"
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.1.0"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
@@ -67,7 +66,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^9.0.0",
     "eleventy-plugin-helmet": "^0.2.2",
-    "eslint-utils": "^2.1.0",
+    "eslint-utils": "^3.0.0",
     "hast-util-is-element": "^1.1.0",
     "html-minifier": "^4.0.0",
     "liquidjs": "^9.23.1",
@@ -84,6 +83,5 @@
     "sharp": "^0.33.2",
     "style-dictionary": "^2.10.2",
     "unist-util-visit": "^2.0.3"
-  },
-  "packageManager": "yarn@4.1.0"
+  }
 }
