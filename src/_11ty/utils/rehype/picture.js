@@ -66,7 +66,7 @@ const picture = (opts = {}) => {
     function sources(images, sizes) {
         const nodes = [];
     
-        Object.values(images).map((imageFormat) => {
+        Object.values(images).forEach((imageFormat) => {
             nodes.push({
                 type: 'element',
                 tagName: 'source',

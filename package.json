@@ -39,11 +39,10 @@
     "postbuild": "npm run fonts:compress"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.10",
     "@lhci/cli": "^0.13.0",
-    "babel-eslint": "^10.1.0",
     "concurrently": "^8.2.2",
     "eslint": "8.56.0",
-    "eslint-plugin-ghost": "3.4.0",
     "normalize": "^0.3.1",
     "stylelint": "^16.2.1",
     "stylelint-config-standard-scss": "^13.0.0",

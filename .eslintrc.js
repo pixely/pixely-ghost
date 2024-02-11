@@ -1,20 +1,14 @@
 module.exports = {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     parserOptions: {
-        ecmaVersion: 6,
+        ecmaVersion: 8,
         ecmaFeatures: {
             jsx: true,
             experimentalObjectRestSpread: true,
         },
+        requireConfigFile: false,
     },
-    plugins: ['ghost'],
-    extends: [
-        'plugin:ghost/node',
-        'plugin:ghost/ember',
-    ],
     rules: {
-        'ghost/sort-imports-es6-autofix/sort-imports-es6': 'off',
-        'ghost/ember/use-ember-get-and-set': 'off',
         'no-console': 'off',
         'no-inner-declarations': 'off',
         'valid-jsdoc': 'off',
