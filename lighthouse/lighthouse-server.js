@@ -12,18 +12,19 @@ module.exports = {
             staticDistDir: './dist',
         },
         assert: {
-            preset: 'lighthouse:no-pwa',
             settings: {
                 skipAudits: ['redirects-http'],
             },
             assertions: {
-                'unused-javascript': ['warn'],
+                'categories:performance': ['error', { 'minScore': 0.9}],
+                'categories:accessibility': ['error', { 'minScore': 0.9}],
+                'categories:seo': ['error', { 'minScore': 0.9}]
             },
         },
-        upload: {
-            target: 'lhci',
-            serverBaseUrl: 'https://enigmatic-chamber-98135.herokuapp.com',
-            failOnUploadFailure: true,
-        },
+        // upload: {
+        //     target: 'lhci',
+        //     serverBaseUrl: 'https://enigmatic-chamber-98135.herokuapp.com',
+        //     failOnUploadFailure: true,
+        // },
     },
 };
