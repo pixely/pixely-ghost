@@ -28,7 +28,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm install -g @lhci/cli@0.13.x
       - name: Run build
         run: npm run build:eleventy
         env:
