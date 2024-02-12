@@ -24,7 +24,6 @@
 
 // Dark mode
 @media (prefers-color-scheme: dark) {
-
   :root {
     @include tokens(map.get($tokens, "dark-theme"))
   }

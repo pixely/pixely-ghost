@@ -1,7 +1,5 @@
 .contact-form {
-
   &__field {
-
     &:not(:last-child) {
       margin-bottom: 15px;
     }
@@ -13,11 +11,8 @@
 }
 
 @media (min-width: 576px) {
-
   .contact-form {
-
     &__field {
-  
       &--narrow {
         width: 75%;
       }

@@ -23,11 +23,10 @@
 }
 
 @keyframes active-theme {
-  
   0%,
-  100% { box-shadow: 0 0 0px 2px rgba(255,255,255,.5); }
+  100% { box-shadow: 0 0 0 2px rgba(255 255 255 / .5); }
 
-  40% { box-shadow: 0 0 0px 4px rgba(255,255,255,.5); }
+  40% { box-shadow: 0 0 0 4px rgba(255 255 255 / .5); }
 }
 
 .theme-drawer {
@@ -35,20 +34,20 @@
   max-height: 0;
   background: var(--theme-secondary-dark);
   text-align: center;
-  border-bottom: 2px solid rgb(0, 0, 0, .2);
+  border-bottom: 2px solid rgb(0 0 0 / .2);
   position: sticky;
   top: 0;
   z-index: 200;
   
   &.is-open {
     display: block;
-    animation: themeDrawerOpen .4s cubic-bezier(.42, 0, .17, 1.24);
+    animation: theme-drawer-open .4s cubic-bezier(.42, 0, .17, 1.24);
     animation-fill-mode: both;
   }
 
   &.is-animating-out {
     display: block;
-    animation: themeDrawerClose .2s ease-in;
+    animation: theme-drawer-close .2s ease-in;
     animation-fill-mode: both;
   }
 
@@ -67,9 +66,9 @@
   &__card {
     position: relative;
     border-radius: 4px;
-    box-shadow: 0px 0px 3px 1px rgba(0,0,0,.1);
+    box-shadow: 0 0 3px 1px rgba(0 0 0 / .1);
+    background: rgba(0 0 0 / .1);
     background-clip: padding-box;
-    background: rgba(0,0,0,.1);
     text-align: center;
     width: 150px;
     margin: 0 10px;
@@ -93,7 +92,7 @@
     border-style: solid;
     text-transform: capitalize;
     display: block;
-    box-shadow: 0 0 0px 2px rgba(255,255,255,.2);
+    box-shadow: 0 0 0 2px rgba(255 255 255 / .2);
     transition: box-shadow .2s ease-in-out, transform .2s ease-in-out, border-color .2s ease-in-out;
 
     // Set the default light card theme 
@@ -103,7 +102,7 @@
       @include theme-card(map.get($tokens, "dark-theme"));
       
       // stylelint-disable-next-line max-nesting-depth
-      &--default:after {
+      &--default::after {
         content: ": Dark";
       }
     }
@@ -114,17 +113,14 @@
       }  
     }
 
-    &--default:after {
+    &--default::after {
       content: ": Light";
     }
   }
 
   &__checkbox {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     opacity: 0;
     height: 100%;
     width: 100%;
@@ -136,7 +132,7 @@
   
     &:hover ~ .theme-drawer__label {
       transform: scale(1.01);
-      box-shadow: 0 0 0px 4px rgba(255, 255, 255, .5);
+      box-shadow: 0 0 0 4px rgba(255 255 255 / .5);
     }
 
     &:active ~ .theme-drawer__label {
@@ -144,7 +140,7 @@
     }
 
     &:checked ~ .theme-drawer__label {
-      box-shadow: 0 0 0px 4px rgba(255, 255, 255, .5);
+      box-shadow: 0 0 0 4px rgba(255 255 255 / .5);
       font-weight: $font-weight-bold;
     }
 
@@ -162,8 +158,8 @@
     position: relative;
     color: var(--theme-primary-normal);
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       display: block;
       content: "";
       position: absolute;
@@ -175,11 +171,11 @@
       top: 11.5px;
     }
 
-    &:before {
+    &::before {
       transform: rotate(45deg);
     }
 
-    &:after {
+    &::after {
       transform: rotate(-45deg);
     }
 
@@ -188,8 +184,8 @@
       color: var(--theme-primary-dark);
 
       // stylelint-disable-next-line max-nesting-depth
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         background: var(--theme-primary-dark);
       }
     }
@@ -197,14 +193,12 @@
 }
 
 @media (min-width: 576px) {
-
   .theme-drawer__card {
     width: 200px;
   }
 }
 
-@keyframes themeDrawerOpen {
-
+@keyframes theme-drawer-open {
   0% {
     max-height: 0;
     opacity: 0;
@@ -223,8 +217,7 @@
   }
 }
 
-@keyframes themeDrawerClose {
-
+@keyframes theme-drawer-close {
   0% {
     max-height: 150px;
     opacity: 1;

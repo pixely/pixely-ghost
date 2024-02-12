@@ -1,5 +1,4 @@
 .author {
-
   &__title {
     grid-column: 2 / -2;
     grid-row: 3 / span 2;
@@ -9,9 +8,6 @@
   
   &__bio {
     grid-column: 2 / -2;
-  }
-  
-  &__bio {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 2fr 6fr;
@@ -39,9 +35,7 @@
 }
     
 @media (min-width: 576px) {
-
   .author {
-
     &__title {
       grid-column: 2 / span 4;
       margin-left: -20px;
@@ -54,11 +48,10 @@
 }
 
 @media (min-width: 1200px) {
-
   .author {
-
     &__feed {
       grid-column: 2 / span 5;
+
       //   margin: -10px;
     }
   }

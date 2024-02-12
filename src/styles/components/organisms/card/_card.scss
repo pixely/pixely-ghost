@@ -15,8 +15,8 @@
     margin: 5px 0 10px;
   }
 
-  &__meta-item:not(:last-child):after {
-    content: " – ";
+  &__meta-item:not(:last-child)::after {
+    content: ' – ';
   }
 
   &--featured {
@@ -26,7 +26,6 @@
 }
 
 @media (min-width: 576px) {
-
   .card {
     padding: 10px;
     margin: -10px;

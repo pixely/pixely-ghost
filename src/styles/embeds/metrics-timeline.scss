@@ -1,5 +1,6 @@
+/* stylelint-disable property-no-vendor-prefix, at-rule-no-vendor-prefix */
+
 @-webkit-keyframes page-fade-1 {
-  
   0% {
     opacity: 0;
     -webkit-transform: scale(.8);
@@ -25,8 +26,7 @@
   }
 }
 
-@keyframes page-fade-1 {
-  
+@keyframes page-fade-1 { 
   0% {
     opacity: 0;
     -webkit-transform: scale(.8);
@@ -53,7 +53,6 @@
 }
 
 @-webkit-keyframes page-fade-2 {
-
   0%,
   10% {
     opacity: 0;
@@ -81,7 +80,6 @@
 }
 
 @keyframes page-fade-2 {
-
   0%,
   10% {
     opacity: 0;
@@ -109,7 +107,6 @@
 }
 
 @-webkit-keyframes page-fade-3 {
-
   0%,
   20% {
     opacity: 0;
@@ -137,7 +134,6 @@
 }
 
 @keyframes page-fade-3 {
-
   0%,
   20% {
     opacity: 0;
@@ -165,7 +161,6 @@
 }
 
 @-webkit-keyframes page-fade-4 {
-
   0%,
   30% {
     opacity: 0;
@@ -193,7 +188,6 @@
 }
 
 @keyframes page-fade-4 {
-
   0%,
   30% {
     opacity: 0;
@@ -221,7 +215,6 @@
 }
 
 @-webkit-keyframes element-fade-1 {
-
   0%,
   5% {
     opacity: 0
@@ -234,7 +227,6 @@
 }
 
 @keyframes element-fade-1 {
-
   0%,
   5% {
     opacity: 0
@@ -247,7 +239,6 @@
 }
 
 @-webkit-keyframes element-fade-2 {
-
   0%,
   15% {
     opacity: 0
@@ -260,7 +251,6 @@
 }
 
 @keyframes element-fade-2 {
-
   0%,
   15% {
     opacity: 0
@@ -273,7 +263,6 @@
 }
 
 @-webkit-keyframes element-fade-3 {
-
   0%,
   25% {
     opacity: 0
@@ -286,7 +275,6 @@
 }
 
 @keyframes element-fade-3 {
-
   0%,
   25% {
     opacity: 0
@@ -299,7 +287,6 @@
 }
 
 @-webkit-keyframes element-fade-4 {
-
   0%,
   35% {
     opacity: 1
@@ -312,7 +299,6 @@
 }
 
 @keyframes element-fade-4 {
-
   0%,
   35% {
     opacity: 1
@@ -325,7 +311,6 @@
 }
 
 @-webkit-keyframes arrow-fade-1 {
-
   0%,
   10%,
   100%,
@@ -340,7 +325,6 @@
 }
 
 @keyframes arrow-fade-1 {
-
   0%,
   10%,
   100%,
@@ -355,7 +339,6 @@
 }
 
 @-webkit-keyframes arrow-fade-2 {
-
   0%,
   100%,
   20%,
@@ -370,7 +353,6 @@
 }
 
 @keyframes arrow-fade-2 {
-
   0%,
   100%,
   20%,
@@ -385,7 +367,6 @@
 }
 
 @-webkit-keyframes arrow-fade-3 {
-
   0%,
   100%,
   30%,
@@ -400,7 +381,6 @@
 }
 
 @keyframes arrow-fade-3 {
-
   0%,
   100%,
   30%,
@@ -415,7 +395,6 @@
 }
 
 @-webkit-keyframes title-fade-1 {
-
   0%,
   15% {
     opacity: 0
@@ -428,7 +407,6 @@
 }
 
 @keyframes title-fade-1 {
-
   0%,
   15% {
     opacity: 0
@@ -441,7 +419,6 @@
 }
 
 @-webkit-keyframes title-fade-2 {
-
   0%,
   25% {
     opacity: 0
@@ -454,7 +431,6 @@
 }
 
 @keyframes title-fade-2 {
-
   0%,
   25% {
     opacity: 0
@@ -467,7 +443,6 @@
 }
 
 @-webkit-keyframes title-fade-3 {
-
   0%,
   35% {
     opacity: 0
@@ -480,7 +455,6 @@
 }
 
 @keyframes title-fade-3 {
-
   0%,
   35% {
     opacity: 0
@@ -497,10 +471,7 @@
   max-width: 100%;
   background: var(--theme-primary-dark);
   padding: 20px;
-  -ms-grid-column-span: -2;
-  grid-column-end: -1;
-  -ms-grid-column: 1;
-  grid-column-start: 1;
+  grid-column: 1 / -1;
   overflow: visible
 }
 
