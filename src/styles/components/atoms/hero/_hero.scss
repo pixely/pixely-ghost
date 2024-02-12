@@ -5,8 +5,7 @@
   object-position: center;
 }
 
-@media (min-width: 576px) {
-
+@media (min-width >= 576px) {
   .image.hero,
   .hero {
     max-height: 60vh;

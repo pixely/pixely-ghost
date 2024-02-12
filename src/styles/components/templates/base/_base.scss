@@ -4,7 +4,6 @@
   &__inner {
     margin: $size-spacing-small 0 0 $size-spacing-small;
     background: var(--theme-base);
-
     display: grid;
     grid-template-columns: $grid-mobile-template;
     grid-template-rows: min-content auto;
@@ -13,21 +12,18 @@
   }
 
   &--post {
-
     .base__inner {
       grid-template-rows: 60px 25vh 60px;
     }
   }
 
   &--tag {
-
     .base__inner {
       grid-template-rows: 60px 25vh 45px minmax(20px, max-content) auto;
     }
   }
 
   &--author {
-
     .base__inner {
       grid-template-rows: 60px 25vh 45px minmax(20px, max-content) auto;
     }
@@ -53,13 +49,10 @@
   }
 }
 
-@media (min-width: 576px) {
-  
+@media (min-width >= 576px) {
   .base {
-
     &__inner {
       margin: $size-spacing-medium;
-
       grid-template-columns: $grid-desktop-template;
       grid-template-rows: min-content auto;
       grid-gap: $grid-desktop-gap;
@@ -67,7 +60,6 @@
     }
 
     &--post {
-
       .base__inner {
         grid-template-rows: auto;
       }

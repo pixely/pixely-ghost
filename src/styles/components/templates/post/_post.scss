@@ -1,5 +1,4 @@
 .post {
-
   &__title {
     grid-column: 2 / -1;
     grid-row: 3 / 5;
@@ -36,10 +35,8 @@
   }
 }
 
-@media (min-width: 576px) {
-
+@media (min-width >= 576px) {
   .post {
-
     &__title {
       grid-column: 2 / 6;
       grid-row: 3 / 5;

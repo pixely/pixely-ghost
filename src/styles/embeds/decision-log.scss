@@ -10,7 +10,7 @@
   }
 
   &__cursor {
-    animation: 1s cursorFade ease-in-out infinite;
+    animation: 1s cursor-fade ease-in-out infinite;
     stroke: var(--theme-tertiary);
   }
 
@@ -20,10 +20,6 @@
 
   &__checkbox {
     fill: #fff;
-  }
-
-  &__text {
-    fill: var(--theme-text-normal);
   }
 
   &__pro {
@@ -72,8 +68,7 @@
   }
 }
 
-@keyframes cursorFade {
-
+@keyframes cursor-fade {
   0%,
   100% {
     opacity: 0;

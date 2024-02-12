@@ -1,7 +1,7 @@
 $type--base: 20px;
 $type--extra-small: .694rem;
 
-html { font-size: 18px } /*20px*/
+html { font-size: 18px } /* 20px */
 
 body {
   font-family: $font-family-body-copy;
@@ -81,8 +81,7 @@ small,
   color: var(--theme-text-inverted);
 }
 
-@media (min-width: 576px) {
-  
-  html { font-size: 20px } /*20px*/
+@media (min-width >= 576px) {
+  html { font-size: 20px } /* 20px */
 
 }

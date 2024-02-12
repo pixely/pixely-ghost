@@ -28,8 +28,7 @@
   }
 }
 
-@media (min-width: 576px) {
-  
+@media (min-width >= 576px) { 
   .author-bio {
     grid-gap: $grid-desktop-gap;
   }

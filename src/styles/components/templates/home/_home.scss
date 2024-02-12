@@ -1,25 +1,20 @@
 .home {
-  
   &__feed {
     margin-top: 10px;
     grid-column: 2 / -2;
   }
 }
 
-@media (min-width: 576px) {
-
+@media (min-width >= 576px) {
   .home {
-
     &__feed {
       grid-column: 2 / span 6;
     }
   }
 }
 
-@media (min-width: 1200px) {
-
+@media (min-width >= 1200px) {
   .home {
-
     &__feed {
       grid-column: 2 / span 5;
     }

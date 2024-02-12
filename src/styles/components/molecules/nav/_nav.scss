@@ -1,7 +1,6 @@
 .nav {
   background: var(--theme-secondary-normal);
   display: flex;
-  transition: background-color .2s linear;
   padding: 0;
   appearance: none;
   border: 0;
@@ -14,14 +13,8 @@
   transition: .3s ease-in-out;
   
   &--theme {
-    background: rgba(var(--theme-secondary-normal), .8);
+    background: rgba(var(--theme-secondary-normal) / .8);
     padding: 18px;
-
-    &:hover path,
-    &:active path,
-    &:focus path {
-      stroke: transparent;
-    }
 
     svg {
       height: 100%;
@@ -31,6 +24,12 @@
     path {
       fill: var(--theme-text-secondary);
       transition: .3s ease-in-out;
+    }
+    
+    &:hover path,
+    &:active path,
+    &:focus path {
+      stroke: transparent;
     }
   }
 
@@ -64,7 +63,6 @@
   }
 
   &.is-open .nav__icon-bar {
-  
     &:nth-child(1),
     &:nth-child(4) {
       top: 28px;
@@ -90,11 +88,8 @@
 
   &__overlay {
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.75);
+    inset: 0;
+    background: rgba(0 0 0 / .75);
     cursor: pointer;
     display: none;
     
@@ -104,25 +99,21 @@
 
     &.is-animating-in {
       display: block;
-      animation: navFadeIn .2s cubic-bezier(.42, 0, .17, 1.24);
+      animation: nav-fade-in .2s cubic-bezier(.42, 0, .17, 1.24);
     }
 
     &.is-animating-out {
       display: block;
-      animation: navFadeOut .2s ease-in;
+      animation: nav-fade-out .2s ease-in;
     }
   }
 
   &__menu {
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    inset: 0;
     height: 100%;
     background: var(--theme-secondary-normal);
     overflow: scroll;
-    display: grid;
     padding: 60px 10px;
     flex: 1 1 1;
     border-top: 10px solid  var(--theme-secondary-dark);
@@ -137,12 +128,12 @@
 
     &.is-animating-in {
       display: block;
-      animation: navSlideInDown .2s linear;
+      animation: nav-slide-in-down .2s linear;
     }
 
     &.is-animating-out {
       display: block;
-      animation: navSlideOutUp .2s ease-in-out;
+      animation: nav-slide-out-up .2s ease-in-out;
     }
   }
 
@@ -151,15 +142,11 @@
     font-weight: bold;
     text-decoration: none;
     font-size: 1.44rem;
-    display: block;
     padding: 20px 0;
     text-align: center;
     display: grid;
     place-content: center center;
     background: transparent;
-    // animation: navFadeInOut .2s linear;
-    // animation-delay: .3s;
-    // animation-fill-mode: backwards;
 
     &:last-child {
       margin-bottom: 20px;
@@ -175,10 +162,8 @@
   }
 }
 
-@media (min-width: 576px) {
-
+@media (min-width >= 576px) {
   .nav {
-    
     &.is-open {
       transform: translateY(20px)
     }
@@ -199,19 +184,18 @@
 
       &.is-animating-in {
         display: block;
-        animation: navSlideIn .2s linear;
+        animation: nav-slide-in .2s linear;
       }
 
       &.is-animating-out {
         display: block;
-        animation: navSlideOut .2s ease-in-out;
+        animation: nav-slide-out .2s ease-in-out;
       }
     }
   }
 }
 
-@keyframes navFadeIn {
-
+@keyframes nav-fade-in {
   from {
     opacity: 0;
   }
@@ -221,8 +205,7 @@
   }
 }
 
-@keyframes navFadeOut {
-  
+@keyframes nav-fade-out {
   from {
     opacity: 1;
   }
@@ -232,8 +215,7 @@
   }
 }
 
-@keyframes navSlideIn {
-  
+@keyframes nav-slide-in {
   from {
     transform: translate(100%);
     opacity: .5;
@@ -245,8 +227,7 @@
   }
 }
 
-@keyframes navSlideOut {
-  
+@keyframes nav-slide-out {
   from {
     transform: translate(0);
     opacity: 1;
@@ -258,30 +239,22 @@
   }
 }
 
-@keyframes navSlideInDown {
-  
+@keyframes nav-slide-in-down {
   from {
     transform: translate(-100%, -100%) scale(0);
-    // transform: scale(0);
-    // opacity: 0;
   }
 
   to {
     transform: translate(0) scale(1);
-    // transform: scale(1);
-    // opacity: 1;
   }
 }
 
-@keyframes navSlideOutUp {
-  
+@keyframes nav-slide-out-up {
   from {
-    // transform: translate(0); 
     opacity: 1;   
   }
 
   to {
-    // transform: translate(-100%, -100%);
     opacity: 0;
   }
 }
