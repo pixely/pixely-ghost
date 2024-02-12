@@ -25,7 +25,7 @@
   }
 }
   
-@media (min-width >= 576px) {
+@media (min-width: 576px) {
   .tag {
     &__title {
       grid-column: 2 / span 4;
@@ -38,7 +38,7 @@
   }
 }
   
-@media (min-width >= 1200px) {
+@media (min-width: 1200px) {
   .tag {
     &__feed {
       grid-column: 2 / span 5;

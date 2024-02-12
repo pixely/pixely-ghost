@@ -49,7 +49,7 @@
   }
 }
 
-@media (min-width >= 576px) {
+@media (min-width: 576px) {
   .base {
     &__inner {
       margin: $size-spacing-medium;

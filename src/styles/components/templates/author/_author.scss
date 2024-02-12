@@ -34,7 +34,7 @@
   }
 }
     
-@media (min-width >= 576px) {
+@media (min-width: 576px) {
   .author {
     &__title {
       grid-column: 2 / span 4;
@@ -47,7 +47,7 @@
   }
 }
 
-@media (min-width >= 1200px) {
+@media (min-width: 1200px) {
   .author {
     &__feed {
       grid-column: 2 / span 5;

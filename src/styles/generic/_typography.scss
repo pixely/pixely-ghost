@@ -81,7 +81,7 @@ small,
   color: var(--theme-text-inverted);
 }
 
-@media (min-width >= 576px) {
+@media (min-width: 576px) {
   html { font-size: 20px } /* 20px */
 
 }
