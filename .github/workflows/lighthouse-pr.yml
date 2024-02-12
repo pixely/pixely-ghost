@@ -39,7 +39,7 @@ jobs:
           GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
           SITE_URL: "http://localhost:8080/"
       - name: Run Lighthouse CI
-        run: npm run lhci autorun --config=./lighthouse/lighthouse-pr.js
+        run: lhci autorun --config=./lighthouse/lighthouse-pr.js
         env:
           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
