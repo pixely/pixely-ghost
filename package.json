@@ -43,7 +43,7 @@
     "concurrently": "^8.2.2",
     "eslint": "8.57.0",
     "normalize": "^0.3.1",
-    "stylelint": "^16.2.1",
+    "stylelint": "^16.4.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.2.1",
