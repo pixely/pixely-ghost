@@ -60,7 +60,7 @@
     "@quasibit/eleventy-plugin-schema": "^1.11.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "@tryghost/content-api": "^1.11.20",
-    "@tryghost/helpers": "^1.1.89",
+    "@tryghost/helpers": "^1.1.90",
     "clean-css": "^5.3.3",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
