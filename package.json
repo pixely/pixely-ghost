@@ -72,7 +72,7 @@
     "luxon": "^3.4.4",
     "normalize.css": "^8.0.1",
     "parcel": "^2.11.0",
-    "postcss": "^8.4.39",
+    "postcss": "^8.4.41",
     "postcss-modules": "^6.0.0",
     "postcss-normalize": "^10.0.1",
     "rehype": "^13.0.1",
