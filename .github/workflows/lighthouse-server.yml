@@ -3,7 +3,7 @@ name: Lighthouse Server
 on: 
   push:
     branches:
-      - master
+      - lighthouse-server
 
 jobs:
   lhci:
