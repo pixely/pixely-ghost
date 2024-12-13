@@ -25,7 +25,7 @@
     "build:eleventy": "npm run prebuild && cross-env ELEVENTY_ENV=prod eleventy && npm run postbuild",
     "dev": "cross-env ELEVENTY_ENV=dev concurrently \"eleventy --serve\" \"npm run assets:watch\"",
     "lint": "npm run lint:es; npm run lint:stylelint",
-    "lint:es": "eslint . --ext .js --cache",
+    "lint:es": "eslint --ext=.js --cache .",
     "lint:stylelint": "stylelint \"**/**.scss\"",
     "test": "npm run lint",
     "assets:watch": "npm run preassets:watch && parcel watch 'src/styles/**/[^_]*.{css,scss}' 'src/js/**/*.js' --dist-dir=dist --no-cache",
