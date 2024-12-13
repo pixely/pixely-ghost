@@ -1,12 +1,8 @@
 name: Lighthouse
 
 on: 
-  pull_request:
-    branches-ignore:
-      - dependabot/*
-  push:
-    branches-ignore:
-      - master
+  schedule:
+    - cron: '0 1 1 1 *'
 
 jobs:
   lhci:
