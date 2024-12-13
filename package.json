@@ -39,7 +39,7 @@
     "postbuild": "npm run fonts:compress"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.25.8",
+    "@babel/eslint-parser": "^7.25.9",
     "concurrently": "^8.2.2",
     "eslint": "9.16.0",
     "normalize": "^0.3.1",
