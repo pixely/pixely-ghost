@@ -75,7 +75,7 @@
     "postcss": "^8.4.47",
     "postcss-modules": "^6.0.0",
     "postcss-normalize": "^13.0.1",
-    "rehype": "^13.0.1",
+    "rehype": "^13.0.2",
     "rehype-format": "^5.0.0",
     "rehype-partials": "^1.0.6",
     "sass": "^1.83.0",
