@@ -78,7 +78,7 @@
     "rehype": "^13.0.2",
     "rehype-format": "^5.0.1",
     "rehype-partials": "^1.0.6",
-    "sass": "^1.83.1",
+    "sass": "^1.83.4",
     "sharp": "^0.33.4",
     "style-dictionary": "^3.9.2",
     "unist-util-visit": "^5.0.0"
