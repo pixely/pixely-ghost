@@ -71,7 +71,7 @@
     "liquidjs": "^10.21.0",
     "luxon": "^3.5.0",
     "normalize.css": "^8.0.1",
-    "parcel": "^2.11.0",
+    "parcel": "^2.14.1",
     "postcss": "^8.5.3",
     "postcss-modules": "^6.0.1",
     "postcss-normalize": "^13.0.1",
