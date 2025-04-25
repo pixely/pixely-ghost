@@ -80,7 +80,7 @@
     "rehype-partials": "^1.0.6",
     "sass": "^1.86.1",
     "sharp": "^0.33.4",
-    "style-dictionary": "^3.9.2",
+    "style-dictionary": "^4.4.0",
     "unist-util-visit": "^5.0.0"
   },
   "optionalDependencies": {
