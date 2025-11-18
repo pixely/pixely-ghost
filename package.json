@@ -50,7 +50,7 @@
     "stylelint-selector-bem-pattern": "^4.0.1"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-cache-assets": "^2.0.4",
     "@11ty/eleventy-img": "^5.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.3",
@@ -80,7 +80,7 @@
     "rehype-partials": "^1.0.6",
     "sass": "^1.86.1",
     "sharp": "^0.33.4",
-    "style-dictionary": "^3.9.2",
+    "style-dictionary": "^5.1.1",
     "unist-util-visit": "^5.0.0"
   },
   "optionalDependencies": {
